@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-container-highest": "#e2e3e0",
+          "on-secondary-fixed-variant": "#0c5136",
+          "error": "#ba1a1a",
+          "primary-fixed-dim": "#a5d0b9",
+          "text-primary": "#1A1A1A",
+          "surface-variant": "#e2e3e0",
+          "secondary-fixed": "#b0f1cc",
+          "surface-tint": "#3f6653",
+          "primary": "#012d1d",
+          "tertiary-container": "#5a302f",
+          "surface-container-high": "#e8e8e5",
+          "on-tertiary-container": "#d29895",
+          "on-secondary": "#ffffff",
+          "on-primary-fixed": "#002114",
+          "inverse-on-surface": "#f0f1ee",
+          "outline-variant": "#c1c8c2",
+          "surface-container-low": "#f3f4f1",
+          "on-primary": "#ffffff",
+          "secondary": "#2b694d",
+          "primary-fixed": "#c1ecd4",
+          "on-secondary-container": "#327053",
+          "on-surface": "#1a1c1a",
+          "secondary-container": "#b0f1cc",
+          "on-secondary-fixed": "#002113",
+          "outline": "#717973",
+          "on-surface-variant": "#414844",
+          "surface-bright": "#f9faf6",
+          "on-primary-fixed-variant": "#274e3d",
+          "surface-container-lowest": "#ffffff",
+          "on-error-container": "#93000a",
+          "text-secondary": "#5C5C5C",
+          "on-tertiary-fixed": "#331111",
+          "surface-container": "#eeeeeb",
+          "surface": "#F8F6F0",
+          "accent": "#E07A5F",
+          "primary-container": "#1b4332",
+          "on-tertiary": "#ffffff",
+          "tertiary-fixed": "#ffdad8",
+          "tertiary": "#401b1b",
+          "surface-dim": "#dadad7",
+          "background": "#f9faf6",
+          "tertiary-fixed-dim": "#f5b7b4",
+          "error-container": "#ffdad6",
+          "on-background": "#1a1c1a",
+          "inverse-surface": "#2f312f",
+          "on-primary-container": "#86af99",
+          "inverse-primary": "#a5d0b9",
+          "on-tertiary-fixed-variant": "#673a39",
+          "secondary-fixed-dim": "#94d4b1",
+          "white": "#FFFFFF",
+          "sale": "#C1121F",
+          "on-error": "#ffffff"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "container-max": "1200px",
+          "space-xl": "64px",
+          "section-padding-desktop": "100px",
+          "space-md": "16px",
+          "space-lg": "32px",
+          "space-xs": "4px",
+          "gutter": "24px",
+          "space-sm": "8px",
+          "section-padding-mobile": "60px"
+        },
+        "fontFamily": {
+          "headline-hero": ["Outfit"],
+          "body-sm": ["Inter"],
+          "body-md": ["Inter"],
+          "eyebrow": ["Inter"],
+          "headline-md": ["Outfit"],
+          "headline-lg-mobile": ["Outfit"],
+          "headline-sm": ["Outfit"],
+          "body-lg": ["Inter"],
+          "button": ["Inter"],
+          "headline-hero-mobile": ["Outfit"],
+          "headline-lg": ["Outfit"]
+        },
+        "fontSize": {
+          "headline-hero": ["56px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+          "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+          "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+          "eyebrow": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.08em", "fontWeight": "600" }],
+          "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+          "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "700" }],
+          "headline-sm": ["18px", { "lineHeight": "1.4", "fontWeight": "600" }],
+          "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+          "button": ["15px", { "lineHeight": "1.0", "fontWeight": "600" }],
+          "headline-hero-mobile": ["36px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+          "headline-lg": ["40px", { "lineHeight": "1.15", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+        }
+      }
+    }
+  }</script><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet"/></head><body class="bg-surface font-body-md text-on-surface"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-container-max mx-auto px-gutter flex items-center justify-between"><a class="font-headline-md font-bold text-primary tracking-tight" data-path="home" href="#">VerdureLeaf</a><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary font-semibold"><a aria-current="page" class="transition-colors text-primary font-semibold" data-path="home" href="#">Home</a><a class="text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="about-us" href="#">About Us</a><a class="text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="products" href="#">Products</a><a class="text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="blogs" href="#">Blogs</a><a class="text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="recipes" href="#">Recipes</a><a class="text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="careers" href="#">Careers</a><a class="text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact-us" href="#">Contact Us</a></nav><div class="flex items-center gap-space-md"><a class="hidden xl:flex items-center gap-space-xs text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="tel:+918590349845"><span class="material-symbols-outlined text-[18px]">call</span>+91 859 034 9845</a><a class="relative p-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="cart" href="#"><span class="material-symbols-outlined">shopping_bag</span></a><a class="bg-accent text-on-tertiary px-space-md py-space-sm rounded-full font-button text-button hover:opacity-95 transition-opacity" data-path="subscription" href="#">Start Subscription</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
+<!-- Hero Section -->
+<section class="relative bg-primary text-on-primary py-section-padding-desktop px-gutter overflow-hidden">
+<div class="absolute inset-0 opacity-20 bg-cover bg-center pointer-events-none" data-alt="A lush vertical urban microgreens farm in Bangalore showing glowing LED grow lights and vibrant green trays of organic radish and broccoli microgreens, high-end architectural photography, cinematic lighting, earthy tones of deep forest green and soft cream." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAh6ENqOHrEWbwynq0PjpcIw5MTVSmwNOV_yfE3P1VvxhnK_8UALeTP5Xof-x9CHKp2PIgYucy1AZhLwLHF-rx6vDljOLAeVP7Aw-QVAe0Rg6m3R9KsNxsHVML1R-rt-85lQAFSrjZPX7Vtv2fKsKcX7gIibpFXmquj0eVhKPcWYKH3whfrA0aJyT0sA0nir7AtGWDXhjygdz7ZTuwqDi5vThgTzA22GhfZ9fbJikRh-I4ScYAA0-LXKg')"></div>
+<div class="max-w-container-max mx-auto relative z-10 flex flex-col items-start gap-space-md">
+<span class="font-eyebrow text-eyebrow uppercase text-primary-fixed-dim tracking-widest bg-primary-container px-space-sm py-space-xs rounded-full">Our Mission & Philosophy</span>
+<h1 class="font-headline-hero text-headline-hero max-w-3xl text-on-primary">Cultivating the Future of Urban Nutrition, One Leaf at a Time.</h1>
+<p class="font-body-lg text-primary-fixed-dim max-w-2xl mt-space-sm">Founded between the bustling tech corridors of Bangalore and the visionary skyline of Dubai, VerdureLeaf brings hyper-local, pesticide-free microgreens straight to your table within hours of harvest.</p>
+</div>
+</section>
+<!-- Company Story Section -->
+<section class="py-section-padding-desktop px-gutter max-w-container-max mx-auto w-full">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-xl items-center">
+<div class="flex flex-col gap-space-md">
+<span class="font-eyebrow text-eyebrow uppercase text-secondary">Our Journey</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Roots in Sustainability, Wings in Innovation.</h2>
+<p class="font-body-md text-on-surface-variant">VerdureLeaf was born out of a simple observation: modern urbanites are starved for authentic living nutrients despite an abundance of food choices. By merging controlled-environment agriculture with precision hydroponics, we eliminate food miles, reduce water consumption by 95%, and deliver living microgreens that pack up to 40x the nutritional punch of mature vegetables.</p>
+<p class="font-body-md text-on-surface-variant">From our state-of-the-art climate-controlled indoor farms in India and the UAE, we supply top-tier restaurants and health-conscious households who refuse to compromise on freshness or flavor.</p>
+<div class="grid grid-cols-2 gap-space-lg mt-space-md">
+<div class="bg-surface-container p-space-lg rounded-xl shadow-[0_8px_24px_rgba(27,67,50,0.06)]">
+<span class="font-headline-lg text-primary font-bold">95%</span>
+<p class="font-body-sm text-on-surface-variant mt-space-xs">Less Water Used vs Traditional Farming</p>
+</div>
+<div class="bg-surface-container p-space-lg rounded-xl shadow-[0_8px_24px_rgba(27,67,50,0.06)]">
+<span class="font-headline-lg text-primary font-bold">< 4h</span>
+<p class="font-body-sm text-on-surface-variant mt-space-xs">Harvest to Kitchen Delivery Window</p>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="w-full h-[500px] rounded-xl overflow-hidden shadow-[0_8px_24px_rgba(27,67,50,0.06)] bg-cover bg-center" data-alt="Close up of an urban agronomist inspecting trays of vibrant organic broccoli and arugula microgreens in a pristine indoor vertical farm, warm natural lighting filtered through glass panels, professional portrait photography, clean minimalist aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDhmsp4JePkh9pua6pHibKjYa-D3KNtYPEAx_lBkrc5GYBdFb0ERZxs4onW7TY5QvkH1Yh6bQMsT5z6Z7wrD7QBEoBnfQDtNWq0AK28up7GaPALjZ2U9OfVBpHlPtMRxRIiMHDPNtWypb-i4jU54AtI-IaIB5sQcl6RaZR4W76Z_Rlp4L58J5fPk_Fe0Y3Cyxu9hifbM4yWUcTuZahVrW7kvUh6mu3iLLpLW_9dS0iISbxk24GCpSkcTQ')"></div>
+</div>
+</div>
+</section>
+<!-- Core Values Section -->
+<section class="py-section-padding-desktop px-gutter bg-surface-container-low w-full">
+<div class="max-w-container-max mx-auto flex flex-col items-center">
+<div class="text-center max-w-xl mb-space-xl">
+<span class="font-eyebrow text-eyebrow uppercase text-secondary">What We Stand For</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-space-sm">Our Three Pillars</h2>
+<p class="font-body-md text-on-surface-variant mt-space-xs">Every seed we sow and every tray we deliver is guided by an uncompromising commitment to excellence.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg w-full">
+<!-- Value 1 -->
+<div class="bg-surface p-space-xl rounded-xl shadow-[0_8px_24px_rgba(27,67,50,0.06)] flex flex-col items-start gap-space-md transition-transform duration-300 hover:-translate-y-1">
+<div class="w-14 h-14 rounded-full bg-secondary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">spa</span>
+</div>
+<h3 class="font-headline-md text-on-surface">Purity</h3>
+<p class="font-body-md text-on-surface-variant">Zero synthetic pesticides, zero artificial fertilizers, and zero harmful chemicals. Just pure, living nutrition harvested at peak potency in sterile, filtered environments.</p>
+</div>
+<!-- Value 2 -->
+<div class="bg-surface p-space-xl rounded-xl shadow-[0_8px_24px_rgba(27,67,50,0.06)] flex flex-col items-start gap-space-md transition-transform duration-300 hover:-translate-y-1">
+<div class="w-14 h-14 rounded-full bg-secondary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+</div>
+<h3 class="font-headline-md text-on-surface">Sustainability</h3>
+<p class="font-body-md text-on-surface-variant">Closed-loop hydroponic systems, biodegradable packaging, and hyper-local urban footprint minimize carbon emissions and preserve precious planetary resources.</p>
+</div>
+<!-- Value 3 -->
+<div class="bg-surface p-space-xl rounded-xl shadow-[0_8px_24px_rgba(27,67,50,0.06)] flex flex-col items-start gap-space-md transition-transform duration-300 hover:-translate-y-1">
+<div class="w-14 h-14 rounded-full bg-secondary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<h3 class="font-headline-md text-on-surface">Nutrition</h3>
+<p class="font-body-md text-on-surface-variant">Packed with up to 40 times higher concentration of vital nutrients and vitamins than their fully grown counterparts to supercharge your daily diet.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Team Quotes & Testimonials Section -->
+<section class="py-section-padding-desktop px-gutter max-w-container-max mx-auto w-full">
+<div class="flex flex-col items-center text-center mb-space-xl">
+<span class="font-eyebrow text-eyebrow uppercase text-secondary">Leadership & Voices</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-space-sm">Words from Our Founders</h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
+<div class="bg-surface-container p-space-xl rounded-xl shadow-[0_8px_24px_rgba(27,67,50,0.06)] flex flex-col justify-between">
+<p class="font-body-lg text-on-surface italic mb-space-xl">"We didn't just want to build another farming venture. We wanted to reconnect urban dwellers with living, breathing food that heals the body and respects the Earth."</p>
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-full bg-cover bg-center" data-alt="Portrait of Rohan Sharma, co-founder and CEO of VerdureLeaf, wearing a clean linen shirt in a modern bright office with indoor plants, warm inviting smile, professional editorial photography." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDx2T_8w9Ai0bEaXIV65IRLfDqC1c2FvptCpK34iHDpP3luhb8oGPcy7YpSRPuj03maLDKLBdRDl6dAPQSyYIj4RmES9rEeJXLCrEyCxXCVxfROw3xCXWgtwZc1GnyecSgTupez_5giYUmADNsntMagoRkJKBDrpmNUmjlsKfkFqbNTOEBahxKV_lINUc2YcFgjA1c6P52mf2MHG447gzmjxRJNTQfXoJKzHJBMm3NeV0R_pJNhAWk8fQ')"></div>
+<div>
+<h4 class="font-headline-sm text-on-surface font-semibold">Rohan Sharma</h4>
+<p class="font-body-sm text-on-surface-variant">Co-Founder & CEO, India</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container p-space-xl rounded-xl shadow-[0_8px_24px_rgba(27,67,50,0.06)] flex flex-col justify-between">
+<p class="font-body-lg text-on-surface italic mb-space-xl">"Operating in Dubai taught us that innovation can turn even arid deserts into lush hubs of nourishment. Vertical farming is no longer the future—it's the absolute necessity of today."</p>
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-full bg-cover bg-center" data-alt="Portrait of Fatima Al-Mansoori, co-founder and Head of Middle East Operations at VerdureLeaf, wearing professional attire against a sleek Dubai skyline backdrop, confident and warm expression, high-end corporate portrait." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAKOeUb2De7F_eHzNBQ0hLZnebB3gabaLvenFa21eM7Q8lrBxtw_UD2GXaRLeG-sgwuoHUuY92bTXjbqYqRdLH2v7SuP9qNdGxkQhnnHG43djmiCpqlt1_a7x8QDIq-OlpcPhZcxKu_C2TRf6n6eTTb6VQkCwkfZ5pea35R5wlRu0eOtweLo1FkyxU5ZBJg153YHL2OnkqniiL-2SbvXOBczqzEHvyxaogl7_8Xcg9P_oP1Bokk00bz4A')"></div>
+<div>
+<h4 class="font-headline-sm text-on-surface font-semibold">Fatima Al-Mansoori</h4>
+<p class="font-body-sm text-on-surface-variant">Co-Founder & Head of UAE Operations</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Full-width Green CTA Banner -->
+<section class="w-full bg-primary py-space-xl text-on-primary px-gutter text-center relative overflow-hidden">
+<div class="absolute -right-20 -bottom-20 w-96 h-96 rounded-full bg-secondary opacity-10 pointer-events-none"></div>
+<div class="max-w-container-max mx-auto flex flex-col items-center relative z-10 gap-space-md">
+<h2 class="font-headline-lg text-headline-lg text-on-primary">Ready to Transform Your Plate?</h2>
+<p class="font-body-lg text-primary-fixed-dim max-w-xl">Join hundreds of health enthusiasts across India and the UAE enjoying weekly doorstep deliveries of live microgreens.</p>
+<div class="flex flex-wrap items-center justify-center gap-space-md mt-space-md">
+<a class="bg-accent text-on-tertiary px-space-xl py-space-md rounded-full font-button text-button hover:opacity-95 transition-opacity shadow-[0_4px_16px_rgba(224,122,95,0.3)]" data-path="subscription" href="#">Start Your Subscription</a>
+<a class="bg-surface text-primary px-space-xl py-space-md rounded-full font-button text-button hover:bg-surface-container transition-colors" data-path="products" href="#">Explore All Products</a>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-primary text-on-primary py-space-xl"><div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-3 gap-space-lg mb-space-lg"><div><h4 class="font-headline-sm font-semibold mb-space-sm text-on-primary">VerdureLeaf India</h4><p class="text-body-sm text-primary-fixed-dim">123 Green Valley, Farm Road<br/>Bangalore, Karnataka 560001</p></div><div><h4 class="font-headline-sm font-semibold mb-space-sm text-on-primary">VerdureLeaf UAE</h4><p class="text-body-sm text-primary-fixed-dim">Suite 404, Oasis Tower<br/>Sheikh Zayed Road, Dubai</p></div><div><h4 class="font-headline-sm font-semibold mb-space-sm text-on-primary">Connect</h4><div class="flex gap-space-md mb-space-md"><span class="material-symbols-outlined cursor-pointer hover:text-primary-fixed-dim transition-colors">globe</span><span class="material-symbols-outlined cursor-pointer hover:text-primary-fixed-dim transition-colors">share</span><span class="material-symbols-outlined cursor-pointer hover:text-primary-fixed-dim transition-colors">mail</span></div></div></div><div class="max-w-container-max mx-auto px-gutter pt-space-md border-t border-primary-container text-center text-body-sm text-primary-fixed-dim">© 2024 VerdureLeaf. All rights reserved.</div></footer></body></html>

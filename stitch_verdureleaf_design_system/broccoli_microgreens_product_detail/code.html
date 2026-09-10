@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-container-highest": "#e2e3e0",
+          "on-secondary-fixed-variant": "#0c5136",
+          "error": "#ba1a1a",
+          "primary-fixed-dim": "#a5d0b9",
+          "text-primary": "#1A1A1A",
+          "surface-variant": "#e2e3e0",
+          "secondary-fixed": "#b0f1cc",
+          "surface-tint": "#3f6653",
+          "primary": "#012d1d",
+          "tertiary-container": "#5a302f",
+          "surface-container-high": "#e8e8e5",
+          "on-tertiary-container": "#d29895",
+          "on-secondary": "#ffffff",
+          "on-primary-fixed": "#002114",
+          "inverse-on-surface": "#f0f1ee",
+          "outline-variant": "#c1c8c2",
+          "surface-container-low": "#f3f4f1",
+          "on-primary": "#ffffff",
+          "secondary": "#2b694d",
+          "primary-fixed": "#c1ecd4",
+          "on-secondary-container": "#327053",
+          "on-surface": "#1a1c1a",
+          "secondary-container": "#b0f1cc",
+          "on-secondary-fixed": "#002113",
+          "outline": "#717973",
+          "on-surface-variant": "#414844",
+          "surface-bright": "#f9faf6",
+          "on-primary-fixed-variant": "#274e3d",
+          "surface-container-lowest": "#ffffff",
+          "on-error-container": "#93000a",
+          "text-secondary": "#5C5C5C",
+          "on-tertiary-fixed": "#331111",
+          "surface-container": "#eeeeeb",
+          "surface": "#F8F6F0",
+          "accent": "#E07A5F",
+          "primary-container": "#1b4332",
+          "on-tertiary": "#ffffff",
+          "tertiary-fixed": "#ffdad8",
+          "tertiary": "#401b1b",
+          "surface-dim": "#dadad7",
+          "background": "#f9faf6",
+          "tertiary-fixed-dim": "#f5b7b4",
+          "error-container": "#ffdad6",
+          "on-background": "#1a1c1a",
+          "inverse-surface": "#2f312f",
+          "on-primary-container": "#86af99",
+          "inverse-primary": "#a5d0b9",
+          "on-tertiary-fixed-variant": "#673a39",
+          "secondary-fixed-dim": "#94d4b1",
+          "white": "#FFFFFF",
+          "sale": "#C1121F",
+          "on-error": "#ffffff"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "container-max": "1200px",
+          "space-xl": "64px",
+          "section-padding-desktop": "100px",
+          "space-md": "16px",
+          "space-lg": "32px",
+          "space-xs": "4px",
+          "gutter": "24px",
+          "space-sm": "8px",
+          "section-padding-mobile": "60px"
+        },
+        "fontFamily": {
+          "headline-hero": ["Outfit"],
+          "body-sm": ["Inter"],
+          "body-md": ["Inter"],
+          "eyebrow": ["Inter"],
+          "headline-md": ["Outfit"],
+          "headline-lg-mobile": ["Outfit"],
+          "headline-sm": ["Outfit"],
+          "body-lg": ["Inter"],
+          "button": ["Inter"],
+          "headline-hero-mobile": ["Outfit"],
+          "headline-lg": ["Outfit"]
+        },
+        "fontSize": {
+          "headline-hero": ["56px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+          "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+          "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+          "eyebrow": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.08em", "fontWeight": "600" }],
+          "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+          "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "700" }],
+          "headline-sm": ["18px", { "lineHeight": "1.4", "fontWeight": "600" }],
+          "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+          "button": ["15px", { "lineHeight": "1.0", "fontWeight": "600" }],
+          "headline-hero-mobile": ["36px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+          "headline-lg": ["40px", { "lineHeight": "1.15", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+        }
+      }
+    }
+  }</script><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet"/></head><body class="bg-surface font-body-md text-on-surface"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-container-max mx-auto px-gutter flex items-center justify-between"><a class="font-headline-md font-bold text-primary tracking-tight" data-path="home" href="#">VerdureLeaf</a><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary font-semibold"><a aria-current="page" class="transition-colors text-primary font-semibold" data-path="home" href="#">Home</a><a class="text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="about-us" href="#">About Us</a><a class="text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="products" href="#">Products</a><a class="text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="blogs" href="#">Blogs</a><a class="text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="recipes" href="#">Recipes</a><a class="text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="careers" href="#">Careers</a><a class="text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact-us" href="#">Contact Us</a></nav><div class="flex items-center gap-space-md"><a class="hidden xl:flex items-center gap-space-xs text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="tel:+918590349845"><span class="material-symbols-outlined text-[18px]">call</span>+91 859 034 9845</a><a class="relative p-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="cart" href="#"><span class="material-symbols-outlined">shopping_bag</span></a><a class="bg-accent text-on-tertiary px-space-md py-space-sm rounded-full font-button text-button hover:opacity-95 transition-opacity" data-path="subscription" href="#">Start Subscription</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full bg-surface">
+<!-- Breadcrumb & Top Bar -->
+<div class="max-w-container-max mx-auto px-gutter py-space-md w-full flex items-center justify-between text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-space-xs">
+<a class="hover:text-primary transition-colors" data-path="home" href="#">Home</a>
+<span>/</span>
+<a class="hover:text-primary transition-colors" data-path="products" href="#">Products</a>
+<span>/</span>
+<span class="text-primary font-semibold">Broccoli Microgreens</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="inline-block w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-xs uppercase font-eyebrow tracking-wider text-secondary">In Stock • Harvested Today</span>
+</div>
+</div>
+<!-- Main Product Section -->
+<section class="max-w-container-max mx-auto px-gutter pb-space-xl pt-space-md w-full">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- Image Gallery (Left Column - 7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-md sticky top-28">
+<!-- Main Featured Image -->
+<div class="w-full aspect-[4/3] rounded-xl overflow-hidden shadow-[0_8px_24px_rgba(27,67,50,0.06)] bg-surface-container-high relative group">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Macro photography of vibrant emerald-green broccoli microgreens arranged neatly in an artisanal wooden tray, lit by soft natural morning light against a warm neutral background, highlighting their delicate crisp leaves and translucent stems." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDqVdy5cxBswO-9s5CH_Aa1zNaZnmQxXLHYYhXBDD6XDgj1R2ZQI4ETMsgmT2nTRJ8RWNukExKVIKu1383cUWckmbpKDeFLE8oyPbucNdmdH3U1_1787jcKs4Q1vJmqwx9XzbgrvLN24krVMSDLr4f2nOfPmUnGbRLZ3CBTIx0uo--H6EFyp3PdxJIsWKKVFUteFTFIPW5AQbSDXwlIg8QXGeNWUBBQ9oCo66Cj4WF4uCIQzEIZ85lsqw')"></div>
+<div class="absolute top-4 left-4 bg-accent text-on-tertiary px-space-md py-space-xs rounded-full font-eyebrow uppercase text-[10px] tracking-widest shadow-sm">
+            Best Seller
+          </div>
+</div>
+<!-- Thumbnail Row -->
+<div class="grid grid-cols-4 gap-space-md">
+<div class="aspect-square rounded-lg overflow-hidden cursor-pointer ring-2 ring-primary ring-offset-2 bg-surface-container-high">
+<div class="w-full h-full bg-cover bg-center" data-alt="Close up view of fresh broccoli microgreen leaves with tiny droplets of morning mist on a dark organic soil background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAdsVC_DLjzNXQjWi_YZOKDJGf3PgstAW5QnfjeaP3gAaVyYJ-mfDCzPOq2P7p6KuzIBhVwWCZi9RYRcNsnZ6Pxa9uIqvU5459u8gGJZkN0_hbLBIGt7L0lcFgaVChCLrv0df_sw7zv0pQxQzYfb0FfylPeFenniSazJi9FkleKuYLkkP33pulEzY0tm5XNGpyD2TG4ehNJSXtSpkCFt8YzhqLQXGQgNs2qXK3IoCGbDy6LnXvjiTlw5A')"></div>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden cursor-pointer opacity-70 hover:opacity-100 transition-opacity bg-surface-container-high">
+<div class="w-full h-full bg-cover bg-center" data-alt="Hand holding a handful of freshly harvested crisp broccoli microgreens ready for culinary plating." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCheNByrHbECAm3NIIGeiFBoHdmixcktwwCKG01WAsBG7o0zpyb4GfNA50f9KWeWsiH0x8MtE0vRTFEL4DnOHmSvv6R1sIrUi-CbGO5QwKzq7zDX7kvm2NvgawuPTPUGLNbPGRRRec5CwafSRrylKqs3tU4hBfe3LDwMb-jvc7EKXD4ebMRx2qlveXcCiD_HQKmoCUb2PIgaJD5DByECJBKfT8q086TOELTYvC9nViuv0HeTeVbwnbMpg')"></div>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden cursor-pointer opacity-70 hover:opacity-100 transition-opacity bg-surface-container-high">
+<div class="w-full h-full bg-cover bg-center" data-alt="Sleek eco-friendly packaging containing fresh organic broccoli microgreens with branded VerdureLeaf label." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAee7_oH9k9uJOZyWssflNEXP0n6_MZWaldUMV3LI_CtpphgJcuRTi6GihtIysBdmI55YeLh94RJdbJ5g_0eXkfiORBOTK3qTWJM73p9nxvHb0nSCMGxaPqes4AYfmsyxoMbnpInNrOnap0TxbKzx0mhyX8lFN9IA50zKl02WZIbyeLVZ2dOKTGg8FL53m2JnYhVo613C41rdrkmn7jfwvF1ZrxfyFCAgTxUZZGvM5K5WkRIWQ2pECiOQ')"></div>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden cursor-pointer opacity-70 hover:opacity-100 transition-opacity bg-surface-container-high">
+<div class="w-full h-full bg-cover bg-center" data-alt="Gourmet salad garnished abundantly with vibrant green broccoli microgreens in a ceramic bowl." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCrUuPFekBcEHETA0eLMrFskjZNF7TFUjLCKjWRz7PG_vN8YUNlCQrWRJ-6YRTC9elh6eeZ7Te-kMyePaSskLAxWgtJ8sC386ca2hWx8hZU1WK4s5rQ2Ku5qdbeNz-0cMTvKY34htTno3Wir2J7pT8GNN0hDgQJG3TRWM4UnctQ3ykIUrN98sDmQacVRM79c6mVrE0DKG_ykPhkqD-OVNVNJsh6m3zXFveUPbOLQ4RBpftAR_9DHgM1_w')"></div>
+</div>
+</div>
+</div>
+<!-- Product Details (Right Column - 5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<!-- Header Info -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="text-xs uppercase font-eyebrow text-secondary tracking-widest">SKU: VL-BR-042</span>
+<div class="flex items-center gap-1 text-accent">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-body-sm text-on-surface font-semibold ml-1">4.9 (128 reviews)</span>
+</div>
+</div>
+<h1 class="font-headline-lg text-on-surface tracking-tight mt-1">Broccoli Microgreens</h1>
+<div class="flex items-baseline gap-space-md mt-2">
+<span class="text-3xl font-headline-md text-primary font-bold">₹319</span>
+<span class="text-body-sm text-on-surface-variant line-through">₹399</span>
+<span class="bg-primary-fixed text-on-primary-fixed text-xs font-semibold px-2 py-0.5 rounded">Save 20%</span>
+</div>
+</div>
+<!-- Description -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col gap-space-md">
+<p class="text-body-md text-on-surface leading-relaxed">
+            Unrivaled in nutritional potency, our broccoli microgreens are packed with up to 40 times the vital phytonutrients of mature broccoli. Delivering an exceptionally crisp texture and a mild, peppery, fresh-earth flavor profile, they elevate any dish instantly.
+          </p>
+<div class="grid grid-cols-2 gap-space-md pt-2 border-t border-outline-variant/30">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">bolt</span>
+<span class="text-body-sm font-semibold text-on-surface">High Sulforaphane</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">eco</span>
+<span class="text-body-sm font-semibold text-on-surface">100% Organic Soil</span>
+</div>
+</div>
+</div>
+<!-- Quantity & Add to Cart Action -->
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center gap-space-md">
+<span class="text-body-sm font-semibold text-on-surface">Quantity:</span>
+<div class="flex items-center bg-surface-container-low rounded-lg p-1 border border-outline-variant/20">
+<button class="w-9 h-9 flex items-center justify-center rounded hover:bg-surface-container transition-colors text-on-surface font-bold">-</button>
+<span class="w-12 text-center font-semibold text-on-surface">1</span>
+<button class="w-9 h-9 flex items-center justify-center rounded hover:bg-surface-container transition-colors text-on-surface font-bold">+</button>
+</div>
+<span class="text-body-sm text-secondary ml-auto font-medium">50g punnet</span>
+</div>
+<button class="w-full bg-accent text-on-tertiary h-14 rounded-full font-button text-button flex items-center justify-center gap-space-sm shadow-[0_4px_16px_rgba(224,122,95,0.3)] hover:opacity-95 hover:scale-[1.01] transition-all">
+<span class="material-symbols-outlined">shopping_bag</span>
+            Add to Cart — ₹319
+          </button>
+</div>
+<!-- Delivery Estimates -->
+<div class="bg-surface-container-highest/50 p-space-md rounded-xl flex flex-col gap-space-md mt-2">
+<h4 class="font-headline-sm text-on-surface text-sm font-semibold flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">local_shipping</span>
+            Estimated Harvest & Delivery
+          </h4>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md text-body-sm">
+<div class="bg-surface p-space-sm rounded-lg flex flex-col gap-1">
+<span class="font-semibold text-primary flex items-center gap-1">🇮🇳 India</span>
+<span class="text-on-surface-variant text-xs">Delivered within 24-48 hours from harvest in Bangalore, Mumbai & Delhi NCR.</span>
+</div>
+<div class="bg-surface p-space-sm rounded-lg flex flex-col gap-1">
+<span class="font-semibold text-primary flex items-center gap-1">🇦🇪 UAE</span>
+<span class="text-on-surface-variant text-xs">Fresh cold-chain air freight delivery across Dubai, Abu Dhabi & Sharjah in 48h.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Related Products Section -->
+<section class="w-full bg-surface-container-low py-space-xl mt-space-xl">
+<div class="max-w-container-max mx-auto px-gutter flex flex-col gap-space-lg">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div>
+<span class="text-eyebrow uppercase text-secondary tracking-widest block mb-2">Complete Your Harvest</span>
+<h2 class="font-headline-lg text-on-surface">You Might Also Like</h2>
+</div>
+<a class="text-primary font-semibold text-body-sm hover:underline flex items-center gap-1" data-path="products" href="#">
+          View all microgreens <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- 3 Microgreen Items Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Item 1 -->
+<div class="bg-surface rounded-xl overflow-hidden shadow-[0_8px_24px_rgba(27,67,50,0.04)] flex flex-col group">
+<div class="aspect-[4/3] relative overflow-hidden bg-surface-container-high">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Fresh vibrant red radish microgreens with striking magenta stems and dark green leaves in a clean container." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB3kRps7SidhBCKVBjCRqeqmIZpy_-MLSi4p6tngdl8TN1vRk50c6Ia8JUXOdiRHdGKUoO2QhlTexhYHchRvam8uby__sOQsMWqSDQrChyqJZf0y_y3Q44x1Kb6HFOpDJLNDCeZv6hGDXJYVm_oxu_tKes4VzQs6cmMqPqt-xKfC1Gaz_X5ALYrzv4fBMdLUDlVVchb1aUU8ZDedkxTBDu_-MRzIKWMnf8MFX9XD-tKAXj9elwCFtbcuw')"></div>
+<div class="absolute top-3 right-3 bg-surface/90 backdrop-blur px-2 py-1 rounded text-xs font-semibold text-primary">₹280</div>
+</div>
+<div class="p-space-lg flex flex-col flex-grow justify-between gap-space-md">
+<div>
+<span class="text-xs uppercase font-eyebrow text-secondary tracking-wider">Spicy & Crisp</span>
+<h3 class="font-headline-sm text-on-surface mt-1">Red Radish Microgreens</h3>
+<p class="text-body-sm text-on-surface-variant mt-2 line-clamp-2">Delivers a bold, spicy kick resembling mature radishes, packed with Vitamin C and antioxidants.</p>
+</div>
+<button class="w-full border border-primary text-primary py-2 rounded-lg font-button text-button hover:bg-primary hover:text-on-primary transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add</span> Quick Add
+            </button>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="bg-surface rounded-xl overflow-hidden shadow-[0_8px_24px_rgba(27,67,50,0.04)] flex flex-col group">
+<div class="aspect-[4/3] relative overflow-hidden bg-surface-container-high">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Lush green sunflower microgreens showing thick succulent stems and large hearty cotyledon leaves." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAk1xEqha5iQGS27i0TLS7jOVZMW9zNcIeRtrndO1J55G7VrS4hMxYI8VrvZDeOUSLctcNQOVTgjC_oSEFW4Yh3hEcIhpeEJ0GL9mhxhUlRpdMneKESP3VwTOAEI2wKaRIcGaEDtQdGt7uy-Fs_qjxf8_awegT7WUcitC8V1IGM-k-AkugdiajgLgfFFc7nrgXJ3kVL8DKgXevXHXy2atHyWH7ydueO7n7X6LQjx4e4EJOjsAqk-yTQQQ')"></div>
+<div class="absolute top-3 right-3 bg-surface/90 backdrop-blur px-2 py-1 rounded text-xs font-semibold text-primary">₹349</div>
+</div>
+<div class="p-space-lg flex flex-col flex-grow justify-between gap-space-md">
+<div>
+<span class="text-xs uppercase font-eyebrow text-secondary tracking-wider">Nutty & Crunchy</span>
+<h3 class="font-headline-sm text-on-surface mt-1">Sunflower Microgreens</h3>
+<p class="text-body-sm text-on-surface-variant mt-2 line-clamp-2">Thick, crunchy stems with a delightful nutty flavor. Exceptional source of plant protein and healthy fats.</p>
+</div>
+<button class="w-full border border-primary text-primary py-2 rounded-lg font-button text-button hover:bg-primary hover:text-on-primary transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add</span> Quick Add
+            </button>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="bg-surface rounded-xl overflow-hidden shadow-[0_8px_24px_rgba(27,67,50,0.04)] flex flex-col group">
+<div class="aspect-[4/3] relative overflow-hidden bg-surface-container-high">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Bright golden-yellow wheatgrass microgreens densely grown in a tray, glowing in indoor grow light." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDFYhTrX2hWlQUrkvWgNX0GWNASus7Zj1w3n84vA03NN_hKZ7KadibyNFoYotU2JDOnmOiEBJPTx5T-cFlGS5WXUG1AixGHbDFYSrQsZwcrIoXTna5NGgW8NujzQnN-tJx3cXfKCQy3sD_hmD0lBG3FWl4klsr5kmFeICHJn8qY9EVci5GjzbJoDOV6ciWGOZe6mDTtHEknUYfXSP9VQGQVdzOSohxMadEIg-QLKU4tUObbdxsGoeHudA')"></div>
+<div class="absolute top-3 right-3 bg-surface/90 backdrop-blur px-2 py-1 rounded text-xs font-semibold text-primary">₹249</div>
+</div>
+<div class="p-space-lg flex flex-col flex-grow justify-between gap-space-md">
+<div>
+<span class="text-xs uppercase font-eyebrow text-secondary tracking-wider">Detox & Vitality</span>
+<h3 class="font-headline-sm text-on-surface mt-1">Organic Wheatgrass</h3>
+<p class="text-body-sm text-on-surface-variant mt-2 line-clamp-2">High chlorophyll concentration ideal for daily juicing, natural cleansing, and immense cellular rejuvenation.</p>
+</div>
+<button class="w-full border border-primary text-primary py-2 rounded-lg font-button text-button hover:bg-primary hover:text-on-primary transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add</span> Quick Add
+            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-primary text-on-primary py-space-xl"><div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-3 gap-space-lg mb-space-lg"><div><h4 class="font-headline-sm font-semibold mb-space-sm text-on-primary">VerdureLeaf India</h4><p class="text-body-sm text-primary-fixed-dim">123 Green Valley, Farm Road<br/>Bangalore, Karnataka 560001</p></div><div><h4 class="font-headline-sm font-semibold mb-space-sm text-on-primary">VerdureLeaf UAE</h4><p class="text-body-sm text-primary-fixed-dim">Suite 404, Oasis Tower<br/>Sheikh Zayed Road, Dubai</p></div><div><h4 class="font-headline-sm font-semibold mb-space-sm text-on-primary">Connect</h4><div class="flex gap-space-md mb-space-md"><span class="material-symbols-outlined cursor-pointer hover:text-primary-fixed-dim transition-colors">globe</span><span class="material-symbols-outlined cursor-pointer hover:text-primary-fixed-dim transition-colors">share</span><span class="material-symbols-outlined cursor-pointer hover:text-primary-fixed-dim transition-colors">mail</span></div></div></div><div class="max-w-container-max mx-auto px-gutter pt-space-md border-t border-primary-container text-center text-body-sm text-primary-fixed-dim">© 2024 VerdureLeaf. All rights reserved.</div></footer></body></html>

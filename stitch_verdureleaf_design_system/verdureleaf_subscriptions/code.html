@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-container-highest": "#e2e3e0",
+          "on-secondary-fixed-variant": "#0c5136",
+          "error": "#ba1a1a",
+          "primary-fixed-dim": "#a5d0b9",
+          "text-primary": "#1A1A1A",
+          "surface-variant": "#e2e3e0",
+          "secondary-fixed": "#b0f1cc",
+          "surface-tint": "#3f6653",
+          "primary": "#012d1d",
+          "tertiary-container": "#5a302f",
+          "surface-container-high": "#e8e8e5",
+          "on-tertiary-container": "#d29895",
+          "on-secondary": "#ffffff",
+          "on-primary-fixed": "#002114",
+          "inverse-on-surface": "#f0f1ee",
+          "outline-variant": "#c1c8c2",
+          "surface-container-low": "#f3f4f1",
+          "on-primary": "#ffffff",
+          "secondary": "#2b694d",
+          "primary-fixed": "#c1ecd4",
+          "on-secondary-container": "#327053",
+          "on-surface": "#1a1c1a",
+          "secondary-container": "#b0f1cc",
+          "on-secondary-fixed": "#002113",
+          "outline": "#717973",
+          "on-surface-variant": "#414844",
+          "surface-bright": "#f9faf6",
+          "on-primary-fixed-variant": "#274e3d",
+          "surface-container-lowest": "#ffffff",
+          "on-error-container": "#93000a",
+          "text-secondary": "#5C5C5C",
+          "on-tertiary-fixed": "#331111",
+          "surface-container": "#eeeeeb",
+          "surface": "#F8F6F0",
+          "accent": "#E07A5F",
+          "primary-container": "#1b4332",
+          "on-tertiary": "#ffffff",
+          "tertiary-fixed": "#ffdad8",
+          "tertiary": "#401b1b",
+          "surface-dim": "#dadad7",
+          "background": "#f9faf6",
+          "tertiary-fixed-dim": "#f5b7b4",
+          "error-container": "#ffdad6",
+          "on-background": "#1a1c1a",
+          "inverse-surface": "#2f312f",
+          "on-primary-container": "#86af99",
+          "inverse-primary": "#a5d0b9",
+          "on-tertiary-fixed-variant": "#673a39",
+          "secondary-fixed-dim": "#94d4b1",
+          "white": "#FFFFFF",
+          "sale": "#C1121F",
+          "on-error": "#ffffff"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "container-max": "1200px",
+          "space-xl": "64px",
+          "section-padding-desktop": "100px",
+          "space-md": "16px",
+          "space-lg": "32px",
+          "space-xs": "4px",
+          "gutter": "24px",
+          "space-sm": "8px",
+          "section-padding-mobile": "60px"
+        },
+        "fontFamily": {
+          "headline-hero": ["Outfit"],
+          "body-sm": ["Inter"],
+          "body-md": ["Inter"],
+          "eyebrow": ["Inter"],
+          "headline-md": ["Outfit"],
+          "headline-lg-mobile": ["Outfit"],
+          "headline-sm": ["Outfit"],
+          "body-lg": ["Inter"],
+          "button": ["Inter"],
+          "headline-hero-mobile": ["Outfit"],
+          "headline-lg": ["Outfit"]
+        },
+        "fontSize": {
+          "headline-hero": ["56px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+          "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+          "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+          "eyebrow": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.08em", "fontWeight": "600" }],
+          "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+          "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "700" }],
+          "headline-sm": ["18px", { "lineHeight": "1.4", "fontWeight": "600" }],
+          "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+          "button": ["15px", { "lineHeight": "1.0", "fontWeight": "600" }],
+          "headline-hero-mobile": ["36px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+          "headline-lg": ["40px", { "lineHeight": "1.15", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+        }
+      }
+    }
+  }</script><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet"/></head><body class="bg-surface font-body-md text-on-surface"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-container-max mx-auto px-gutter flex items-center justify-between"><a class="font-headline-md font-bold text-primary tracking-tight" data-path="home" href="#">VerdureLeaf</a><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary font-semibold"><a aria-current="page" class="transition-colors text-primary font-semibold" data-path="home" href="#">Home</a><a class="text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="about-us" href="#">About Us</a><a class="text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="products" href="#">Products</a><a class="text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="blogs" href="#">Blogs</a><a class="text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="recipes" href="#">Recipes</a><a class="text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="careers" href="#">Careers</a><a class="text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact-us" href="#">Contact Us</a></nav><div class="flex items-center gap-space-md"><a class="hidden xl:flex items-center gap-space-xs text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="tel:+918590349845"><span class="material-symbols-outlined text-[18px]">call</span>+91 859 034 9845</a><a class="relative p-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="cart" href="#"><span class="material-symbols-outlined">shopping_bag</span></a><a class="bg-accent text-on-tertiary px-space-md py-space-sm rounded-full font-button text-button hover:opacity-95 transition-opacity" data-path="subscription" href="#">Start Subscription</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
+<!-- Hero Section -->
+<section class="relative w-full bg-primary text-on-primary py-section-padding-desktop overflow-hidden">
+<div class="absolute inset-0 opacity-10 bg-cover bg-center" data-alt="Close up macro photograph of lush vibrant green microgreens growing in organic soil, glowing with natural morning sunlight, tactile organic minimalism style, VerdureLeaf forest green and warm cream palette." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuABAsU4INiL-tRYOum9YtflYR1vGuGd9rg9s5hPE1UOLFnU2XSHFEVEd6iw15tUX1B3ddOjbzyxhI-nzu7n-X1sLR6czI0Jm1v6kMoXmZSfpCpNxCIptAbd5hA2W4c6vzsij64_-H9HgbsepWnJusy-aYWgD3UNKtLA1ncL9mr7EViilPs5xHr0RTLS3JDS3fEnsuJBg_jKw_Q0QXT3fam97nXiRwi4O-ydMewcXYi-gXhWfMivsOq-Lg')"></div>
+<div class="max-w-container-max mx-auto px-gutter relative z-10 flex flex-col items-center text-center">
+<span class="font-eyebrow text-primary-fixed-dim uppercase tracking-widest mb-space-sm">Farm-To-Doorstep Vitality</span>
+<h1 class="font-headline-hero text-headline-hero text-on-primary max-w-3xl mb-space-md">Live Nutrient-Dense, Delivered Weekly.</h1>
+<p class="font-body-lg text-primary-fixed-dim max-w-2xl mb-space-xl">Experience the pinnacle of culinary freshness and health. Harvested hours before delivery, our microgreens pack up to 40x more nutrients than mature greens.</p>
+<div class="flex flex-wrap gap-space-lg justify-center text-left">
+<div class="flex items-center gap-space-sm bg-primary-container/80 backdrop-blur-md px-space-md py-space-sm rounded-xl">
+<span class="material-symbols-outlined text-secondary-fixed text-[24px]">eco</span>
+<div>
+<h4 class="font-headline-sm text-on-primary">100% Organic</h4>
+<p class="font-body-sm text-primary-fixed-dim">Zero pesticides or synthetic fertilizers</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm bg-primary-container/80 backdrop-blur-md px-space-md py-space-sm rounded-xl">
+<span class="material-symbols-outlined text-secondary-fixed text-[24px]">bolt</span>
+<div>
+<h4 class="font-headline-sm text-on-primary">Same-Day Harvest</h4>
+<p class="font-body-sm text-primary-fixed-dim">Cut right before it reaches your door</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm bg-primary-container/80 backdrop-blur-md px-space-md py-space-sm rounded-xl">
+<span class="material-symbols-outlined text-secondary-fixed text-[24px]">local_shipping</span>
+<div>
+<h4 class="font-headline-sm text-on-primary">Free Delivery</h4>
+<p class="font-body-sm text-primary-fixed-dim">Scheduled cold-chain shipping</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing & Tiers Section -->
+<section class="max-w-container-max mx-auto px-gutter py-section-padding-desktop">
+<div class="text-center max-w-2xl mx-auto mb-space-xl">
+<span class="font-eyebrow text-secondary uppercase tracking-widest mb-space-sm">Flexible Subscriptions</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-space-md">Choose Your Harvest Plan</h2>
+<p class="font-body-md text-on-surface-variant">Pause, skip, or modify your delivery frequency anytime with just a single click.</p>
+<!-- Frequency Toggle -->
+<div class="inline-flex items-center bg-surface-container-high p-space-xs rounded-full mt-space-lg">
+<button class="px-space-md py-space-xs rounded-full font-button text-body-sm bg-primary text-on-primary transition-all" id="monthly-toggle" onclick="setBilling('monthly')">Monthly Billing (Save 15%)</button>
+<button class="px-space-md py-space-xs rounded-full font-button text-body-sm text-on-surface-variant transition-all" id="weekly-toggle" onclick="setBilling('weekly')">Weekly Billing</button>
+</div>
+</div>
+<!-- Pricing Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg items-stretch">
+<!-- Card 1: Weekly Fresh Box -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl p-space-lg shadow-[0_8px_24px_rgba(27,67,50,0.06)] relative transition-all hover:-translate-y-1">
+<div class="mb-space-md">
+<span class="font-eyebrow text-secondary uppercase tracking-wider">Starter</span>
+<h3 class="font-headline-md text-on-surface mt-space-xs">Weekly Fresh Box</h3>
+<p class="font-body-sm text-on-surface-variant mt-space-xs">Perfect for singles or couples starting their microgreens journey.</p>
+</div>
+<div class="mb-space-lg">
+<span class="font-headline-hero text-primary text-[42px]" id="price-1">₹749</span>
+<span class="font-body-sm text-on-surface-variant"> / delivery</span>
+</div>
+<ul class="flex flex-col gap-space-sm mb-space-xl flex-grow">
+<li class="flex items-center gap-space-sm text-body-sm text-on-surface"><span class="material-symbols-outlined text-secondary text-[18px]">check</span> 2 live trays per delivery</li>
+<li class="flex items-center gap-space-sm text-body-sm text-on-surface"><span class="material-symbols-outlined text-secondary text-[18px]">check</span> Choice of Arugula & Radish</li>
+<li class="flex items-center gap-space-sm text-body-sm text-on-surface"><span class="material-symbols-outlined text-secondary text-[18px]">check</span> Free insulated cold shipping</li>
+<li class="flex items-center gap-space-sm text-body-sm text-on-surface-variant line-through"><span class="material-symbols-outlined text-outline text-[18px]">close</span> Chef consultation</li>
+</ul>
+<button class="w-full py-space-md rounded-full bg-secondary text-on-secondary font-button hover:opacity-95 transition-opacity text-center" onclick="alert('Plan selected: Weekly Fresh Box')">Select Plan</button>
+</div>
+<!-- Card 2: Bi-Weekly Family Box (Featured) -->
+<div class="flex flex-col bg-primary text-on-primary rounded-xl p-space-lg shadow-[0_12px_32px_rgba(27,67,50,0.15)] relative transition-all hover:-translate-y-1 ring-2 ring-accent">
+<div class="absolute -top-3 right-space-md bg-accent text-on-tertiary px-space-md py-1 rounded-full font-eyebrow tracking-wider uppercase">Most Popular</div>
+<div class="mb-space-md">
+<span class="font-eyebrow text-primary-fixed-dim uppercase tracking-wider">Household</span>
+<h3 class="font-headline-md text-on-primary mt-space-xs">Bi-Weekly Family Box</h3>
+<p class="font-body-sm text-primary-fixed-dim mt-space-xs">Ideal for families looking to incorporate daily superfoods.</p>
+</div>
+<div class="mb-space-lg">
+<span class="font-headline-hero text-primary-fixed text-[42px]" id="price-2">₹1,399</span>
+<span class="font-body-sm text-primary-fixed-dim"> / delivery</span>
+</div>
+<ul class="flex flex-col gap-space-sm mb-space-xl flex-grow">
+<li class="flex items-center gap-space-sm text-body-sm text-on-primary"><span class="material-symbols-outlined text-secondary-fixed text-[18px]">check</span> 4 live trays per delivery</li>
+<li class="flex items-center gap-space-sm text-body-sm text-on-primary"><span class="material-symbols-outlined text-secondary-fixed text-[18px]">check</span> Mixed variety rotation</li>
+<li class="flex items-center gap-space-sm text-body-sm text-on-primary"><span class="material-symbols-outlined text-secondary-fixed text-[18px]">check</span> Free priority cold shipping</li>
+<li class="flex items-center gap-space-sm text-body-sm text-on-primary"><span class="material-symbols-outlined text-secondary-fixed text-[18px]">check</span> Exclusive recipe guide included</li>
+</ul>
+<button class="w-full py-space-md rounded-full bg-accent text-on-tertiary font-button hover:opacity-95 transition-opacity text-center" onclick="alert('Plan selected: Bi-Weekly Family Box')">Select Plan</button>
+</div>
+<!-- Card 3: Chef Custom Box -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl p-space-lg shadow-[0_8px_24px_rgba(27,67,50,0.06)] relative transition-all hover:-translate-y-1">
+<div class="mb-space-md">
+<span class="font-eyebrow text-secondary uppercase tracking-wider">Connoisseur</span>
+<h3 class="font-headline-md text-on-surface mt-space-xs">Chef Custom Box</h3>
+<p class="font-body-sm text-on-surface-variant mt-space-xs">Tailored selections for passionate home cooks and culinary pros.</p>
+</div>
+<div class="mb-space-lg">
+<span class="font-headline-hero text-primary text-[42px]" id="price-3">₹2,199</span>
+<span class="font-body-sm text-on-surface-variant"> / delivery</span>
+</div>
+<ul class="flex flex-col gap-space-sm mb-space-xl flex-grow">
+<li class="flex items-center gap-space-sm text-body-sm text-on-surface"><span class="material-symbols-outlined text-secondary text-[18px]">check</span> 6 custom live trays</li>
+<li class="flex items-center gap-space-sm text-body-sm text-on-surface"><span class="material-symbols-outlined text-secondary text-[18px]">check</span> Rare & exotic varieties</li>
+<li class="flex items-center gap-space-sm text-body-sm text-on-surface"><span class="material-symbols-outlined text-secondary text-[18px]">check</span> Priority VIP delivery slot</li>
+<li class="flex items-center gap-space-sm text-body-sm text-on-surface"><span class="material-symbols-outlined text-secondary text-[18px]">check</span> Direct WhatsApp chef support</li>
+</ul>
+<button class="w-full py-space-md rounded-full bg-secondary text-on-secondary font-button hover:opacity-95 transition-opacity text-center" onclick="alert('Plan selected: Chef Custom Box')">Select Plan</button>
+</div>
+</div>
+</section>
+<!-- Subscribe Sign-Up Form Mockup Section -->
+<section class="bg-surface-container-low py-section-padding-desktop">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 lg:grid-cols-2 gap-space-xl items-center">
+<div>
+<span class="font-eyebrow text-secondary uppercase tracking-widest mb-space-sm">Get Started Today</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-space-md">Ready to Transform Your Plate?</h2>
+<p class="font-body-lg text-on-surface-variant mb-space-lg">Join thousands of health enthusiasts across India and the UAE enjoying restaurant-quality living microgreens at home.</p>
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-headline-sm">1</div>
+<p class="font-body-md text-on-surface">Select your preferred subscription tier above.</p>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-headline-sm">2</div>
+<p class="font-body-md text-on-surface">Enter your delivery address and schedule.</p>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-headline-sm">3</div>
+<p class="font-body-md text-on-surface">Receive fresh living greens right at your doorstep.</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-[0_8px_24px_rgba(27,67,50,0.06)]">
+<h3 class="font-headline-md text-on-surface mb-space-md">Quick Subscribe Mockup</h3>
+<form class="flex flex-col gap-space-md" onsubmit="event.preventDefault(); alert('Subscription sign-up simulated successfully!');">
+<div>
+<label class="block font-body-sm font-medium text-on-surface mb-space-xs">Full Name</label>
+<input class="w-full px-space-md py-space-sm rounded-lg bg-surface border border-outline-variant text-on-surface focus:outline-none focus:border-primary" placeholder="Aarav Sharma" required="" type="text"/>
+</div>
+<div>
+<label class="block font-body-sm font-medium text-on-surface mb-space-xs">Email Address</label>
+<input class="w-full px-space-md py-space-sm rounded-lg bg-surface border border-outline-variant text-on-surface focus:outline-none focus:border-primary" placeholder="aarav@example.com" required="" type="email"/>
+</div>
+<div>
+<label class="block font-body-sm font-medium text-on-surface mb-space-xs">Delivery City</label>
+<select class="w-full px-space-md py-space-sm rounded-lg bg-surface border border-outline-variant text-on-surface focus:outline-none focus:border-primary">
+<option>Bangalore, India</option>
+<option>Mumbai, India</option>
+<option>Dubai, UAE</option>
+<option>Abu Dhabi, UAE</option>
+</select>
+</div>
+<button class="w-full mt-space-sm py-space-md rounded-full bg-accent text-on-tertiary font-button text-button hover:opacity-95 transition-opacity" type="submit">Complete Subscription</button>
+</form>
+</div>
+</div>
+</section>
+<script>
+    function setBilling(type) {
+      const monthlyBtn = document.getElementById('monthly-toggle');
+      const weeklyBtn = document.getElementById('weekly-toggle');
+      const p1 = document.getElementById('price-1');
+      const p2 = document.getElementById('price-2');
+      const p3 = document.getElementById('price-3');
+
+      if (type === 'monthly') {
+        monthlyBtn.className = "px-space-md py-space-xs rounded-full font-button text-body-sm bg-primary text-on-primary transition-all";
+        weeklyBtn.className = "px-space-md py-space-xs rounded-full font-button text-body-sm text-on-surface-variant transition-all";
+        p1.innerText = "₹749";
+        p2.innerText = "₹1,399";
+        p3.innerText = "₹2,199";
+      } else {
+        weeklyBtn.className = "px-space-md py-space-xs rounded-full font-button text-body-sm bg-primary text-on-primary transition-all";
+        monthlyBtn.className = "px-space-md py-space-xs rounded-full font-button text-body-sm text-on-surface-variant transition-all";
+        p1.innerText = "₹899";
+        p2.innerText = "₹1,599";
+        p3.innerText = "₹2,499";
+      }
+    }
+  </script>
+</div></main><footer class="w-full bg-primary text-on-primary py-space-xl"><div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-3 gap-space-lg mb-space-lg"><div><h4 class="font-headline-sm font-semibold mb-space-sm text-on-primary">VerdureLeaf India</h4><p class="text-body-sm text-primary-fixed-dim">123 Green Valley, Farm Road<br/>Bangalore, Karnataka 560001</p></div><div><h4 class="font-headline-sm font-semibold mb-space-sm text-on-primary">VerdureLeaf UAE</h4><p class="text-body-sm text-primary-fixed-dim">Suite 404, Oasis Tower<br/>Sheikh Zayed Road, Dubai</p></div><div><h4 class="font-headline-sm font-semibold mb-space-sm text-on-primary">Connect</h4><div class="flex gap-space-md mb-space-md"><span class="material-symbols-outlined cursor-pointer hover:text-primary-fixed-dim transition-colors">globe</span><span class="material-symbols-outlined cursor-pointer hover:text-primary-fixed-dim transition-colors">share</span><span class="material-symbols-outlined cursor-pointer hover:text-primary-fixed-dim transition-colors">mail</span></div></div></div><div class="max-w-container-max mx-auto px-gutter pt-space-md border-t border-primary-container text-center text-body-sm text-primary-fixed-dim">© 2024 VerdureLeaf. All rights reserved.</div></footer></body></html>

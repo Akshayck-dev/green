@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-container-highest": "#e2e3e0",
+          "on-secondary-fixed-variant": "#0c5136",
+          "error": "#ba1a1a",
+          "primary-fixed-dim": "#a5d0b9",
+          "text-primary": "#1A1A1A",
+          "surface-variant": "#e2e3e0",
+          "secondary-fixed": "#b0f1cc",
+          "surface-tint": "#3f6653",
+          "primary": "#012d1d",
+          "tertiary-container": "#5a302f",
+          "surface-container-high": "#e8e8e5",
+          "on-tertiary-container": "#d29895",
+          "on-secondary": "#ffffff",
+          "on-primary-fixed": "#002114",
+          "inverse-on-surface": "#f0f1ee",
+          "outline-variant": "#c1c8c2",
+          "surface-container-low": "#f3f4f1",
+          "on-primary": "#ffffff",
+          "secondary": "#2b694d",
+          "primary-fixed": "#c1ecd4",
+          "on-secondary-container": "#327053",
+          "on-surface": "#1a1c1a",
+          "secondary-container": "#b0f1cc",
+          "on-secondary-fixed": "#002113",
+          "outline": "#717973",
+          "on-surface-variant": "#414844",
+          "surface-bright": "#f9faf6",
+          "on-primary-fixed-variant": "#274e3d",
+          "surface-container-lowest": "#ffffff",
+          "on-error-container": "#93000a",
+          "text-secondary": "#5C5C5C",
+          "on-tertiary-fixed": "#331111",
+          "surface-container": "#eeeeeb",
+          "surface": "#F8F6F0",
+          "accent": "#E07A5F",
+          "primary-container": "#1b4332",
+          "on-tertiary": "#ffffff",
+          "tertiary-fixed": "#ffdad8",
+          "tertiary": "#401b1b",
+          "surface-dim": "#dadad7",
+          "background": "#f9faf6",
+          "tertiary-fixed-dim": "#f5b7b4",
+          "error-container": "#ffdad6",
+          "on-background": "#1a1c1a",
+          "inverse-surface": "#2f312f",
+          "on-primary-container": "#86af99",
+          "inverse-primary": "#a5d0b9",
+          "on-tertiary-fixed-variant": "#673a39",
+          "secondary-fixed-dim": "#94d4b1",
+          "white": "#FFFFFF",
+          "sale": "#C1121F",
+          "on-error": "#ffffff"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "container-max": "1200px",
+          "space-xl": "64px",
+          "section-padding-desktop": "100px",
+          "space-md": "16px",
+          "space-lg": "32px",
+          "space-xs": "4px",
+          "gutter": "24px",
+          "space-sm": "8px",
+          "section-padding-mobile": "60px"
+        },
+        "fontFamily": {
+          "headline-hero": ["Outfit"],
+          "body-sm": ["Inter"],
+          "body-md": ["Inter"],
+          "eyebrow": ["Inter"],
+          "headline-md": ["Outfit"],
+          "headline-lg-mobile": ["Outfit"],
+          "headline-sm": ["Outfit"],
+          "body-lg": ["Inter"],
+          "button": ["Inter"],
+          "headline-hero-mobile": ["Outfit"],
+          "headline-lg": ["Outfit"]
+        },
+        "fontSize": {
+          "headline-hero": ["56px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+          "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+          "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+          "eyebrow": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.08em", "fontWeight": "600" }],
+          "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+          "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "700" }],
+          "headline-sm": ["18px", { "lineHeight": "1.4", "fontWeight": "600" }],
+          "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+          "button": ["15px", { "lineHeight": "1.0", "fontWeight": "600" }],
+          "headline-hero-mobile": ["36px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+          "headline-lg": ["40px", { "lineHeight": "1.15", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+        }
+      }
+    }
+  }</script><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet"/></head><body class="bg-surface font-body-md text-on-surface"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-container-max mx-auto px-gutter flex items-center justify-between"><a class="font-headline-md font-bold text-primary tracking-tight" data-path="home" href="#">VerdureLeaf</a><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary font-semibold"><a aria-current="page" class="transition-colors text-primary font-semibold" data-path="home" href="#">Home</a><a class="text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="about-us" href="#">About Us</a><a class="text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="products" href="#">Products</a><a class="text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="blogs" href="#">Blogs</a><a class="text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="recipes" href="#">Recipes</a><a class="text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="careers" href="#">Careers</a><a class="text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact-us" href="#">Contact Us</a></nav><div class="flex items-center gap-space-md"><a class="hidden xl:flex items-center gap-space-xs text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="tel:+918590349845"><span class="material-symbols-outlined text-[18px]">call</span>+91 859 034 9845</a><a class="relative p-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="cart" href="#"><span class="material-symbols-outlined">shopping_bag</span></a><a class="bg-accent text-on-tertiary px-space-md py-space-sm rounded-full font-button text-button hover:opacity-95 transition-opacity" data-path="subscription" href="#">Start Subscription</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
+<!-- Shop Hero / Header Section -->
+<section class="max-w-container-max mx-auto px-gutter py-space-xl text-center">
+<div class="inline-block mb-space-sm px-space-md py-space-xs rounded-full bg-primary-fixed-dim/30 text-on-primary-fixed-variant font-eyebrow text-eyebrow uppercase tracking-widest">
+      Farm Fresh Vitality
+    </div>
+<h1 class="font-headline-hero text-headline-hero text-primary mb-space-md">
+      Microgreens Collection
+    </h1>
+<p class="font-body-lg text-text-secondary max-w-2xl mx-auto">
+      Harvested at peak nutrient density. Delivered alive or freshly cut to your doorstep in pristine eco-packaging across India and the UAE.
+    </p>
+<!-- Category Filter Chips -->
+<div class="flex flex-wrap items-center justify-center gap-space-sm mt-space-lg" id="filter-container">
+<button class="filter-btn px-space-md py-space-sm rounded-full font-button text-button bg-primary text-on-primary transition-all shadow-sm" onclick="filterProducts('all')">
+        All Greens
+      </button>
+<button class="filter-btn px-space-md py-space-sm rounded-full font-button text-button bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-all" onclick="filterProducts('pungent')">
+        Pungent & Spicy
+      </button>
+<button class="filter-btn px-space-md py-space-sm rounded-full font-button text-button bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-all" onclick="filterProducts('mild')">
+        Mild & Crunchy
+      </button>
+<button class="filter-btn px-space-md py-space-sm rounded-full font-button text-button bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-all" onclick="filterProducts('earthy')">
+        Earthy & Sweet
+      </button>
+<button class="filter-btn px-space-md py-space-sm rounded-full font-button text-button bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-all" onclick="filterProducts('superfood')">
+        Superfood
+      </button>
+</div>
+</section>
+<!-- 8-Product Grid Section -->
+<section class="max-w-container-max mx-auto px-gutter pb-space-section-desktop">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg" id="product-grid">
+<!-- Product 1 -->
+<div class="product-card group bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_8px_24px_rgba(27,67,50,0.06)] hover:shadow-[0_12px_32px_rgba(27,67,50,0.12)] transition-all flex flex-col justify-between" data-category="pungent">
+<div class="relative overflow-hidden aspect-square bg-surface-container">
+<div class="absolute top-space-sm left-space-sm z-10 bg-sale text-on-error font-eyebrow text-eyebrow px-space-sm py-space-xs rounded-full uppercase tracking-wider">Sale</div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Macro photography of vibrant organic radish microgreens in a minimal ceramic tray with warm natural lighting and soft focus background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBjkcnLtkZn7e3bX0XjwBKTVQ3p22B4kkdRqSwxZl-tVTOe4pThYYBAauirc2TWeePvvn60YT61DQXzFa-4Dkx8oQMxoxD0ZkRcegYfzEG37dUBvlKmZAshkBKfU65Z1YAhPSBUZxWfuELXT9cDhisTkYRDDkyjmb5zZFeyA4723_-uykdgoSppVSQm_U7Gz-bLOec0_3mG1Yky7w96ULuphnkxzk5zl67zORxEaYK751_9lT615Ql3w"/>
+<button class="absolute top-space-sm right-space-sm z-10 w-9 h-9 rounded-full bg-surface/80 backdrop-blur-md flex items-center justify-center text-on-surface hover:bg-surface transition-colors" onclick="toggleWishlist(this)">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-grow justify-between">
+<div>
+<span class="text-eyebrow text-text-secondary uppercase tracking-wider">Pungent & Spicy</span>
+<h3 class="font-headline-sm text-primary mt-1 mb-space-xs">Organic Daikon Radish</h3>
+<p class="text-body-sm text-text-secondary line-clamp-2">Bold, peppery kick packed with Vitamin C and robust enzymes.</p>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-surface-container flex items-center justify-between">
+<div>
+<span class="text-body-md font-semibold text-primary">₹249</span>
+<span class="text-body-sm text-text-secondary line-through ml-2">₹299</span>
+</div>
+<button class="bg-accent text-on-tertiary px-space-md py-space-sm rounded-full font-button text-button hover:opacity-95 transition-opacity flex items-center gap-space-xs" onclick="addToCart(this, 'Organic Daikon Radish', '₹249')">
+<span class="material-symbols-outlined text-[16px]">shopping_bag</span> Add
+            </button>
+</div>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="product-card group bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_8px_24px_rgba(27,67,50,0.06)] hover:shadow-[0_12px_32px_rgba(27,67,50,0.12)] transition-all flex flex-col justify-between" data-category="mild">
+<div class="relative overflow-hidden aspect-square bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Fresh vibrant green broccoli microgreens arranged neatly in a sustainable bamboo fiber container under soft daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6KyPhssGGIV46BUsI_g0u9ro42mWwaCiDgdLuGGRpy87uZN6lqfYikEp1ncxZHuXwoMzHDL6DubiWRIGK7Dl0urjDvhK7ODYfwuiF-78a3N3zibC2B16oc2BJItN8TqPjqVFW8co26sWXwN8MKsHGuwqQU2-eFUdRfZ8IXQ0-7wYISkFtgwjl9ocCTnoX-_DjhMcFk5NjQcZyAXMr7tQhmETUP4ZFtz8sYZU99-kzqV-kT6PhDcwC0A"/>
+<button class="absolute top-space-sm right-space-sm z-10 w-9 h-9 rounded-full bg-surface/80 backdrop-blur-md flex items-center justify-center text-on-surface hover:bg-surface transition-colors" onclick="toggleWishlist(this)">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-grow justify-between">
+<div>
+<span class="text-eyebrow text-text-secondary uppercase tracking-wider">Mild & Crunchy</span>
+<h3 class="font-headline-sm text-primary mt-1 mb-space-xs">Sprouting Broccoli</h3>
+<p class="text-body-sm text-text-secondary line-clamp-2">High concentration of sulforaphane with a crisp, mild cabbage flavor.</p>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-surface-container flex items-center justify-between">
+<div>
+<span class="text-body-md font-semibold text-primary">₹299</span>
+</div>
+<button class="bg-accent text-on-tertiary px-space-md py-space-sm rounded-full font-button text-button hover:opacity-95 transition-opacity flex items-center gap-space-xs" onclick="addToCart(this, 'Sprouting Broccoli', '₹299')">
+<span class="material-symbols-outlined text-[16px]">shopping_bag</span> Add
+            </button>
+</div>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="product-card group bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_8px_24px_rgba(27,67,50,0.06)] hover:shadow-[0_12px_32px_rgba(27,67,50,0.12)] transition-all flex flex-col justify-between" data-category="earthy">
+<div class="relative overflow-hidden aspect-square bg-surface-container">
+<div class="absolute top-space-sm left-space-sm z-10 bg-sale text-on-error font-eyebrow text-eyebrow px-space-sm py-space-xs rounded-full uppercase tracking-wider">Sale</div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Ruby red chard microgreens with striking crimson stems and deep emerald leaves in a clean studio setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPRpKuh3opoyb_UJTZwg34yOtQ0ztDEg8nS-sVJ08kM5h611Lj-WbTQXVjuW-sWJKwh4Ng2yHSVlfRmSF6R35fGVr8yyAaLUZGcbGC59XfqmqXW15ey2p85m1XetMqegKDm2cjUmAtq7MNaXSMsziYtB8tMMEidDN6P3rKMuvFg7AdSOgU-Q5WcDYp5YDc3YvFsKL0wA7aJmcRJ10HL-NVjtFJUpbqru_-bO9RFfvWhjH0WIyyQjfNoQ"/>
+<button class="absolute top-space-sm right-space-sm z-10 w-9 h-9 rounded-full bg-surface/80 backdrop-blur-md flex items-center justify-center text-on-surface hover:bg-surface transition-colors" onclick="toggleWishlist(this)">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-grow justify-between">
+<div>
+<span class="text-eyebrow text-text-secondary uppercase tracking-wider">Earthy & Sweet</span>
+<h3 class="font-headline-sm text-primary mt-1 mb-space-xs">Ruby Red Chard</h3>
+<p class="text-body-sm text-text-secondary line-clamp-2">Earthy profile with gorgeous ruby stems to elevate any culinary plating.</p>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-surface-container flex items-center justify-between">
+<div>
+<span class="text-body-md font-semibold text-primary">₹229</span>
+<span class="text-body-sm text-text-secondary line-through ml-2">₹279</span>
+</div>
+<button class="bg-accent text-on-tertiary px-space-md py-space-sm rounded-full font-button text-button hover:opacity-95 transition-opacity flex items-center gap-space-xs" onclick="addToCart(this, 'Ruby Red Chard', '₹229')">
+<span class="material-symbols-outlined text-[16px]">shopping_bag</span> Add
+            </button>
+</div>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="product-card group bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_8px_24px_rgba(27,67,50,0.06)] hover:shadow-[0_12px_32px_rgba(27,67,50,0.12)] transition-all flex flex-col justify-between" data-category="superfood">
+<div class="relative overflow-hidden aspect-square bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Dense emerald green wheatgrass microgreens growing uniformly, showcasing vitality and freshness." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUJGnzF-iDoecx71tDlOm96y0ldgYq4iwmX-q4gzKMp74BBvM2tc8NsNW8_-jPY545Uqg944m2hnX4EtSvuBU3PCgkSa_GFhD_n1BZ-2Ts-zs_p5u9MvPfZ8uKwCyf4hHKSiu4pBH51YVMI5jKDLkE5gJrOAyHuxw0dDPMChg0jgw8bO44Xjhg6LXeIbRJfKO3DMvUkj23oxZbwY3-Zukn8J8MLjZRMeCIURrSsttMyf0O1betVJ_CjA"/>
+<button class="absolute top-space-sm right-space-sm z-10 w-9 h-9 rounded-full bg-surface/80 backdrop-blur-md flex items-center justify-center text-on-surface hover:bg-surface transition-colors" onclick="toggleWishlist(this)">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-grow justify-between">
+<div>
+<span class="text-eyebrow text-text-secondary uppercase tracking-wider">Superfood</span>
+<h3 class="font-headline-sm text-primary mt-1 mb-space-xs">Organic Wheatgrass</h3>
+<p class="text-body-sm text-text-secondary line-clamp-2">The ultimate chlorophyll powerhouse for morning elixirs and vitality shots.</p>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-surface-container flex items-center justify-between">
+<div>
+<span class="text-body-md font-semibold text-primary">₹199</span>
+</div>
+<button class="bg-accent text-on-tertiary px-space-md py-space-sm rounded-full font-button text-button hover:opacity-95 transition-opacity flex items-center gap-space-xs" onclick="addToCart(this, 'Organic Wheatgrass', '₹199')">
+<span class="material-symbols-outlined text-[16px]">shopping_bag</span> Add
+            </button>
+</div>
+</div>
+</div>
+<!-- Product 5 -->
+<div class="product-card group bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_8px_24px_rgba(27,67,50,0.06)] hover:shadow-[0_12px_32px_rgba(27,67,50,0.12)] transition-all flex flex-col justify-between" data-category="mild">
+<div class="relative overflow-hidden aspect-square bg-surface-container">
+<div class="absolute top-space-sm left-space-sm z-10 bg-sale text-on-error font-eyebrow text-eyebrow px-space-sm py-space-xs rounded-full uppercase tracking-wider">Sale</div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Plump, sweet green pea shoot microgreens with curling tendrils in a sunlit greenhouse." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCblHt0ioE1mhG6J3Rp1gdIlmRc-SmmummIgJpuiOCXS3CMjjC0flkC9zYzC0KPyr4e4_lszVwipaGL8cpMtxVQaIFBFnXWzWK2OBKQjYvx_h6s8wMe2XDkPQvCKx3SAgo3E6rQi2SbRc1QbdTQqA40iU_G9e31C8ivLAmM6a5Ml6yWKQNepZXRHKWaZnYZWFTnaDGt2flPDbEi2efM0ELPag2kFYLEzjKWBee5OHweHcd06GJ575I35w"/>
+<button class="absolute top-space-sm right-space-sm z-10 w-9 h-9 rounded-full bg-surface/80 backdrop-blur-md flex items-center justify-center text-on-surface hover:bg-surface transition-colors" onclick="toggleWishlist(this)">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-grow justify-between">
+<div>
+<span class="text-eyebrow text-text-secondary uppercase tracking-wider">Mild & Crunchy</span>
+<h3 class="font-headline-sm text-primary mt-1 mb-space-xs">Snow Pea Shoots</h3>
+<p class="text-body-sm text-text-secondary line-clamp-2">Delightfully crunchy with a sweet fresh-picked garden pea flavor.</p>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-surface-container flex items-center justify-between">
+<div>
+<span class="text-body-md font-semibold text-primary">₹279</span>
+<span class="text-body-sm text-text-secondary line-through ml-2">₹329</span>
+</div>
+<button class="bg-accent text-on-tertiary px-space-md py-space-sm rounded-full font-button text-button hover:opacity-95 transition-opacity flex items-center gap-space-xs" onclick="addToCart(this, 'Snow Pea Shoots', '₹279')">
+<span class="material-symbols-outlined text-[16px]">shopping_bag</span> Add
+            </button>
+</div>
+</div>
+</div>
+<!-- Product 6 -->
+<div class="product-card group bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_8px_24px_rgba(27,67,50,0.06)] hover:shadow-[0_12px_32px_rgba(27,67,50,0.12)] transition-all flex flex-col justify-between" data-category="pungent">
+<div class="relative overflow-hidden aspect-square bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Delicate yellow mustard microgreens with bright green cotyledons exhibiting a sharp, zesty look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaT1TmlQ1lpfbUL644T84h9u9R6-q0kOXASvLaKFT6OFn9-qsziUV5R3ctRNc_cstvrRPWeuM9zv14cbFhL3wdqYpsWsCJr_7CFD8BMgW19lvSg92q0r2diFwFWI84_aZiaaASkHrXNTDusFhSmqPDh6-c2Gvq4AtRCq2EbYlXeXT6ryc_tamzebT1EN6ovzeUimEjjWK7hujlPCBp-3KSCXGp34bDMPm0UJDVPv-VgF1y22iZueivaQ"/>
+<button class="absolute top-space-sm right-space-sm z-10 w-9 h-9 rounded-full bg-surface/80 backdrop-blur-md flex items-center justify-center text-on-surface hover:bg-surface transition-colors" onclick="toggleWishlist(this)">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-grow justify-between">
+<div>
+<span class="text-eyebrow text-text-secondary uppercase tracking-wider">Pungent & Spicy</span>
+<h3 class="font-headline-sm text-primary mt-1 mb-space-xs">Southern Giant Mustard</h3>
+<p class="text-body-sm text-text-secondary line-clamp-2">Brings authentic Dijon-like pungency and wonderful warmth to sandwiches.</p>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-surface-container flex items-center justify-between">
+<div>
+<span class="text-body-md font-semibold text-primary">₹219</span>
+</div>
+<button class="bg-accent text-on-tertiary px-space-md py-space-sm rounded-full font-button text-button hover:opacity-95 transition-opacity flex items-center gap-space-xs" onclick="addToCart(this, 'Southern Giant Mustard', '₹219')">
+<span class="material-symbols-outlined text-[16px]">shopping_bag</span> Add
+            </button>
+</div>
+</div>
+</div>
+<!-- Product 7 -->
+<div class="product-card group bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_8px_24px_rgba(27,67,50,0.06)] hover:shadow-[0_12px_32px_rgba(27,67,50,0.12)] transition-all flex flex-col justify-between" data-category="earthy">
+<div class="relative overflow-hidden aspect-square bg-surface-container">
+<div class="absolute top-space-sm left-space-sm z-10 bg-sale text-on-error font-eyebrow text-eyebrow px-space-sm py-space-xs rounded-full uppercase tracking-wider">Sale</div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Deep magenta red beet microgreens with rich earthy tones and lush leaf structure." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4ix14rNGc-9bi85m0DuvtdAd-gTpRhvnteHYJCP2sUghfs6s3wwpoO-Lp9sSfE_f2H8MsZ-h4RFKM8km_MD27eRxCl_mtnM0I7_3az5OGMpiSYl4MBPO6-OaReeMOxw9fzrzIIM8kxPzo0VKDEbrAUTP4964V9HPdT6vHa8bEBYs8djndgk_nQrIMFQeCCV72fIzH3k0C4VegR9glgo-L0PwS9Y-3op2sTGZ1fz1oHWTb7hXdFsjAqQ"/>
+<button class="absolute top-space-sm right-space-sm z-10 w-9 h-9 rounded-full bg-surface/80 backdrop-blur-md flex items-center justify-center text-on-surface hover:bg-surface transition-colors" onclick="toggleWishlist(this)">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-grow justify-between">
+<div>
+<span class="text-eyebrow text-text-secondary uppercase tracking-wider">Earthy & Sweet</span>
+<h3 class="font-headline-sm text-primary mt-1 mb-space-xs">Bull's Blood Beet</h3>
+<p class="text-body-sm text-text-secondary line-clamp-2">Deep burgundy leaves with a mild, sweet beet flavor profile.</p>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-surface-container flex items-center justify-between">
+<div>
+<span class="text-body-md font-semibold text-primary">₹259</span>
+<span class="text-body-sm text-text-secondary line-through ml-2">₹310</span>
+</div>
+<button '₹259')"="" beet\",="" blood="" bull's="" class="bg-accent text-on-tertiary px-space-md py-space-sm rounded-full font-button text-button hover:opacity-95 transition-opacity flex items-center gap-space-xs" onclick="addToCart(this, \">
+<span class="material-symbols-outlined text-[16px]">shopping_bag</span> Add
+            </button>
+</div>
+</div>
+</div>
+<!-- Product 8 -->
+<div class="product-card group bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_8px_24px_rgba(27,67,50,0.06)] hover:shadow-[0_12px_32px_rgba(27,67,50,0.12)] transition-all flex flex-col justify-between" data-category="superfood">
+<div class="relative overflow-hidden aspect-square bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A curated colorful blend of diverse microgreens including amaranth, radish, and arugula in a master harvest box." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyzni2ejbrIYJAkKxsOqhS51rEc0rwQ0aunpF0UhhqTzd_bz2apxb5rldjhCJvGvKg9FM9zFgOIOvGVursNA6Lvh0x6eazVCAap8eczAZsR-T20o3wzPTYiuowqjswMQrxZZLYzzz65k27M0BYYMxGUgm1cuOyQHTp7ne3D_e9ZfHy9cXY5bhjeM-NOlXmSklSgEArY7mG9RhCV2sw3Wj5RjrpSv8KFPj14DBnW2NYkBOnPp9HJQrnBA"/>
+<button class="absolute top-space-sm right-space-sm z-10 w-9 h-9 rounded-full bg-surface/80 backdrop-blur-md flex items-center justify-center text-on-surface hover:bg-surface transition-colors" onclick="toggleWishlist(this)">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-grow justify-between">
+<div>
+<span class="text-eyebrow text-text-secondary uppercase tracking-wider">Superfood</span>
+<h3 class="font-headline-sm text-primary mt-1 mb-space-xs">Chef's Immunity Blend</h3>
+<p class="text-body-sm text-text-secondary line-clamp-2">A master antioxidant combination of brassicas, amaranth, and red cabbage.</p>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-surface-container flex items-center justify-between">
+<div>
+<span class="text-body-md font-semibold text-primary">₹349</span>
+</div>
+<button '₹349')"="" blend\",="" chef's="" class="bg-accent text-on-tertiary px-space-md py-space-sm rounded-full font-button text-button hover:opacity-95 transition-opacity flex items-center gap-space-xs" immunity="" onclick="addToCart(this, \">
+<span class="material-symbols-outlined text-[16px]">shopping_bag</span> Add
+            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- View More / Pagination -->
+<div class="flex flex-col items-center justify-center mt-space-xl gap-space-md">
+<button class="px-space-xl py-space-md rounded-full bg-primary text-on-primary font-button text-button hover:bg-primary-container transition-colors shadow-md flex items-center gap-space-sm" id="view-more-btn" onclick="loadMoreProducts()">
+<span>View More Harvests</span>
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+<span class="text-body-sm text-text-secondary">Showing 8 of 24 available varieties</span>
+</div>
+</section>
+<!-- Interactive Script -->
+<script>
+    function filterProducts(category) {
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-primary', 'text-on-primary');
+        btn.classList.add('bg-surface-container-high', 'text-on-surface');
+      });
+      event.target.classList.remove('bg-surface-container-high', 'text-on-surface');
+      event.target.classList.add('bg-primary', 'text-on-primary');
+
+      const cards = document.querySelectorAll('.product-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function toggleWishlist(btn) {
+      const icon = btn.querySelector('.material-symbols-outlined');
+      if (icon.style.fontVariationSettings === "'FILL' 1") {
+        icon.style.fontVariationSettings = "'FILL' 0";
+        icon.style.color = 'inherit';
+      } else {
+        icon.style.fontVariationSettings = "'FILL' 1";
+        icon.style.color = '#E07A5F';
+      }
+    }
+
+    function addToCart(btn, name, price) {
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '<span class="material-symbols-outlined text-[16px]">check</span> Added';
+      btn.classList.remove('bg-accent');
+      btn.classList.add('bg-secondary');
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+        btn.classList.remove('bg-secondary');
+        btn.classList.add('bg-accent');
+      }, 1500);
+    }
+
+    function loadMoreProducts() {
+      const btn = document.getElementById('view-more-btn');
+      btn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">progress_activity</span> Loading...';
+      setTimeout(() => {
+        btn.innerHTML = 'All Varieties Loaded';
+        btn.disabled = true;
+        btn.classList.add('opacity-60', 'cursor-not-allowed');
+      }, 1200);
+    }
+  </script>
+</div></main><footer class="w-full bg-primary text-on-primary py-space-xl"><div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-3 gap-space-lg mb-space-lg"><div><h4 class="font-headline-sm font-semibold mb-space-sm text-on-primary">VerdureLeaf India</h4><p class="text-body-sm text-primary-fixed-dim">123 Green Valley, Farm Road<br/>Bangalore, Karnataka 560001</p></div><div><h4 class="font-headline-sm font-semibold mb-space-sm text-on-primary">VerdureLeaf UAE</h4><p class="text-body-sm text-primary-fixed-dim">Suite 404, Oasis Tower<br/>Sheikh Zayed Road, Dubai</p></div><div><h4 class="font-headline-sm font-semibold mb-space-sm text-on-primary">Connect</h4><div class="flex gap-space-md mb-space-md"><span class="material-symbols-outlined cursor-pointer hover:text-primary-fixed-dim transition-colors">globe</span><span class="material-symbols-outlined cursor-pointer hover:text-primary-fixed-dim transition-colors">share</span><span class="material-symbols-outlined cursor-pointer hover:text-primary-fixed-dim transition-colors">mail</span></div></div></div><div class="max-w-container-max mx-auto px-gutter pt-space-md border-t border-primary-container text-center text-body-sm text-primary-fixed-dim">© 2024 VerdureLeaf. All rights reserved.</div></footer></body></html>
