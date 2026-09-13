@@ -1,0 +1,9 @@
+{
+  "name": "caeris-greens",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "cd verdureleaf-website && npm run dev",
+    "build": "cd verdureleaf-website && npm run build"
+  }
+}
