@@ -20,7 +20,7 @@ export default function About() {
           </h1>
           <p className="font-body text-lg text-primary-fixed-dim max-w-2xl mt-2">
             Founded between the bustling tech corridors of Bangalore and the visionary
-            skyline of Dubai, VerdureLeaf brings hyper-local, pesticide-free microgreens
+            skyline of Dubai, Caries Green brings hyper-local, pesticide-free microgreens
             straight to your table within hours of harvest.
           </p>
         </div>
@@ -37,7 +37,7 @@ export default function About() {
               Roots in Sustainability, Wings in Innovation.
             </h2>
             <p className="font-body text-base text-on-surface-variant">
-              VerdureLeaf was born out of a simple observation: modern urbanites are
+              Caries Green was born out of a simple observation: modern urbanites are
               starved for authentic living nutrients despite an abundance of food choices.
               By merging controlled-environment agriculture with precision hydroponics, we
               eliminate food miles, reduce water consumption by 95%, and deliver living

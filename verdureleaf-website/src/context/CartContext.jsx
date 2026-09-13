@@ -2,7 +2,7 @@ import { createContext, useContext, useState, useEffect } from 'react';
 
 const CartContext = createContext();
 
-const STORAGE_KEY = 'verdureleaf_cart_v1';
+const STORAGE_KEY = 'cariesgreen_cart_v1';
 
 export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState(() => {

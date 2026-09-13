@@ -154,9 +154,9 @@ export default function Contact() {
                     </span>
                     <a
                       className="hover:text-primary transition-colors"
-                      href="mailto:india@verdureleaf.com"
+                      href="mailto:india@cariesgreen.com"
                     >
-                      india@verdureleaf.com
+                      india@cariesgreen.com
                     </a>
                   </div>
                 </div>
@@ -202,9 +202,9 @@ export default function Contact() {
                     </span>
                     <a
                       className="hover:text-primary transition-colors"
-                      href="mailto:uae@verdureleaf.com"
+                      href="mailto:uae@cariesgreen.com"
                     >
-                      uae@verdureleaf.com
+                      uae@cariesgreen.com
                     </a>
                   </div>
                 </div>

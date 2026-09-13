@@ -75,11 +75,13 @@ export default function Footer() {
             </div>
 
             {/* Brand Logo */}
-            <Link to="/" className="font-headline text-2xl font-bold text-white flex items-center gap-2 mt-4 group">
-              <span className="w-9 h-9 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
-                <span className="material-symbols-outlined text-[20px]">eco</span>
-              </span>
-              <span className="font-serif text-2xl tracking-normal text-white">VerdureLeaf</span>
+            <Link to="/" className="font-headline text-2xl font-bold text-white flex items-center gap-2.5 mt-4 group">
+              <img
+                src="/images/logo.png"
+                alt="Caries Green Logo"
+                className="w-10 h-10 object-contain shadow-md group-hover:scale-105 transition-transform"
+              />
+              <span className="font-serif text-2xl tracking-normal text-white">Caries Green</span>
             </Link>
           </div>
 
@@ -95,11 +97,11 @@ export default function Footer() {
 
             <div className="flex flex-col gap-2.5 pt-2 text-xs md:text-sm text-gray-300">
               <a
-                href="mailto:info@verdureleaf.com"
+                href="mailto:info@cariesgreen.com"
                 className="flex items-center gap-2.5 hover:text-white transition-colors"
               >
                 <span className="material-symbols-outlined text-[18px]">mail</span>
-                <span>info@verdureleaf.com</span>
+                <span>info@cariesgreen.com</span>
               </a>
 
               <a
@@ -134,11 +136,11 @@ export default function Footer() {
 
             <div className="flex flex-col gap-2.5 pt-2 text-xs md:text-sm text-gray-300">
               <a
-                href="mailto:info@verdureleaf.com"
+                href="mailto:info@cariesgreen.com"
                 className="flex items-center gap-2.5 hover:text-white transition-colors"
               >
                 <span className="material-symbols-outlined text-[18px]">mail</span>
-                <span>info@verdureleaf.com</span>
+                <span>info@cariesgreen.com</span>
               </a>
 
               <a
@@ -158,7 +160,7 @@ export default function Footer() {
         <div className="pt-8 border-t border-white/15 flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Copyright */}
           <span className="font-body text-xs text-gray-400 font-medium order-2 md:order-1">
-            © 2026 VerdureLeaf. All rights reserved.
+            © 2026 Caries Green. All rights reserved.
           </span>
 
           {/* Social Icons */}

@@ -235,7 +235,7 @@ export default function Home() {
               Rooted in nature. Driven by wellness.
             </h2>
             <p className="font-body text-base text-on-surface-variant mb-4 leading-relaxed max-w-xl">
-              Founded with a vision to revolutionize urban nutrition, VerdureLeaf bridges
+              Founded with a vision to revolutionize urban nutrition, Caries Green bridges
               the gap between rural agricultural purity and modern city living. Every seed
               we sow is non-GMO, organic, and nurtured in pristine conditions without a
               single drop of synthetic pesticides.
@@ -276,7 +276,7 @@ export default function Home() {
         <div className="max-w-[1240px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-5 flex flex-col items-start">
             <span className="font-body text-xs font-bold text-secondary uppercase tracking-[0.2em] mb-2 bg-secondary-container/40 px-3.5 py-1 rounded-full">
-              THE VERDURELEAF PROMISE
+              THE CARIES GREEN PROMISE
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-[44px] font-medium leading-[1.12] text-primary mb-4">
               Trusted Freshness

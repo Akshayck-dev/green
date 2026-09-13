@@ -45,13 +45,15 @@ export default function Navbar() {
         {/* Left: Brand Logo */}
         <Link
           to="/"
-          className="font-headline text-xl md:text-2xl font-bold tracking-tight flex items-center gap-2 flex-shrink-0 group"
+          className="font-headline text-xl md:text-2xl font-bold tracking-tight flex items-center gap-2.5 flex-shrink-0 group"
         >
-          <span className="w-8.5 h-8.5 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-md group-hover:scale-105 transition-transform flex-shrink-0">
-            <span className="material-symbols-outlined text-[18px]">eco</span>
-          </span>
-          <span className={`font-serif tracking-normal whitespace-nowrap ${scrolled ? 'text-primary' : 'text-white'}`}>
-            VerdureLeaf
+          <img
+            src="/images/logo.png"
+            alt="Caries Green Logo"
+            className="w-9 h-9 sm:w-10 sm:h-10 object-contain drop-shadow-sm group-hover:scale-105 transition-transform flex-shrink-0"
+          />
+          <span className={`font-serif tracking-tight whitespace-nowrap ${scrolled ? 'text-primary' : 'text-white'}`}>
+            Caries Green
           </span>
         </Link>
 
