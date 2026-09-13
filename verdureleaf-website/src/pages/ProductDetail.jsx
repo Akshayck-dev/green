@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { products, relatedProducts } from '../data/products';
 import { useCart } from '../context/CartContext';
@@ -10,6 +10,11 @@ export default function ProductDetail() {
   const [quantity, setQuantity] = useState(1);
   const [selectedOption, setSelectedOption] = useState('50g Fresh Cut Punnet');
   const { addToCart } = useCart();
+
+  useEffect(() => {
+    setSelectedImage(0);
+    setQuantity(1);
+  }, [slug]);
 
   const images = product.detailImages || [product.image];
   const extraPrice = selectedOption.includes('Live Growth') ? 80 : 0;
