@@ -45,14 +45,14 @@ export default function Navbar() {
         {/* Left: Brand Logo */}
         <Link
           to="/"
-          className="font-headline text-xl md:text-2xl font-bold tracking-tight flex items-center gap-2.5 flex-shrink-0 group"
+          className="font-headline text-xl md:text-2xl font-bold tracking-tight flex items-center gap-3 flex-shrink-0 group"
         >
           <img
             src="/images/logo.png"
             alt="Caeris Greens Logo"
-            className="w-9 h-9 sm:w-10 sm:h-10 object-contain drop-shadow-sm group-hover:scale-105 transition-transform flex-shrink-0"
+            className="w-10 h-10 sm:w-11 sm:h-11 object-contain drop-shadow-md group-hover:scale-105 transition-transform flex-shrink-0"
           />
-          <span className={`font-serif tracking-tight whitespace-nowrap ${scrolled ? 'text-primary' : 'text-white'}`}>
+          <span className={`font-serif text-xl sm:text-2xl font-bold tracking-tight whitespace-nowrap ${scrolled ? 'text-primary' : 'text-white'}`}>
             Caeris Greens
           </span>
         </Link>

@@ -75,13 +75,13 @@ export default function Footer() {
             </div>
 
             {/* Brand Logo */}
-            <Link to="/" className="font-headline text-2xl font-bold text-white flex items-center gap-2.5 mt-4 group">
+            <Link to="/" className="font-headline text-2xl font-bold text-white flex items-center gap-3 mt-4 group">
               <img
                 src="/images/logo.png"
                 alt="Caeris Greens Logo"
-                className="w-10 h-10 object-contain shadow-md group-hover:scale-105 transition-transform"
+                className="w-11 h-11 object-contain shadow-md group-hover:scale-105 transition-transform"
               />
-              <span className="font-serif text-2xl tracking-normal text-white">Caeris Greens</span>
+              <span className="font-serif text-2xl font-bold tracking-normal text-white">Caeris Greens</span>
             </Link>
           </div>
 
