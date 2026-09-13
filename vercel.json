@@ -1,4 +1,5 @@
 {
+  "installCommand": "npm --prefix verdureleaf-website install",
   "buildCommand": "npm --prefix verdureleaf-website run build",
   "outputDirectory": "verdureleaf-website/dist",
   "framework": "vite",
