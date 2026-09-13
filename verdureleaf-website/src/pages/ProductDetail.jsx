@@ -1,19 +1,27 @@
 import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { products, relatedProducts } from '../data/products';
+import { useCart } from '../context/CartContext';
 
 export default function ProductDetail() {
   const { slug } = useParams();
   const product = products.find((p) => p.slug === slug) || products[3]; // default to broccoli
   const [selectedImage, setSelectedImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
+  const [selectedOption, setSelectedOption] = useState('50g Fresh Cut Punnet');
+  const { addToCart } = useCart();
 
   const images = product.detailImages || [product.image];
-  const price = product.price;
+  const extraPrice = selectedOption.includes('Live Growth') ? 80 : 0;
+  const price = product.price + extraPrice;
   const originalPrice = product.originalPrice;
   const discount = originalPrice
     ? Math.round(((originalPrice - price) / originalPrice) * 100)
     : 0;
+
+  const handleAddToCart = () => {
+    addToCart(product, quantity, selectedOption);
+  };
 
   return (
     <div className="flex flex-col w-full bg-surface">
@@ -141,33 +149,62 @@ export default function ProductDetail() {
             </div>
 
             {/* Quantity & Add to Cart */}
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-5">
+              {/* Option Selector */}
+              <div className="flex flex-col gap-2">
+                <label className="text-xs font-semibold uppercase text-on-surface tracking-wider">
+                  Select Harvest Format:
+                </label>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {[
+                    '50g Fresh Cut Punnet',
+                    '100g Live Growth Tray (+₹80)',
+                  ].map((opt) => (
+                    <button
+                      key={opt}
+                      onClick={() => setSelectedOption(opt)}
+                      className={`p-3 rounded-xl border text-sm font-semibold transition-all text-left flex items-center justify-between ${
+                        selectedOption === opt
+                          ? 'border-primary bg-primary-container/10 text-primary ring-2 ring-primary/40'
+                          : 'border-outline-variant/40 bg-surface-container-low text-on-surface hover:bg-surface-container'
+                      }`}
+                    >
+                      <span>{opt}</span>
+                      <span className="material-symbols-outlined text-[18px]">
+                        {selectedOption === opt ? 'radio_button_checked' : 'radio_button_unchecked'}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
               <div className="flex items-center gap-4">
                 <span className="text-sm font-semibold text-on-surface">Quantity:</span>
-                <div className="flex items-center bg-surface-container-low rounded-lg p-1 border border-outline-variant/20">
+                <div className="flex items-center bg-surface-container-low rounded-xl p-1 border border-outline-variant/20">
                   <button
-                    className="w-9 h-9 flex items-center justify-center rounded hover:bg-surface-container transition-colors text-on-surface font-bold"
+                    className="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container transition-colors text-on-surface font-bold text-lg"
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
                   >
                     -
                   </button>
-                  <span className="w-12 text-center font-semibold text-on-surface">
+                  <span className="w-12 text-center font-bold text-on-surface text-base">
                     {quantity}
                   </span>
                   <button
-                    className="w-9 h-9 flex items-center justify-center rounded hover:bg-surface-container transition-colors text-on-surface font-bold"
+                    className="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container transition-colors text-on-surface font-bold text-lg"
                     onClick={() => setQuantity(quantity + 1)}
                   >
                     +
                   </button>
                 </div>
-                <span className="text-sm text-secondary ml-auto font-medium">
-                  {product.weight || '50g punnet'}
-                </span>
               </div>
-              <button className="w-full bg-accent text-on-tertiary h-14 rounded-full font-body text-[15px] font-semibold flex items-center justify-center gap-2 shadow-[0_4px_16px_rgba(224,122,95,0.3)] hover:opacity-95 hover:scale-[1.01] transition-all">
-                <span className="material-symbols-outlined">shopping_bag</span>
-                Add to Cart — ₹{price * quantity}
+
+              <button
+                onClick={handleAddToCart}
+                className="w-full bg-accent text-on-tertiary h-14 rounded-full font-body text-base font-semibold flex items-center justify-center gap-2 shadow-[0_8px_24px_rgba(224,122,95,0.3)] hover:opacity-95 hover:scale-[1.01] transition-all cursor-pointer"
+              >
+                <span className="material-symbols-outlined text-[20px]">shopping_bag</span>
+                <span>Add to Bag — ₹{price * quantity}</span>
               </button>
             </div>
 

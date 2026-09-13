@@ -1,213 +1,354 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { homeProducts } from '../data/products';
 import { faqData } from '../data/faq';
+import { posts } from '../data/posts';
+import { useCart } from '../context/CartContext';
+
+const heroSlides = [
+  {
+    title: 'Weekly Doorstep Harvest',
+    tagline: 'FRESH • ORGANIC • SUSTAINABLE',
+    subtitle:
+      'Freshly harvested microgreens delivered to your doorstep with flexible weekly subscriptions.',
+    bgDesktop: '/images/hero_greenhouse_desktop.png',
+    bgMobile: '/images/hero_greenhouse_mobile.png',
+    ctaPrimary: 'Start Your Plan',
+    ctaPrimaryLink: '/subscriptions',
+    ctaSecondary: 'View Collections',
+    ctaSecondaryLink: '/shop',
+  },
+  {
+    title: 'Live Tray Superfoods',
+    tagline: 'PEAK BIOLOGICAL ENERGY',
+    subtitle:
+      'Up to 40x higher nutrient concentration than mature vegetables. Delivered living with roots intact for maximum freshness.',
+    bgDesktop: '/images/hero_harvest_desktop.png',
+    bgMobile: '/images/hero_harvest_mobile.png',
+    ctaPrimary: 'Start Your Plan',
+    ctaPrimaryLink: '/subscriptions',
+    ctaSecondary: 'View Collections',
+    ctaSecondaryLink: '/shop',
+  },
+  {
+    title: 'Pure Farm-to-Table Wellness',
+    tagline: 'HYDROPONIC & PESTICIDE FREE',
+    subtitle:
+      'Cultivated with organic seeds and pristine water. Zero chemical fertilizers or synthetic additives.',
+    bgDesktop: '/images/hero_subscription_desktop.png',
+    bgMobile: '/images/hero_subscription_mobile.png',
+    ctaPrimary: 'Start Your Plan',
+    ctaPrimaryLink: '/subscriptions',
+    ctaSecondary: 'View Collections',
+    ctaSecondaryLink: '/shop',
+  },
+];
 
 export default function Home() {
-  const [openFaq, setOpenFaq] = useState(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [openFaq, setOpenFaq] = useState(0);
+  const { addToCart, setQuickViewProduct } = useCart();
 
-  const toggleFaq = (id) => {
-    setOpenFaq(openFaq === id ? null : id);
+  useEffect(() => {
+    if (isPaused) return;
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [isPaused]);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
   };
 
   return (
-    <div className="flex flex-col w-full">
-      {/* 1. Hero Section */}
-      <section className="relative w-full h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden -mt-20 pt-20">
+    <div className="flex flex-col w-full bg-surface overflow-x-hidden">
+      {/* ================================================== */}
+      {/* 1. HERO SECTION */}
+      {/* ================================================== */}
+      <section
+        className="relative w-full h-[calc(100vh-80px)] min-h-[600px] flex items-center justify-center overflow-hidden"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
+        {/* Desktop Slide Background Image */}
         <div
-          className="absolute inset-0 bg-cover bg-center z-0"
+          className="hidden md:block absolute inset-0 bg-cover bg-center transition-all duration-700 z-0"
           style={{
-            backgroundImage: `url('https://lh3.googleusercontent.com/aida-public/AB6AXuC6nNQGPjAmPw4qgbL9H0-1HG8uOh_lR1vlwdMmHHrT7AuxTFyIVpWYkvK1IgEsWGxbSeQHeB3FBTcfDSUFrzr2dkXyIHkvBp0bYNRRFxvY4nyrOOwKC2Nn_gEhJ2sx4i2ZfMKBeI0q8zPGUEFnWILxEOwHsoQOFNE0KZyE4Sxgd4ndadwvisculySHDccdAIbVemkg2kkbtvtc8O_utn7SE71b8WEaBkUx6xRuGD6P7TNTlNOei5iDBw')`,
+            backgroundImage: `url('${heroSlides[currentSlide].bgDesktop}')`,
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-transparent z-10" />
-        <div className="max-w-[1200px] w-full mx-auto px-6 relative z-20 flex flex-col items-start text-on-primary">
-          <span className="font-body text-xs font-semibold text-primary-fixed-dim uppercase tracking-widest mb-2">
-            VERDURELEAF LIVING FARM
-          </span>
-          <h1 className="font-headline text-4xl md:text-[56px] font-bold leading-[1.1] tracking-tight max-w-2xl mb-4">
-            Fresh Life in <br />
-            <span className="text-primary-fixed">Greens · Nutrition · Wellness</span>
-          </h1>
-          <p className="font-body text-lg text-primary-fixed-dim max-w-xl mb-8">
-            Harvested hours before your doorstep. Nutrient-dense, organic microgreens
-            grown with precision and care across India and the UAE.
-          </p>
-          <div className="flex flex-wrap items-center gap-4 mb-16">
-            <Link
-              to="/subscriptions"
-              className="bg-accent text-on-tertiary px-8 py-4 rounded-full font-body text-[15px] font-semibold hover:opacity-95 transition-opacity shadow-[0_8px_24px_rgba(224,122,95,0.3)]"
-            >
-              Start Subscription
-            </Link>
-            <Link
-              to="/shop"
-              className="border border-primary-fixed text-on-primary px-8 py-4 rounded-full font-body text-[15px] font-semibold hover:bg-primary-container/30 transition-colors"
-            >
-              Shop once
-            </Link>
-          </div>
-          {/* Carousel Dots */}
-          <div className="flex items-center gap-2">
-            <span className="w-8 h-2 rounded-full bg-accent" />
-            <span className="w-2 h-2 rounded-full bg-primary-fixed/40" />
-            <span className="w-2 h-2 rounded-full bg-primary-fixed/40" />
-          </div>
-        </div>
-      </section>
+        {/* Mobile Slide Background Image */}
+        <div
+          className="md:hidden absolute inset-0 bg-cover bg-center transition-all duration-700 z-0"
+          style={{
+            backgroundImage: `url('${heroSlides[currentSlide].bgMobile}')`,
+          }}
+        />
 
-      {/* 2. About Us Teaser */}
-      <section className="w-full bg-surface py-16 md:py-24">
-        <div className="max-w-[1200px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="flex flex-col items-start">
-            <span className="font-body text-xs font-semibold text-secondary uppercase tracking-widest mb-2">
-              ABOUT VERDURELEAF
-            </span>
-            <h2 className="font-headline text-3xl md:text-[40px] font-bold leading-tight text-on-surface mb-4">
-              Pure freshness and purposeful growth.
-            </h2>
-            <p className="font-body text-base text-on-surface-variant mb-8">
-              We believe that the most potent nutrition comes in the smallest packages.
-              By combining advanced controlled-environment agriculture with uncompromising
-              organic standards, we cultivate microgreens that burst with concentrated
-              vitamins, minerals, and intense culinary flavors.
-            </p>
+        {/* Subtle Dark Gradient Overlay for Maximum Text Readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-black/10 z-10" />
+
+        {/* Hero Content Box */}
+        <div className="max-w-[1240px] w-full mx-auto px-6 md:px-12 relative z-20 flex flex-col items-start text-white">
+          <span className="font-body text-[11px] md:text-xs font-bold text-emerald-300 uppercase tracking-[0.2em] mb-3 bg-black/40 px-3.5 py-1.5 rounded-full border border-white/20">
+            {heroSlides[currentSlide].tagline}
+          </span>
+
+          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-medium leading-[1.06] tracking-tight max-w-3xl text-white mb-5 drop-shadow-md">
+            {heroSlides[currentSlide].title}
+          </h1>
+
+          <p className="font-body text-base md:text-xl text-emerald-50/95 max-w-xl mb-8 md:mb-10 leading-relaxed drop-shadow-sm font-normal">
+            {heroSlides[currentSlide].subtitle}
+          </p>
+
+          <div className="flex flex-wrap items-center gap-3 md:gap-4 mb-12 md:mb-16">
             <Link
-              to="/about"
-              className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-4 transition-all"
+              to={heroSlides[currentSlide].ctaPrimaryLink}
+              className="bg-accent text-on-tertiary px-8 py-4 rounded-full font-body text-sm md:text-[15px] font-bold hover:opacity-95 hover:scale-[1.03] transition-all shadow-xl shadow-accent/30 flex items-center gap-2"
             >
-              <span>Learn More</span>
+              <span>{heroSlides[currentSlide].ctaPrimary}</span>
+              <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+            </Link>
+            <Link
+              to={heroSlides[currentSlide].ctaSecondaryLink}
+              className="border-2 border-white/80 text-white px-8 py-4 rounded-full font-body text-sm md:text-[15px] font-semibold hover:bg-white/10 hover:border-white transition-all flex items-center gap-2"
+            >
+              <span>{heroSlides[currentSlide].ctaSecondary}</span>
               <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
             </Link>
           </div>
-          <div className="relative">
+
+          {/* Slide Indicator Numbers */}
+          <div className="flex items-center gap-4 text-xs font-bold text-white/70">
+            {heroSlides.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentSlide(idx)}
+                className={`transition-all cursor-pointer ${
+                  idx === currentSlide
+                    ? 'text-accent border-b-2 border-accent pb-0.5 scale-110 font-black'
+                    : 'text-white/60 hover:text-white'
+                }`}
+                aria-label={`Go to slide ${idx + 1}`}
+              >
+                0{idx + 1}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Slider Controls */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-3 md:left-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 md:w-12 md:h-12 rounded-full bg-black/40 text-white border border-white/20 shadow-md flex items-center justify-center hover:bg-black/70 transition-colors cursor-pointer"
+          aria-label="Previous Slide"
+        >
+          <span className="material-symbols-outlined text-[20px] md:text-[24px]">chevron_left</span>
+        </button>
+        <button
+          onClick={nextSlide}
+          className="absolute right-3 md:right-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 md:w-12 md:h-12 rounded-full bg-black/40 text-white border border-white/20 shadow-md flex items-center justify-center hover:bg-black/70 transition-colors cursor-pointer"
+          aria-label="Next Slide"
+        >
+          <span className="material-symbols-outlined text-[20px] md:text-[24px]">chevron_right</span>
+        </button>
+      </section>
+
+      {/* ================================================== */}
+      {/* 2. ABOUT US SECTION */}
+      {/* ================================================== */}
+      <section className="w-full bg-surface py-12 md:py-16 border-b border-surface-container-high">
+        <div className="max-w-[1240px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          {/* Left Collage Container */}
+          <div className="lg:col-span-6 relative h-[380px] sm:h-[460px] w-full order-1">
+            {/* Photo 1 */}
             <div
-              className="w-full h-[400px] rounded-xl bg-cover bg-center shadow-[0_8px_24px_rgba(27,67,50,0.08)]"
+              className="absolute top-0 left-0 w-[62%] h-[260px] sm:h-[300px] rounded-2xl bg-cover bg-center shadow-xl border-4 border-surface z-10 hover:z-30 transition-transform duration-500 hover:scale-[1.02]"
               style={{
-                backgroundImage: `url('https://lh3.googleusercontent.com/aida-public/AB6AXuAJ0lRcjEjXBZKBLnWuFYjSpdhijgVTAQ2W8u2dsaX0d8-XfMSKbuXd-Un8KwmKb2EyPAeyMOCUhLTn87gUQlPLqLXG95yLV5Mxug-ZewIlEuztoQlgkNlrS7XXEXAf45pL0pUb7P13Eh9phfAV0nmCnfTjPLe2LoBO7KdPNILEi49L64Bps1J0mlcG_5qrOnDCrVcELFcJUigHGLced1Ptp7n21HV-j6RpgOdA_aPWvzoAQLoS9l_lVg')`,
+                backgroundImage: `url('https://lh3.googleusercontent.com/aida-public/AB6AXuAmZM-azbZj2s3lVfJFe4sbBKgfEBgjyFA7_c_HdgTPeH-gP4q4kcC0ei8nrESBuwn05M12NaJo8b1JtnMZygbnYcHzNjj7n2pv0-vYgYreFhzfFgeDjbxq5Ctv-IEdNuqvwYPoU73nGeO8EAa5kbmCzYwrQuXic36ByZzURxiHheXJDljkP-S8QmiTZ-aEpt8CwoXGN45ulIxudh6N8HJ2GbDP5FBl58kUDsrIXU3bzNlxPLf2Xh4Nvg')`,
               }}
             />
+            {/* Photo 2 */}
+            <div
+              className="absolute top-10 right-0 w-[54%] h-[240px] sm:h-[280px] rounded-2xl bg-cover bg-center shadow-xl border-4 border-surface z-20 hover:z-30 transition-transform duration-500 hover:scale-[1.02]"
+              style={{
+                backgroundImage: `url('https://lh3.googleusercontent.com/aida-public/AB6AXuCQ7OI3oHZZbYOIIMn6hOiSX5ngFZiaF2xFRYGl6pDe2hOgoLXyMlppuDWHQ1vdqMwG2KMuQ7xTBnt3eIF-T7pdCazvuYpJ4MTq2j8E2c_RXixF8we0HE6r3E9RuCDtFAVzkaUD1gcSSdKR0Lhg35VLd_tKK0WNBeKZKHnbInyi4_qKyDhNNJGxVB0jC-iEinzsf0d1lyzLVplnL32P7lXohQLzJVReDnhro5SEAwl_UUt3-MqQQHxb6Q')`,
+              }}
+            />
+            {/* Photo 3 */}
+            <div
+              className="absolute bottom-0 left-12 w-[68%] h-[200px] sm:h-[230px] rounded-2xl bg-cover bg-center shadow-2xl border-4 border-surface z-30 hover:scale-[1.02] transition-transform duration-500"
+              style={{
+                backgroundImage: `url('https://lh3.googleusercontent.com/aida-public/AB6AXuDbsO9PmP4uea4VPVRfaWrU6BJeT6nmOqONBKHEkbGY22UhCWYRUdOGm0Wpl4xjxdEgfIULbXuYiUw4mBGxOPjmnSlWbo7xtDyXZiG0hZsERkGPC-qwkU4mcojfKBpnPDTsMj8fI1jpbRNtIA54NUOFORnf8bwRQQTgvTvYPb78BFonsizpkd7ktNhJ2-i4-Q1RlnDPCM8VbQqGZiWQRZrm_iXl7lZwTTkMyt1qzia8cS_F8BN9BWQO_A')`,
+              }}
+            />
+          </div>
+
+          {/* Right Content */}
+          <div className="lg:col-span-6 flex flex-col items-start order-2">
+            <span className="font-body text-xs font-bold text-secondary uppercase tracking-[0.2em] mb-2 bg-secondary-container/40 px-3.5 py-1 rounded-full">
+              ABOUT US
+            </span>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-[44px] font-medium leading-[1.12] text-primary mb-5">
+              Pure freshness and purposeful growth.
+            </h2>
+            <p className="font-body text-base text-on-surface-variant mb-4 leading-relaxed max-w-xl">
+              We believe that the most potent nutrition comes in the smallest packages.
+              By combining advanced controlled-environment indoor farming with uncompromising
+              organic standards, we cultivate microgreens that burst with concentrated
+              vitamins, minerals, and intense culinary flavors.
+            </p>
+            <p className="font-body text-sm text-on-surface-variant/90 mb-7 leading-relaxed max-w-xl">
+              Every tray is nurtured in sterile compost mediums under natural sunlight LED spectrums,
+              delivering hyper-local freshness directly to your kitchen.
+            </p>
+            <Link
+              to="/about"
+              className="bg-primary text-on-primary px-8 py-3.5 rounded-full font-body text-sm font-semibold hover:bg-primary-container transition-all shadow-md inline-flex items-center gap-2 group"
+            >
+              <span>Learn More</span>
+              <span className="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">
+                arrow_forward
+              </span>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* 3. Our Story */}
-      <section className="w-full bg-surface-container-low py-16 md:py-24">
-        <div className="max-w-[1200px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-          <div className="lg:col-span-5 order-2 lg:order-1">
-            <div
-              className="w-full h-[450px] rounded-xl bg-cover bg-center shadow-[0_8px_24px_rgba(27,67,50,0.08)]"
-              style={{
-                backgroundImage: `url('https://lh3.googleusercontent.com/aida-public/AB6AXuDZbC-W1ObCdn3Y8EgCkhrbcBWLIKe6WQfGpaZiWFS4X396NBTF_DwzfYE5uc0xTtraEjgBXGGWOWiRO1VtjObM7UD1OoK1PUExzPfgpncytMrx44tsO5kCbKMe-I0_VNu3x5jo-8EpzCTJKs-s3rgEF3oOXaO339_37WhUiAl10K_J0lAZ_XvCWSmNbVvsZAchUgJJZ3_lEf3hDH1OlNCTBJVAsgk0-LpiJF3wDgf5GOFEz87_TPdyYQ')`,
-              }}
-            />
-          </div>
-          <div className="lg:col-span-7 order-1 lg:order-2 flex flex-col items-start">
-            <span className="font-body text-xs font-semibold text-secondary uppercase tracking-widest mb-2">
+      {/* ================================================== */}
+      {/* 3. HERITAGE / STORY SECTION */}
+      {/* ================================================== */}
+      <section className="w-full bg-surface-container-low py-12 md:py-16 border-b border-surface-container-high">
+        <div className="max-w-[1240px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="lg:col-span-6 flex flex-col items-start">
+            <span className="font-body text-xs font-bold text-secondary uppercase tracking-[0.2em] mb-2 bg-secondary-container/40 px-3.5 py-1 rounded-full">
               OUR HERITAGE
             </span>
-            <h2 className="font-headline text-3xl md:text-[40px] font-bold leading-tight text-on-surface mb-4">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-[44px] font-medium leading-[1.12] text-primary mb-5">
               Rooted in nature. Driven by wellness.
             </h2>
-            <p className="font-body text-base text-on-surface-variant mb-4">
+            <p className="font-body text-base text-on-surface-variant mb-4 leading-relaxed max-w-xl">
               Founded with a vision to revolutionize urban nutrition, VerdureLeaf bridges
               the gap between rural agricultural purity and modern city living. Every seed
               we sow is non-GMO, organic, and nurtured in pristine conditions without a
               single drop of synthetic pesticides.
             </p>
-            <p className="font-body text-base text-on-surface-variant mb-8">
+            <p className="font-body text-sm text-on-surface-variant/90 mb-7 leading-relaxed max-w-xl">
               From our climate-controlled farms in Bangalore to our high-tech facilities
               in Dubai, we ensure strict cold-chain integrity so that the enzymes and
               antioxidants remain fully intact from root to table.
             </p>
-            <div className="grid grid-cols-2 gap-8 w-full pt-4 border-t border-surface-container-highest">
-              <div>
-                <h3 className="font-headline text-2xl text-primary font-bold">100%</h3>
-                <p className="font-body text-sm text-on-surface-variant">
-                  Traceable Organic Seeds
-                </p>
-              </div>
-              <div>
-                <h3 className="font-headline text-2xl text-primary font-bold">24 Hrs</h3>
-                <p className="font-body text-sm text-on-surface-variant">
-                  From Harvest to Table
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. Trusted Freshness */}
-      <section className="w-full bg-surface py-16 md:py-24">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <div className="text-center max-w-xl mx-auto mb-16">
-            <span className="font-body text-xs font-semibold text-secondary uppercase tracking-widest mb-2">
-              THE VERDURELEAF PROMISE
-            </span>
-            <h2 className="font-headline text-3xl md:text-[40px] font-bold leading-tight text-on-surface mb-2">
-              Trusted Freshness
-            </h2>
-            <p className="font-body text-base text-on-surface-variant">
-              Engineered for supreme nutritional density and absolute safety.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: 'eco',
-                title: '100% Freshness',
-                desc: 'Living greens delivered with roots intact, maintaining maximum biological activity and flavor vibrancy.',
-              },
-              {
-                icon: 'bolt',
-                title: '4x Nutrition',
-                desc: 'Up to 40 times higher concentrations of vital nutrients than their fully grown mature vegetable counterparts.',
-              },
-              {
-                icon: 'water_drop',
-                title: 'Zero Pesticides',
-                desc: 'Grown in sterile, pure organic soil mediums without synthetic chemicals, heavy metals, or artificial enhancers.',
-              },
-            ].map((card) => (
-              <div
-                key={card.title}
-                className="bg-surface-container-low p-8 rounded-xl shadow-[0_8px_24px_rgba(27,67,50,0.06)] flex flex-col items-start hover:-translate-y-1 transition-transform"
-              >
-                <div className="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary mb-4">
-                  <span className="material-symbols-outlined">{card.icon}</span>
-                </div>
-                <h3 className="font-headline text-2xl font-semibold text-on-surface mb-1">
-                  {card.title}
-                </h3>
-                <p className="font-body text-base text-on-surface-variant">{card.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 5. Curated Collections */}
-      <section className="w-full bg-surface-container-low py-16 md:py-24">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
-            <div>
-              <span className="font-body text-xs font-semibold text-secondary uppercase tracking-widest mb-2">
-                EXPLORE CATEGORIES
-              </span>
-              <h2 className="font-headline text-3xl md:text-[40px] font-bold leading-tight text-on-surface">
-                Curated Collections
-              </h2>
-            </div>
             <Link
-              to="/shop"
-              className="inline-flex items-center gap-2 text-primary font-semibold mt-4 md:mt-0 hover:gap-4 transition-all"
+              to="/about"
+              className="border-2 border-primary text-primary px-8 py-3.5 rounded-full font-body text-sm font-semibold hover:bg-primary/5 transition-all inline-flex items-center gap-2 group"
             >
-              <span>View All Products</span>
-              <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+              <span>Explore Our Story</span>
+              <span className="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">
+                arrow_forward
+              </span>
             </Link>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+          <div className="lg:col-span-6">
+            <div className="group overflow-hidden rounded-2xl shadow-xl border-4 border-surface">
+              <div
+                className="w-full h-[360px] sm:h-[420px] bg-cover bg-center group-hover:scale-[1.03] transition-transform duration-700"
+                style={{
+                  backgroundImage: `url('https://lh3.googleusercontent.com/aida-public/AB6AXuDZbC-W1ObCdn3Y8EgCkhrbcBWLIKe6WQfGpaZiWFS4X396NBTF_DwzfYE5uc0xTtraEjgBXGGWOWiRO1VtjObM7UD1OoK1PUExzPfgpncytMrx44tsO5kCbKMe-I0_VNu3x5jo-8EpzCTJKs-s3rgEF3oOXaO339_37WhUiAl10K_J0lAZ_XvCWSmNbVvsZAchUgJJZ3_lEf3hDH1OlNCTBJVAsgk0-LpiJF3wDgf5GOFEz87_TPdyYQ')`,
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================== */}
+      {/* 4. TRUST / FRESHNESS SECTION */}
+      {/* ================================================== */}
+      <section className="w-full bg-surface py-12 md:py-16 border-b border-surface-container-high">
+        <div className="max-w-[1240px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-5 flex flex-col items-start">
+            <span className="font-body text-xs font-bold text-secondary uppercase tracking-[0.2em] mb-2 bg-secondary-container/40 px-3.5 py-1 rounded-full">
+              THE VERDURELEAF PROMISE
+            </span>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-[44px] font-medium leading-[1.12] text-primary mb-4">
+              Trusted Freshness
+            </h2>
+            <p className="font-body text-base text-on-surface-variant leading-relaxed">
+              Engineered for supreme nutritional density and absolute safety. Harvested live
+              or freshly cut within 24 hours of your table.
+            </p>
+          </div>
+
+          {/* Clean Progress Metrics Card */}
+          <div className="lg:col-span-7 flex flex-col gap-7 bg-surface-container-low p-7 sm:p-9 rounded-2xl shadow-sm border border-outline-variant/20">
+            {/* Metric 1 */}
+            <div>
+              <div className="flex justify-between items-center mb-2">
+                <span className="font-body text-base font-bold text-primary">100% Freshness</span>
+                <span className="font-headline font-black text-sm text-secondary">100%</span>
+              </div>
+              <div className="w-full h-3 rounded-full bg-surface-container-high overflow-hidden">
+                <div className="h-full bg-primary rounded-full w-[100%] transition-all duration-1000" />
+              </div>
+              <span className="text-xs text-on-surface-variant mt-1.5 block">
+                Living roots intact for peak biological energy
+              </span>
+            </div>
+
+            {/* Metric 2 */}
+            <div>
+              <div className="flex justify-between items-center mb-2">
+                <span className="font-body text-base font-bold text-primary">4x Nutrition Boost</span>
+                <span className="font-headline font-black text-sm text-secondary">85%</span>
+              </div>
+              <div className="w-full h-3 rounded-full bg-surface-container-high overflow-hidden">
+                <div className="h-full bg-primary rounded-full w-[85%] transition-all duration-1000" />
+              </div>
+              <span className="text-xs text-on-surface-variant mt-1.5 block">
+                Up to 40x phytonutrient concentration vs mature plants
+              </span>
+            </div>
+
+            {/* Metric 3 */}
+            <div>
+              <div className="flex justify-between items-center mb-2">
+                <span className="font-body text-base font-bold text-primary">Zero Pesticides & Chemicals</span>
+                <span className="font-headline font-black text-sm text-secondary">100%</span>
+              </div>
+              <div className="w-full h-3 rounded-full bg-surface-container-high overflow-hidden">
+                <div className="h-full bg-primary rounded-full w-[100%] transition-all duration-1000" />
+              </div>
+              <span className="text-xs text-on-surface-variant mt-1.5 block">
+                Pure organic seeds and sterile filtered water
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================== */}
+      {/* 5. GREEN NUTRITION MADE EASY */}
+      {/* ================================================== */}
+      <section className="w-full bg-surface-container-low py-12 md:py-16 border-b border-surface-container-high">
+        <div className="max-w-[1240px] mx-auto px-6 md:px-12">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <span className="font-body text-xs font-bold text-secondary uppercase tracking-[0.2em] mb-2 inline-block">
+              EXPLORE CATEGORIES
+            </span>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-[44px] font-medium leading-tight text-primary">
+              Green Nutrition Made Easy
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
                 title: 'Microgreen Collections',
@@ -219,7 +360,7 @@ export default function Home() {
               {
                 title: 'Salads & Recipes',
                 desc: 'Chef-crafted pairing ideas and nutritional bowls to elevate your everyday meals.',
-                path: '#',
+                path: '/shop',
                 image:
                   'https://lh3.googleusercontent.com/aida-public/AB6AXuBNHzFm7L-TyXEGpnus6o2DEemp1qUCv69svgqzZP0yQP_IXF_ZHYM23CT3UTzxVaVSOoOCaUwMwnF5Ijz9ojuw2uapXHbjctnIfjOgICSzuZIclfWhY-ZXrSPUBWf2o_-Vuy7c148ggmxlszvwx1jpPjvDM5Yb0WQFf3HLl8vuBkM3R-T0EsK-p0ChtIn0bgDr4B7-RZloNPve371tvHme5cnsFkhYnKEBDIGPS8aKF56Ph1DlEkXV9A',
               },
@@ -233,26 +374,26 @@ export default function Home() {
             ].map((col) => (
               <div
                 key={col.title}
-                className="relative h-[400px] rounded-xl overflow-hidden group shadow-[0_8px_24px_rgba(27,67,50,0.08)] flex flex-col justify-end p-8"
+                className="relative h-[420px] rounded-2xl overflow-hidden group shadow-lg flex flex-col justify-end p-8 border border-outline-variant/20"
               >
                 <div
-                  className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500"
+                  className="absolute inset-0 bg-cover bg-center group-hover:scale-[1.03] transition-transform duration-700"
                   style={{ backgroundImage: `url('${col.image}')` }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent" />
-                <div className="relative z-10 text-on-primary">
-                  <h3 className="font-headline text-2xl font-semibold mb-1">
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/45 to-transparent transition-opacity group-hover:opacity-90" />
+                <div className="relative z-10 text-on-primary flex flex-col items-start">
+                  <h3 className="font-serif text-2xl font-medium mb-2">
                     {col.title}
                   </h3>
-                  <p className="font-body text-sm text-primary-fixed-dim mb-4">
+                  <p className="font-body text-xs text-primary-fixed-dim mb-6 leading-relaxed">
                     {col.desc}
                   </p>
                   <Link
                     to={col.path}
-                    className="inline-flex items-center gap-1 text-primary-fixed font-body text-[15px] font-semibold group-hover:underline"
+                    className="w-11 h-11 rounded-full bg-surface text-primary flex items-center justify-center group-hover:bg-accent group-hover:text-on-tertiary transition-all duration-300 shadow-md"
+                    aria-label={`Explore ${col.title}`}
                   >
-                    <span>Explore</span>
-                    <span className="material-symbols-outlined text-[16px]">
+                    <span className="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">
                       arrow_forward
                     </span>
                   </Link>
@@ -263,298 +404,328 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. Featured Products */}
-      <section className="w-full bg-surface py-16 md:py-24">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
+      {/* ================================================== */}
+      {/* 6. FEATURED PRODUCTS */}
+      {/* ================================================== */}
+      <section className="w-full bg-surface py-12 md:py-16 border-b border-surface-container-high">
+        <div className="max-w-[1240px] mx-auto px-6 md:px-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10">
             <div>
-              <span className="font-body text-xs font-semibold text-secondary uppercase tracking-widest mb-2">
-                SHOP BESTSELLERS
+              <span className="font-body text-xs font-bold text-secondary uppercase tracking-[0.2em] mb-2 block">
+                FRESH HARVESTS
               </span>
-              <h2 className="font-headline text-3xl md:text-[40px] font-bold leading-tight text-on-surface">
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-[44px] font-medium leading-tight text-primary">
                 Featured Products
               </h2>
             </div>
             <Link
               to="/shop"
-              className="inline-flex items-center gap-2 text-primary font-semibold mt-4 md:mt-0 hover:gap-4 transition-all"
+              className="inline-flex items-center gap-1.5 text-primary text-sm font-semibold hover:gap-3 transition-all mt-4 md:mt-0 group"
             >
-              <span>View All Catalog</span>
-              <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+              <span>Discover our full collection</span>
+              <span className="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">
+                arrow_forward
+              </span>
             </Link>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
             {homeProducts.map((product) => (
-              <Link
-                to={`/product/${product.slug}`}
+              <div
                 key={product.id}
-                className="bg-surface-container-low rounded-xl overflow-hidden shadow-[0_8px_24px_rgba(27,67,50,0.06)] flex flex-col group"
+                className="group bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between border border-outline-variant/20 hover:-translate-y-1"
               >
-                <div className="relative h-60 bg-surface-container overflow-hidden">
-                  {product.onSale && (
-                    <span className="absolute top-3 left-3 bg-sale text-on-error text-xs font-bold px-2.5 py-1 rounded-full z-10">
-                      SALE
-                    </span>
+                {/* Image Container */}
+                <div className="relative overflow-hidden aspect-square bg-surface-container">
+                  {product.stockStatus && (
+                    <div className="absolute top-3 left-3 z-10 bg-surface/90 backdrop-blur-md text-secondary font-body text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-sm">
+                      {product.stockStatus}
+                    </div>
                   )}
-                  <div
-                    className="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
-                    style={{ backgroundImage: `url('${product.image}')` }}
-                  />
+                  <Link to={`/product/${product.slug}`}>
+                    <img
+                      className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                      src={product.image}
+                      alt={product.name}
+                      loading="lazy"
+                    />
+                  </Link>
+
+                  {/* Quick View Hover Button */}
+                  <button
+                    onClick={() => setQuickViewProduct(product)}
+                    className="absolute bottom-3 right-3 z-10 bg-primary text-on-primary text-xs font-semibold px-3.5 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-md flex items-center gap-1 hover:bg-primary-container"
+                  >
+                    <span className="material-symbols-outlined text-[14px]">visibility</span>
+                    <span>Quick View</span>
+                  </button>
                 </div>
-                <div className="p-4 flex flex-col flex-grow justify-between">
+
+                {/* Body Content */}
+                <div className="p-5 flex flex-col flex-grow justify-between gap-3">
                   <div>
-                    <span className="font-body text-xs font-semibold text-secondary uppercase">
-                      {product.categoryLabel}
-                    </span>
-                    <h3 className="font-headline text-lg font-semibold text-on-surface mt-1 mb-2">
-                      {product.name}
-                    </h3>
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="font-body text-[10px] font-bold text-text-secondary uppercase tracking-wider">
+                        {product.categoryLabel}
+                      </span>
+                      {product.weight && (
+                        <span className="font-body text-[11px] font-semibold text-secondary">
+                          {product.weight}
+                        </span>
+                      )}
+                    </div>
+                    <Link to={`/product/${product.slug}`}>
+                      <h3 className="font-headline text-base sm:text-lg font-bold text-primary hover:text-secondary transition-colors line-clamp-1">
+                        {product.name}
+                      </h3>
+                    </Link>
                   </div>
-                  <div>
-                    <div className="flex items-center gap-2 mb-4">
-                      <span
-                        className={`font-bold text-base ${
-                          product.onSale ? 'text-sale' : 'text-primary'
-                        }`}
-                      >
+
+                  {/* Card Footer */}
+                  <div className="pt-3 border-t border-surface-container flex items-center justify-between">
+                    <div>
+                      <span className="text-lg font-bold text-primary font-headline">
                         ₹{product.price}
                       </span>
                       {product.originalPrice && (
-                        <span className="text-text-secondary line-through text-sm">
+                        <span className="text-xs text-text-secondary line-through ml-1.5">
                           ₹{product.originalPrice}
                         </span>
                       )}
                     </div>
-                    <button className="w-full bg-primary text-on-primary py-2.5 rounded-lg font-body text-[15px] font-semibold hover:bg-primary-container transition-colors flex items-center justify-center gap-2">
-                      <span className="material-symbols-outlined text-[18px]">
-                        shopping_bag
-                      </span>
-                      <span>Add to cart</span>
+                    <button
+                      onClick={() => addToCart(product, 1)}
+                      className="bg-accent text-on-tertiary px-3.5 py-2 rounded-full font-body text-xs font-bold hover:opacity-95 hover:scale-105 transition-all flex items-center gap-1 shadow-sm"
+                    >
+                      <span className="material-symbols-outlined text-[15px]">shopping_bag</span>
+                      <span>Add to Cart</span>
                     </button>
                   </div>
                 </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 7. FAQ Accordion */}
-      <section className="w-full bg-surface-container-low py-16 md:py-24">
-        <div className="max-w-3xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="font-body text-xs font-semibold text-secondary uppercase tracking-widest mb-2">
-              GOT QUESTIONS?
-            </span>
-            <h2 className="font-headline text-3xl md:text-[40px] font-bold leading-tight text-on-surface mb-2">
-              Frequently Asked Questions
-            </h2>
-            <p className="font-body text-base text-on-surface-variant">
-              Everything you need to know about our microgreens, subscriptions, and care.
-            </p>
-          </div>
-          <div className="space-y-4">
-            {faqData.map((faq) => (
-              <div
-                key={faq.id}
-                className="bg-surface p-8 rounded-xl shadow-[0_4px_16px_rgba(27,67,50,0.04)] transition-all"
-              >
-                <button
-                  className="w-full flex items-center justify-between text-left font-headline text-lg font-semibold text-on-surface focus:outline-none"
-                  onClick={() => toggleFaq(faq.id)}
-                >
-                  <span>{faq.question}</span>
-                  <span
-                    className={`material-symbols-outlined text-secondary transition-transform duration-300 ${
-                      openFaq === faq.id ? 'rotate-180' : ''
-                    }`}
-                  >
-                    expand_more
-                  </span>
-                </button>
-                {openFaq === faq.id && (
-                  <div className="pt-4 text-base text-on-surface-variant font-body">
-                    {faq.answer}
-                  </div>
-                )}
               </div>
             ))}
           </div>
+
+          <div className="flex justify-center mt-12">
+            <Link
+              to="/shop"
+              className="bg-primary text-on-primary px-10 py-3.5 rounded-full font-body text-sm font-semibold hover:bg-primary-container transition-all shadow-md flex items-center gap-2 group"
+            >
+              <span>View More Products</span>
+              <span className="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">
+                arrow_forward
+              </span>
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* 8. Cultivation Process */}
-      <section className="w-full bg-surface py-16 md:py-24">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <div className="text-center max-w-xl mx-auto mb-16">
-            <span className="font-body text-xs font-semibold text-secondary uppercase tracking-widest mb-2">
-              HOW WE GROW
-            </span>
-            <h2 className="font-headline text-3xl md:text-[40px] font-bold leading-tight text-on-surface mb-2">
-              Our Cultivation Process
-            </h2>
-            <p className="font-body text-base text-on-surface-variant">
-              From seed selection to doorstep delivery in three meticulous steps.
-            </p>
+      {/* ================================================== */}
+      {/* 7. WEEKLY SUBSCRIPTION CTA (CAMPAIGN SECTION) */}
+      {/* ================================================== */}
+      <section className="w-full bg-surface-container-low py-12 md:py-16 border-b border-surface-container-high">
+        <div className="max-w-[1240px] mx-auto px-6 md:px-12">
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-outline-variant/20 bg-primary min-h-[380px] flex items-center">
+            {/* Background Lifestyle Asset */}
+            <div
+              className="absolute inset-0 bg-cover bg-center opacity-40 z-0 scale-105"
+              style={{
+                backgroundImage: `url('/images/hero_subscription_desktop.png')`,
+              }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-transparent z-1" />
+
+            <div className="relative z-10 p-8 sm:p-12 lg:p-16 max-w-2xl text-on-primary flex flex-col items-start">
+              <span className="font-body text-xs font-bold text-accent uppercase tracking-[0.2em] mb-3 bg-black/30 px-3.5 py-1 rounded-full border border-white/20">
+                FLEXIBLE DOORSTEP HARVEST
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium leading-tight mb-4 text-white">
+                Fresh Greens. Every Week.
+              </h2>
+              <p className="font-body text-base text-primary-fixed-dim mb-8 leading-relaxed">
+                Get freshly harvested microgreens delivered to your doorstep on a schedule that works for you. Pause, skip, or adjust your varieties anytime with zero commitment.
+              </p>
+              <div className="flex flex-wrap items-center gap-4">
+                <Link
+                  to="/subscriptions"
+                  className="bg-accent text-on-tertiary px-8 py-3.5 rounded-full font-body text-sm font-bold hover:opacity-95 hover:scale-[1.03] transition-all shadow-lg flex items-center gap-2"
+                >
+                  <span>Start Weekly Subscription</span>
+                  <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </Link>
+                <Link
+                  to="/shop"
+                  className="border border-white/60 text-white px-7 py-3.5 rounded-full font-body text-sm font-semibold hover:bg-white/10 transition-all flex items-center gap-2"
+                >
+                  <span>Explore Microgreens</span>
+                </Link>
+              </div>
+            </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        </div>
+      </section>
+
+      {/* ================================================== */}
+      {/* 8. FAQ SECTION */}
+      {/* ================================================== */}
+      <section className="w-full bg-surface-container-low py-12 md:py-16 border-b border-surface-container-high">
+        <div className="max-w-[1240px] mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* Left Image Container */}
+            <div className="lg:col-span-5 relative">
+              <div
+                className="w-full h-[480px] rounded-2xl bg-cover bg-center shadow-xl border-4 border-surface"
+                style={{
+                  backgroundImage: `url('https://lh3.googleusercontent.com/aida-public/AB6AXuDbsO9PmP4uea4VPVRfaWrU6BJeT6nmOqONBKHEkbGY22UhCWYRUdOGm0Wpl4xjxdEgfIULbXuYiUw4mBGxOPjmnSlWbo7xtDyXZiG0hZsERkGPC-qwkU4mcojfKBpnPDTsMj8fI1jpbRNtIA54NUOFORnf8bwRQQTgvTvYPb78BFonsizpkd7ktNhJ2-i4-Q1RlnDPCM8VbQqGZiWQRZrm_iXl7lZwTTkMyt1qzia8cS_F8BN9BWQO_A')`,
+                }}
+              />
+            </div>
+
+            {/* Right FAQ Accordion Card */}
+            <div className="lg:col-span-7 bg-surface-container-lowest p-7 sm:p-10 rounded-2xl shadow-lg border border-outline-variant/30 lg:-ml-12 relative z-10">
+              <span className="font-body text-xs font-bold text-secondary uppercase tracking-[0.2em] mb-2 block">
+                FREQUENTLY ASKED QUESTIONS
+              </span>
+              <h2 className="font-serif text-2xl sm:text-3xl font-medium leading-tight text-primary mb-6">
+                Everything you need to know about fresh microgreens
+              </h2>
+
+              <div className="flex flex-col divide-y divide-surface-container">
+                {faqData.map((item, idx) => (
+                  <div key={item.id} className="py-3.5">
+                    <button
+                      id={`faq-btn-${idx}`}
+                      aria-expanded={openFaq === idx}
+                      aria-controls={`faq-answer-${idx}`}
+                      onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
+                      className="w-full flex items-center justify-between text-left font-headline font-semibold text-base text-primary hover:text-secondary transition-colors cursor-pointer py-1"
+                    >
+                      <span className="pr-4">{item.question}</span>
+                      <span className="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center flex-shrink-0 text-secondary">
+                        <span className="material-symbols-outlined text-[18px]">
+                          {openFaq === idx ? 'remove' : 'add'}
+                        </span>
+                      </span>
+                    </button>
+                    {openFaq === idx && (
+                      <div
+                        id={`faq-answer-${idx}`}
+                        role="region"
+                        aria-labelledby={`faq-btn-${idx}`}
+                        className="font-body text-xs sm:text-sm text-on-surface-variant mt-2 leading-relaxed animate-scale-up"
+                      >
+                        {item.answer}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================== */}
+      {/* 9. PROCESS SECTION (01 / 02 / 03) */}
+      {/* ================================================== */}
+      <section className="w-full bg-surface py-12 md:py-16 border-b border-surface-container-high">
+        <div className="max-w-[1240px] mx-auto px-6 md:px-12">
+          <div className="text-center max-w-xl mx-auto mb-12">
+            <span className="font-body text-xs font-bold text-secondary uppercase tracking-[0.2em] mb-2 block">
+              OUR HARVEST METHOD
+            </span>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-[44px] font-medium leading-tight text-primary">
+              From Seed to Doorstep
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 relative">
             {[
               {
-                step: 'STEP 01',
-                title: 'Seed Selection',
-                desc: 'We source only the highest-grade, certified organic, non-GMO heirloom seeds tested for high germination and nutritional potency.',
-                image:
-                  'https://lh3.googleusercontent.com/aida-public/AB6AXuCQjlmrJ0sE0OZ8NZ0Aq2vlFsYRRCic0keCHN5rgN_N3FS5VwTAS1-6b79eRkHOYafjB100gSKlsCTdmOGEnNFDuIuN_I5trAJejIX1Xqqn-_oS7FIDsqvWwLycgKns92Lf0QEEHsdJMaq_5AStxNHm6FWHwHlJ6XT6vI7ho-umzwZ2wakwB1khBkM1aJrXM6oawax6QPfyFnrYgnaPair9a2zgd8WAR5TrbNHenY5yWtLlqWxSTTCJ7g',
+                num: '01',
+                title: 'Seed Selection & Planting',
+                desc: 'Traceable organic non-GMO seeds cultivated in pristine growing mediums without synthetic chemicals or artificial enhancers.',
               },
               {
-                step: 'STEP 02',
-                title: 'Controlled Growing',
-                desc: 'Grown in optimized indoor micro-climates with precise humidity, airflow, and custom LED light spectrums to maximize antioxidant development.',
-                image:
-                  'https://lh3.googleusercontent.com/aida-public/AB6AXuDgnFRniCCDuvFL3niiO1pbO3YuOlyFEm2W_eQPwiez-8_uPTddxheyNVzcVPh08qleCHIwlOFO8ReYd_lQo5tPfDgOV5bCR-N81Ke1jgJZ5bMMa1zUVg_HoaHQBIM6bOeCdyZelajlLmvo_LcEo7fwNdnZfM1hFK1G3pE8gZAxEh9bRQG5SLwvkck_0PPzPkDsCyzbeXBDidIIbGRIEdRkuG3dBp0w50-e3bYI8Yf180sYHJyi2s54bQ',
+                num: '02',
+                title: 'Controlled Growing & Care',
+                desc: 'Climate-controlled hydroponic indoor farming consuming 95% less water while retaining maximum enzymatic and antioxidant activity.',
               },
               {
-                step: 'STEP 03',
+                num: '03',
                 title: 'Fresh Harvesting & Delivery',
-                desc: 'Harvested at peak nutrient density just hours before dispatch, whisked directly to your kitchen in cold-chain transport.',
-                image:
-                  'https://lh3.googleusercontent.com/aida-public/AB6AXuDcelzf-elxf4eF16HMVXPInKFpIJ3qZEUti5ZrPxpmVF0yPHUb_32frghT7pHvmPRjmXH6McnWY9c_lEOZ-k5fu7ZOUvukRZKGYoCO8TxgcXO247AGpac5oV-mSkyBNkysnpfg1LusUDw_kyL66ajD3c4zgRAX1g9bXhQaQJ9dVcH2gclKRdvCvkqv9rbgX2_njeRzxjpV8nkKEOMF7wGjmx9RCYDOX-c2jL52725fvbBzqZWKviXoNQ',
+                desc: 'Harvested or shipped live within 24 hours of doorstep delivery across India and the UAE.',
               },
             ].map((step) => (
-              <div
-                key={step.step}
-                className="bg-surface-container-low p-8 rounded-xl shadow-[0_8px_24px_rgba(27,67,50,0.06)] flex flex-col"
-              >
-                <div
-                  className="w-full h-48 rounded-lg bg-cover bg-center mb-4"
-                  style={{ backgroundImage: `url('${step.image}')` }}
-                />
-                <span className="font-body text-xs font-semibold text-secondary uppercase mb-2">
-                  {step.step}
+              <div key={step.num} className="flex flex-col items-start gap-3 relative z-10">
+                <span className="font-serif text-6xl sm:text-7xl font-bold text-outline-number">
+                  {step.num}
                 </span>
-                <h3 className="font-headline text-2xl font-semibold text-on-surface mb-1">
+                <h3 className="font-headline text-xl font-bold text-primary">
                   {step.title}
                 </h3>
-                <p className="font-body text-base text-on-surface-variant">{step.desc}</p>
+                <p className="font-body text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                  {step.desc}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 9. Latest Posts */}
-      <section className="w-full bg-surface-container-low py-16 md:py-24">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
-            <div>
-              <span className="font-body text-xs font-semibold text-secondary uppercase tracking-widest mb-2">
-                JOURNAL & RECIPES
-              </span>
-              <h2 className="font-headline text-3xl md:text-[40px] font-bold leading-tight text-on-surface">
-                Latest Posts
-              </h2>
-            </div>
-            <a
-              href="#"
-              className="inline-flex items-center gap-2 text-primary font-semibold mt-4 md:mt-0 hover:gap-4 transition-all"
-            >
-              <span>View All Articles</span>
-              <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
-            </a>
+      {/* ================================================== */}
+      {/* 10. LATEST POSTS / JOURNAL */}
+      {/* ================================================== */}
+      <section className="w-full bg-surface-container-low py-12 md:py-16">
+        <div className="max-w-[1240px] mx-auto px-6 md:px-12">
+          <div className="text-center max-w-xl mx-auto mb-10">
+            <span className="font-body text-xs font-bold text-secondary uppercase tracking-[0.2em] mb-2 block">
+              JOURNAL & RECIPES
+            </span>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-[44px] font-medium leading-tight text-primary">
+              Latest Posts
+            </h2>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {[
-              {
-                tag: 'Nutrition',
-                read: '4 min read',
-                title: 'Why Microgreens Are the Ultimate Cellular Superfood',
-                desc: 'Explore the scientific studies behind the concentrated vitamin levels found in young greens.',
-                image:
-                  'https://lh3.googleusercontent.com/aida-public/AB6AXuAOe47FZRWBJUnBuR31e5GGFloAq8kx-PPzJUj46baPCFscJ_3OVH8OKZT_c1yCv8Sw9e2xkXqObw5ugwjyrjJrRxcp8ckH_l6NtTLethd1gv0S03NMCNTzBqmQOKyrB6QeQLYOPqKNnLi7XDfh_2kPMyRPx6GgxOXkloVGWb8wUG2Fk3n9nwmDUapGzJ_PoZ0sy6ag70MIi8Xt3uuScmfH5TJZumBuqiBEhh5Q4BV6X-xFfVXyOjYgKg',
-              },
-              {
-                tag: 'Recipes',
-                read: '3 min read',
-                title: '3 Quick Breakfast Recipes Featuring Radish Microgreens',
-                desc: 'Add a zesty kick to your morning toast and eggs with these simple culinary ideas.',
-                image:
-                  'https://lh3.googleusercontent.com/aida-public/AB6AXuDU4hZSX6GfPUnLuXDJTBs4H46hAkDX2xBecCFLGkIwh8PCxFKzvPT4wtNnRImq9hFx5demslZEVllOgSDMQ8-asxBDsI6J2MiLhx2pyUH-UMA3Q_acJAuT9_0znXFg7D_ukI5UQ7rjeUY8eKr-G7KKPtM2qDcf7Yvs4PJPsvCE6dBuakOv7r-keJ3JjuVpNqN7u-FpaV-lI5QvHUJ-Mf-E-aQoH252YiEbvqcTdUdGqF8zKJK9zAPYxw',
-              },
-              {
-                tag: 'Sustainability',
-                read: '5 min read',
-                title: 'Sustainable Urban Farming: Feeding Cities Locally',
-                desc: 'How indoor vertical farming reduces water usage by 95% and eliminates food miles.',
-                image:
-                  'https://lh3.googleusercontent.com/aida-public/AB6AXuAcdsuOdUWg1a37pjWpkT5sjUvr4FDLcamO2pxv6TtX1Vhxs6zt9wMYzF7WGFIU09K7uXVg2eVamgnUAq44vh9LNKxgIK_pgb8LNcxqtlSctHb3C0nXKaxkRMHTTCUivul3D8M7Dl7fVCNRUjW_nkaa8dIa4iQIoluNJ8dQZyvE2IfBZ5mDk_8yXhO6MkF9iympBtxwUAhpbEbdnpN8KUto_wznRt_BLRxi8cHjXl8wn_ALN6xg859ZQg',
-              },
-            ].map((post) => (
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {posts.map((post) => (
               <div
-                key={post.title}
-                className="bg-surface rounded-xl overflow-hidden shadow-[0_8px_24px_rgba(27,67,50,0.06)] flex flex-col group"
+                key={post.id}
+                className="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between border border-outline-variant/20 group"
               >
-                <div
-                  className="h-56 bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
-                  style={{ backgroundImage: `url('${post.image}')` }}
-                />
-                <div className="p-8 flex flex-col flex-grow justify-between">
+                <div className="relative aspect-[16/10] overflow-hidden bg-surface-container">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <span className="absolute top-3 left-3 bg-surface/90 backdrop-blur-md text-[10px] font-bold text-secondary uppercase tracking-wider px-2.5 py-0.5 rounded-full shadow-sm">
+                    {post.category}
+                  </span>
+                </div>
+                <div className="p-6 flex flex-col flex-grow justify-between gap-4">
                   <div>
-                    <div className="flex items-center gap-4 mb-1">
-                      <span className="font-body text-xs font-semibold text-secondary uppercase">
-                        {post.tag}
-                      </span>
-                      <span className="text-text-secondary text-sm">• {post.read}</span>
-                    </div>
-                    <h3 className="font-headline text-2xl font-semibold text-on-surface mb-2 group-hover:text-secondary transition-colors">
+                    <span className="text-[11px] font-semibold text-on-surface-variant block mb-1">
+                      {post.date} • {post.readTime}
+                    </span>
+                    <h3 className="font-serif text-lg font-medium text-primary group-hover:text-secondary transition-colors leading-snug">
                       {post.title}
                     </h3>
-                    <p className="font-body text-sm text-on-surface-variant mb-4">
-                      {post.desc}
+                    <p className="font-body text-xs text-on-surface-variant line-clamp-2 mt-2 leading-relaxed">
+                      {post.excerpt}
                     </p>
                   </div>
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-1 text-primary font-semibold text-sm"
+                  <Link
+                    to="/about"
+                    className="text-xs font-bold text-primary group-hover:text-secondary inline-flex items-center gap-1 group-hover:gap-2 transition-all"
                   >
-                    <span>Read article</span>
-                    <span className="material-symbols-outlined text-[16px]">
-                      arrow_forward
-                    </span>
-                  </a>
+                    <span>Read Article</span>
+                    <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
+                  </Link>
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 10. Closing Brand Banner */}
-      <section className="w-full bg-primary py-16 md:py-24 text-on-primary relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-container/50 via-transparent to-primary-container/50 pointer-events-none" />
-        <div className="max-w-[1200px] mx-auto px-6 relative z-10 flex flex-col items-center text-center">
-          <span className="font-body text-xs font-semibold text-primary-fixed-dim uppercase tracking-widest mb-2">
-            TASTE THE VITALITY
-          </span>
-          <h2 className="font-headline text-4xl md:text-[56px] font-bold leading-[1.1] tracking-tight mb-4 max-w-2xl">
-            Freshness You Can Feel
-          </h2>
-          <p className="font-body text-lg text-primary-fixed-dim max-w-xl mb-8">
-            Join hundreds of health-conscious households across India and the UAE who
-            have transformed their daily nutrition with VerdureLeaf.
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <Link
-              to="/subscriptions"
-              className="bg-accent text-on-tertiary px-8 py-4 rounded-full font-body text-[15px] font-semibold hover:opacity-95 transition-opacity shadow-[0_8px_24px_rgba(224,122,95,0.3)]"
-            >
-              Start Subscription
-            </Link>
-            <Link
-              to="/contact"
-              className="border border-primary-fixed text-on-primary px-8 py-4 rounded-full font-body text-[15px] font-semibold hover:bg-primary-container/30 transition-colors"
-            >
-              Get in Touch
-            </Link>
           </div>
         </div>
       </section>
