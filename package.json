@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "dev": "cd verdureleaf-website && npm run dev",
-    "build": "cd verdureleaf-website && npm run build"
+    "dev": "npm --prefix verdureleaf-website run dev",
+    "build": "npm --prefix verdureleaf-website run build"
   }
 }
