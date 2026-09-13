@@ -348,7 +348,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="flex md:grid md:grid-cols-3 overflow-x-auto snap-x snap-mandatory no-scrollbar gap-6 pb-4 -mx-6 px-6 md:mx-0 md:px-0">
             {[
               {
                 title: 'Microgreen Collections',
@@ -374,7 +374,7 @@ export default function Home() {
             ].map((col) => (
               <div
                 key={col.title}
-                className="relative h-[420px] rounded-2xl overflow-hidden group shadow-lg flex flex-col justify-end p-8 border border-outline-variant/20"
+                className="relative h-[380px] sm:h-[420px] w-[82%] sm:w-[320px] md:w-full flex-shrink-0 snap-center rounded-2xl overflow-hidden group shadow-lg flex flex-col justify-end p-7 sm:p-8 border border-outline-variant/20"
               >
                 <div
                   className="absolute inset-0 bg-cover bg-center group-hover:scale-[1.03] transition-transform duration-700"
@@ -400,6 +400,10 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+          <div className="md:hidden flex items-center justify-center gap-1.5 text-xs font-semibold text-secondary mt-2">
+            <span className="material-symbols-outlined text-[16px]">swipe</span>
+            <span>Swipe horizontally to view categories</span>
           </div>
         </div>
       </section>
@@ -429,11 +433,11 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
+          <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 overflow-x-auto snap-x snap-mandatory no-scrollbar gap-5 pb-4 -mx-6 px-6 sm:mx-0 sm:px-0">
             {homeProducts.map((product) => (
               <div
                 key={product.id}
-                className="group bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between border border-outline-variant/20 hover:-translate-y-1"
+                className="group bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between border border-outline-variant/20 hover:-translate-y-1 w-[78%] sm:w-full flex-shrink-0 snap-center"
               >
                 {/* Image Container */}
                 <div className="relative overflow-hidden aspect-square bg-surface-container">
@@ -504,6 +508,10 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+          <div className="sm:hidden flex items-center justify-center gap-1.5 text-xs font-semibold text-secondary mt-2">
+            <span className="material-symbols-outlined text-[16px]">swipe</span>
+            <span>Swipe horizontally to view all products</span>
           </div>
 
           <div className="flex justify-center mt-12">
@@ -639,7 +647,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 relative">
+          <div className="flex md:grid md:grid-cols-3 overflow-x-auto snap-x snap-mandatory no-scrollbar gap-6 pb-4 -mx-6 px-6 md:mx-0 md:px-0 relative">
             {[
               {
                 num: '01',
@@ -657,7 +665,7 @@ export default function Home() {
                 desc: 'Harvested or shipped live within 24 hours of doorstep delivery across India and the UAE.',
               },
             ].map((step) => (
-              <div key={step.num} className="flex flex-col items-start gap-3 relative z-10">
+              <div key={step.num} className="flex flex-col items-start gap-3 relative z-10 w-[82%] sm:w-[300px] md:w-full flex-shrink-0 snap-center bg-surface-container-low p-6 rounded-2xl md:bg-transparent md:p-0 border border-outline-variant/20 md:border-0">
                 <span className="font-serif text-6xl sm:text-7xl font-bold text-outline-number">
                   {step.num}
                 </span>
@@ -669,6 +677,10 @@ export default function Home() {
                 </p>
               </div>
             ))}
+          </div>
+          <div className="md:hidden flex items-center justify-center gap-1.5 text-xs font-semibold text-secondary mt-2">
+            <span className="material-symbols-outlined text-[16px]">swipe</span>
+            <span>Swipe horizontally to view process steps</span>
           </div>
         </div>
       </section>
@@ -687,11 +699,11 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="flex md:grid md:grid-cols-3 overflow-x-auto snap-x snap-mandatory no-scrollbar gap-6 pb-4 -mx-6 px-6 md:mx-0 md:px-0">
             {posts.map((post) => (
               <div
                 key={post.id}
-                className="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between border border-outline-variant/20 group"
+                className="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between border border-outline-variant/20 group w-[82%] sm:w-[320px] md:w-full flex-shrink-0 snap-center"
               >
                 <div className="relative aspect-[16/10] overflow-hidden bg-surface-container">
                   <img
@@ -726,6 +738,10 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+          <div className="md:hidden flex items-center justify-center gap-1.5 text-xs font-semibold text-secondary mt-2">
+            <span className="material-symbols-outlined text-[16px]">swipe</span>
+            <span>Swipe horizontally to view articles</span>
           </div>
         </div>
       </section>
