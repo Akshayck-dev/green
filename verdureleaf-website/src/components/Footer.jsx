@@ -78,10 +78,10 @@ export default function Footer() {
             <Link to="/" className="font-headline text-2xl font-bold text-white flex items-center gap-2.5 mt-4 group">
               <img
                 src="/images/logo.png"
-                alt="Caries Green Logo"
+                alt="Caeris Greens Logo"
                 className="w-10 h-10 object-contain shadow-md group-hover:scale-105 transition-transform"
               />
-              <span className="font-serif text-2xl tracking-normal text-white">Caries Green</span>
+              <span className="font-serif text-2xl tracking-normal text-white">Caeris Greens</span>
             </Link>
           </div>
 
@@ -97,11 +97,11 @@ export default function Footer() {
 
             <div className="flex flex-col gap-2.5 pt-2 text-xs md:text-sm text-gray-300">
               <a
-                href="mailto:info@cariesgreen.com"
+                href="mailto:info@caerisgreens.com"
                 className="flex items-center gap-2.5 hover:text-white transition-colors"
               >
                 <span className="material-symbols-outlined text-[18px]">mail</span>
-                <span>info@cariesgreen.com</span>
+                <span>info@caerisgreens.com</span>
               </a>
 
               <a
@@ -136,11 +136,11 @@ export default function Footer() {
 
             <div className="flex flex-col gap-2.5 pt-2 text-xs md:text-sm text-gray-300">
               <a
-                href="mailto:info@cariesgreen.com"
+                href="mailto:info@caerisgreens.com"
                 className="flex items-center gap-2.5 hover:text-white transition-colors"
               >
                 <span className="material-symbols-outlined text-[18px]">mail</span>
-                <span>info@cariesgreen.com</span>
+                <span>info@caerisgreens.com</span>
               </a>
 
               <a
@@ -160,7 +160,7 @@ export default function Footer() {
         <div className="pt-8 border-t border-white/15 flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Copyright */}
           <span className="font-body text-xs text-gray-400 font-medium order-2 md:order-1">
-            © 2026 Caries Green. All rights reserved.
+            © 2026 Caeris Greens. All rights reserved.
           </span>
 
           {/* Social Icons */}

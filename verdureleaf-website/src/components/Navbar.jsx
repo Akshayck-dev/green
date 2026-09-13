@@ -49,11 +49,11 @@ export default function Navbar() {
         >
           <img
             src="/images/logo.png"
-            alt="Caries Green Logo"
+            alt="Caeris Greens Logo"
             className="w-9 h-9 sm:w-10 sm:h-10 object-contain drop-shadow-sm group-hover:scale-105 transition-transform flex-shrink-0"
           />
           <span className={`font-serif tracking-tight whitespace-nowrap ${scrolled ? 'text-primary' : 'text-white'}`}>
-            Caries Green
+            Caeris Greens
           </span>
         </Link>
 

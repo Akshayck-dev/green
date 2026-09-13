@@ -23,7 +23,7 @@ export default function CartDrawer() {
   const grandTotal = subtotal + shippingFee;
 
   const handleCheckout = () => {
-    alert('Thank you for choosing Caries Green! Order placement demo simulated.');
+    alert('Thank you for choosing Caeris Greens! Order placement demo simulated.');
     clearCart();
     setCartOpen(false);
   };
