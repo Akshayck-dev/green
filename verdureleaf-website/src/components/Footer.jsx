@@ -19,25 +19,6 @@ export default function Footer() {
 
       {/* Main Footer Container */}
       <div className="max-w-[1240px] mx-auto px-6 md:px-12 py-16 md:py-20 relative z-10">
-        {/* Final Footer Campaign CTA */}
-        <div className="pb-12 border-b border-white/15 mb-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <div>
-            <h3 className="font-serif text-2xl md:text-3xl font-medium text-white mb-1">
-              Ready to eat greener?
-            </h3>
-            <p className="font-body text-xs md:text-sm text-gray-300">
-              Start your weekly fresh harvest.
-            </p>
-          </div>
-          <Link
-            to="/shop"
-            className="bg-accent text-on-tertiary px-7 py-3 rounded-full font-body text-xs md:text-sm font-semibold hover:opacity-95 transition-opacity shadow-lg flex items-center gap-2"
-          >
-            <span>Shop Microgreens</span>
-            <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
-          </Link>
-        </div>
-
         {/* 2-Column Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-12 pb-16">
           {/* Column 1: Brand Philosophy & Callback (Left ~ 7 Cols) */}
