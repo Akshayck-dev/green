@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { useCart } from '../context/CartContext';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import FlavorProfileGauge from './FlavorProfileGauge';
 
 export default function QuickViewModal() {
   const { quickViewProduct, setQuickViewProduct, addToCart } = useCart();
   const [selectedOption, setSelectedOption] = useState('50g Fresh Cut Punnet');
   const [quantity, setQuantity] = useState(1);
+  const navigate = useNavigate();
 
   if (!quickViewProduct) return null;
 
@@ -17,6 +18,12 @@ export default function QuickViewModal() {
   const handleAdd = () => {
     addToCart(product, quantity, selectedOption);
     setQuickViewProduct(null);
+  };
+
+  const handleBuyNow = () => {
+    addToCart(product, quantity, selectedOption);
+    setQuickViewProduct(null);
+    navigate('/checkout');
   };
 
   return (
@@ -163,13 +170,22 @@ export default function QuickViewModal() {
                 </button>
               </div>
 
-              <button
-                onClick={handleAdd}
-                className="flex-1 bg-accent text-on-tertiary h-12 rounded-full font-body text-sm font-semibold flex items-center justify-center gap-2 shadow-md hover:opacity-95 transition-opacity cursor-pointer"
-              >
-                <span className="material-symbols-outlined text-[18px]">shopping_bag</span>
-                <span>Add to Bag — ₹{itemPrice}</span>
-              </button>
+              <div className="flex-1 grid grid-cols-2 gap-2">
+                <button
+                  onClick={handleAdd}
+                  className="bg-surface-container border border-outline-variant/40 text-on-surface hover:bg-surface-container-high h-12 rounded-full font-body text-xs md:text-sm font-semibold flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
+                >
+                  <span className="material-symbols-outlined text-[16px]">shopping_bag</span>
+                  <span>Add to Bag</span>
+                </button>
+                <button
+                  onClick={handleBuyNow}
+                  className="bg-accent text-on-tertiary h-12 rounded-full font-body text-xs md:text-sm font-bold flex items-center justify-center gap-1.5 shadow-md hover:opacity-95 transition-opacity cursor-pointer"
+                >
+                  <span className="material-symbols-outlined text-[16px]">bolt</span>
+                  <span>Buy Now</span>
+                </button>
+              </div>
             </div>
 
             <Link

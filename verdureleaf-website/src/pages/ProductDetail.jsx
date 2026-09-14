@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { products, relatedProducts } from '../data/products';
 import { useCart } from '../context/CartContext';
 import FlavorProfileGauge from '../components/FlavorProfileGauge';
 
 export default function ProductDetail() {
   const { slug } = useParams();
+  const navigate = useNavigate();
   const product = products.find((p) => p.slug === slug) || products[3]; // default to broccoli
   const [selectedImage, setSelectedImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
@@ -27,6 +28,11 @@ export default function ProductDetail() {
 
   const handleAddToCart = () => {
     addToCart(product, quantity, selectedOption);
+  };
+
+  const handleBuyNow = () => {
+    addToCart(product, quantity, selectedOption);
+    navigate('/checkout');
   };
 
   return (
@@ -210,13 +216,22 @@ export default function ProductDetail() {
                 </div>
               </div>
 
-              <button
-                onClick={handleAddToCart}
-                className="w-full bg-accent text-on-tertiary h-14 rounded-full font-body text-base font-semibold flex items-center justify-center gap-2 shadow-[0_8px_24px_rgba(224,122,95,0.3)] hover:opacity-95 hover:scale-[1.01] transition-all cursor-pointer"
-              >
-                <span className="material-symbols-outlined text-[20px]">shopping_bag</span>
-                <span>Add to Bag — ₹{price * quantity}</span>
-              </button>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <button
+                  onClick={handleAddToCart}
+                  className="w-full bg-surface-container-high border border-outline-variant/40 text-on-surface hover:bg-surface-container h-14 rounded-full font-body text-sm md:text-base font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer"
+                >
+                  <span className="material-symbols-outlined text-[20px]">shopping_bag</span>
+                  <span>Add to Bag — ₹{price * quantity}</span>
+                </button>
+                <button
+                  onClick={handleBuyNow}
+                  className="w-full bg-accent text-on-tertiary h-14 rounded-full font-body text-sm md:text-base font-bold flex items-center justify-center gap-2 shadow-[0_8px_24px_rgba(224,122,95,0.3)] hover:opacity-95 hover:scale-[1.01] transition-all cursor-pointer"
+                >
+                  <span className="material-symbols-outlined text-[20px]">bolt</span>
+                  <span>Buy Now</span>
+                </button>
+              </div>
             </div>
 
             {/* Delivery Estimates */}
@@ -265,13 +280,22 @@ export default function ProductDetail() {
             <span className="text-xs font-bold text-primary">₹{price}</span>
           </div>
         </div>
-        <button
-          onClick={handleAddToCart}
-          className="bg-accent text-on-tertiary px-5 py-2.5 rounded-full font-body text-xs font-bold flex items-center gap-1.5 shadow-md active:scale-95 transition-transform flex-shrink-0 cursor-pointer"
-        >
-          <span className="material-symbols-outlined text-[18px]">shopping_bag</span>
-          <span>Add to Bag</span>
-        </button>
+        <div className="flex items-center gap-2 flex-shrink-0">
+          <button
+            onClick={handleAddToCart}
+            className="bg-surface-container border border-outline-variant/40 text-on-surface px-3 py-2 rounded-full font-body text-xs font-semibold flex items-center gap-1 cursor-pointer"
+          >
+            <span className="material-symbols-outlined text-[15px]">shopping_bag</span>
+            <span>Add</span>
+          </button>
+          <button
+            onClick={handleBuyNow}
+            className="bg-accent text-on-tertiary px-4 py-2 rounded-full font-body text-xs font-bold flex items-center gap-1 shadow-md active:scale-95 transition-transform cursor-pointer"
+          >
+            <span className="material-symbols-outlined text-[15px]">bolt</span>
+            <span>Buy Now</span>
+          </button>
+        </div>
       </div>
 
       {/* Related Products */}

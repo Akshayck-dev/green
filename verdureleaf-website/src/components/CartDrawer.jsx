@@ -1,5 +1,5 @@
 import { useCart } from '../context/CartContext';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const FREE_SHIPPING_THRESHOLD = 500;
 
@@ -12,8 +12,8 @@ export default function CartDrawer() {
     updateQuantity,
     subtotal,
     totalCartItems,
-    clearCart,
   } = useCart();
+  const navigate = useNavigate();
 
   if (!cartOpen) return null;
 
@@ -23,9 +23,8 @@ export default function CartDrawer() {
   const grandTotal = subtotal + shippingFee;
 
   const handleCheckout = () => {
-    alert('Thank you for choosing Caeris Greens! Order placement demo simulated.');
-    clearCart();
     setCartOpen(false);
+    navigate('/checkout');
   };
 
   return (
@@ -48,7 +47,7 @@ export default function CartDrawer() {
           </div>
           <button
             onClick={() => setCartOpen(false)}
-            className="w-8 h-8 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface transition-colors"
+            className="w-8 h-8 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface transition-colors cursor-pointer"
           >
             <span className="material-symbols-outlined text-[20px]">close</span>
           </button>
@@ -90,7 +89,7 @@ export default function CartDrawer() {
               </p>
               <button
                 onClick={() => setCartOpen(false)}
-                className="bg-primary text-on-primary px-6 py-3 rounded-full font-body text-sm font-semibold hover:bg-primary-container transition-colors shadow-md"
+                className="bg-primary text-on-primary px-6 py-3 rounded-full font-body text-sm font-semibold hover:bg-primary-container transition-colors shadow-md cursor-pointer"
               >
                 Browse Harvests
               </button>
@@ -116,7 +115,7 @@ export default function CartDrawer() {
                         </h4>
                         <button
                           onClick={() => removeFromCart(item.id, item.option)}
-                          className="text-on-surface-variant hover:text-error transition-colors p-1"
+                          className="text-on-surface-variant hover:text-error transition-colors p-1 cursor-pointer"
                         >
                           <span className="material-symbols-outlined text-[18px]">delete</span>
                         </button>
@@ -130,7 +129,7 @@ export default function CartDrawer() {
                       <div className="flex items-center bg-surface-container-low rounded-lg p-0.5 border border-outline-variant/20">
                         <button
                           onClick={() => updateQuantity(item.id, item.option, -1)}
-                          className="w-6 h-6 flex items-center justify-center rounded text-on-surface hover:bg-surface-container transition-colors font-bold text-xs"
+                          className="w-6 h-6 flex items-center justify-center rounded text-on-surface hover:bg-surface-container transition-colors font-bold text-xs cursor-pointer"
                         >
                           -
                         </button>
@@ -139,7 +138,7 @@ export default function CartDrawer() {
                         </span>
                         <button
                           onClick={() => updateQuantity(item.id, item.option, 1)}
-                          className="w-6 h-6 flex items-center justify-center rounded text-on-surface hover:bg-surface-container transition-colors font-bold text-xs"
+                          className="w-6 h-6 flex items-center justify-center rounded text-on-surface hover:bg-surface-container transition-colors font-bold text-xs cursor-pointer"
                         >
                           +
                         </button>
@@ -175,7 +174,7 @@ export default function CartDrawer() {
 
             <button
               onClick={handleCheckout}
-              className="w-full bg-accent text-on-tertiary h-13 rounded-full font-body text-base font-semibold hover:opacity-95 transition-opacity shadow-[0_8px_24px_rgba(224,122,95,0.3)] flex items-center justify-center gap-2 mt-2"
+              className="w-full bg-accent text-on-tertiary h-13 rounded-full font-body text-base font-semibold hover:opacity-95 transition-opacity shadow-[0_8px_24px_rgba(224,122,95,0.3)] flex items-center justify-center gap-2 mt-2 cursor-pointer"
             >
               <span>Proceed to Checkout</span>
               <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
