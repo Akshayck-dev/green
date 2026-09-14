@@ -275,11 +275,11 @@ export default function Navbar() {
               </Link>
 
               <a
-                href="tel:+918590349845"
+                href="tel:+918075931749"
                 className="py-2.5 px-4 rounded-full bg-secondary-container/30 text-primary text-xs font-semibold flex items-center justify-center gap-2 border border-secondary-container/50 hover:bg-secondary-container/60 transition-colors"
               >
                 <span className="material-symbols-outlined text-[16px] text-secondary">call</span>
-                <span>+91 859 034 9845</span>
+                <span>+91 8075931749</span>
               </a>
 
               {/* Social Icons Row */}

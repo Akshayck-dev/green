@@ -128,25 +128,34 @@ export default function Contact() {
                     <span className="material-symbols-outlined">apartment</span>
                   </div>
                 </div>
-                <div className="flex flex-col gap-2 text-sm text-on-surface-variant">
+                <div className="flex flex-col gap-2.5 text-sm text-on-surface-variant">
                   <div className="flex items-start gap-2">
                     <span className="material-symbols-outlined text-[18px] text-secondary mt-0.5">
                       location_on
                     </span>
                     <span>
-                      123 Green Valley, Farm Road, Bangalore, Karnataka 560001, India
+                      Neduvelil H, Mutholapuram P.O, Elanji, Ernakulam, Kerala, India
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="material-symbols-outlined text-[18px] text-secondary">
                       call
                     </span>
-                    <a
-                      className="hover:text-primary transition-colors"
-                      href="tel:+918590349845"
-                    >
-                      +91 859 034 9845
-                    </a>
+                    <div className="flex items-center gap-3">
+                      <a
+                        className="hover:text-primary transition-colors"
+                        href="tel:+918075931749"
+                      >
+                        +91 8075931749
+                      </a>
+                      <span>•</span>
+                      <a
+                        className="hover:text-primary transition-colors"
+                        href="tel:+919400759169"
+                      >
+                        +91 9400759169
+                      </a>
+                    </div>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="material-symbols-outlined text-[18px] text-secondary">
@@ -154,9 +163,9 @@ export default function Contact() {
                     </span>
                     <a
                       className="hover:text-primary transition-colors"
-                      href="mailto:india@caerisgreens.com"
+                      href="mailto:jismariajl@gmail.com"
                     >
-                      india@caerisgreens.com
+                      jismariajl@gmail.com
                     </a>
                   </div>
                 </div>

@@ -92,34 +92,42 @@ export default function Footer() {
             </h4>
 
             <p className="font-body text-xs md:text-sm text-gray-200 leading-relaxed font-medium">
-              A B H Business Center, H I M Building, Kappur, Near Koonamoochi Thrithala Circle, Palakkad District, Kerala, India
+              Neduvelil H, Mutholapuram P.O, Elanji, Ernakulam, Kerala, India
             </p>
 
             <div className="flex flex-col gap-2.5 pt-2 text-xs md:text-sm text-gray-300">
               <a
-                href="mailto:info@caerisgreens.com"
+                href="mailto:jismariajl@gmail.com"
                 className="flex items-center gap-2.5 hover:text-white transition-colors"
               >
                 <span className="material-symbols-outlined text-[18px]">mail</span>
-                <span>info@caerisgreens.com</span>
+                <span>jismariajl@gmail.com</span>
               </a>
 
               <a
-                href="tel:+918590349845"
+                href="tel:+918075931749"
                 className="flex items-center gap-2.5 hover:text-white transition-colors"
               >
                 <span className="material-symbols-outlined text-[18px]">call</span>
-                <span>+91 859 034 9845</span>
+                <span>+91 8075931749</span>
               </a>
 
               <a
-                href="https://wa.me/918590349845"
+                href="tel:+919400759169"
+                className="flex items-center gap-2.5 hover:text-white transition-colors"
+              >
+                <span className="material-symbols-outlined text-[18px]">call</span>
+                <span>+91 9400759169</span>
+              </a>
+
+              <a
+                href="https://wa.me/918075931749"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-2.5 hover:text-white transition-colors"
               >
                 <span className="material-symbols-outlined text-[18px]">chat</span>
-                <span>+91 859 034 9845</span>
+                <span>WhatsApp: +91 8075931749</span>
               </a>
             </div>
           </div>
@@ -136,11 +144,11 @@ export default function Footer() {
 
             <div className="flex flex-col gap-2.5 pt-2 text-xs md:text-sm text-gray-300">
               <a
-                href="mailto:info@caerisgreens.com"
+                href="mailto:jismariajl@gmail.com"
                 className="flex items-center gap-2.5 hover:text-white transition-colors"
               >
                 <span className="material-symbols-outlined text-[18px]">mail</span>
-                <span>info@caerisgreens.com</span>
+                <span>jismariajl@gmail.com</span>
               </a>
 
               <a
