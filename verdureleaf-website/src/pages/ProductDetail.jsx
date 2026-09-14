@@ -10,7 +10,7 @@ export default function ProductDetail() {
   const [selectedImage, setSelectedImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [selectedOption, setSelectedOption] = useState('50g Fresh Cut Punnet');
-  const { addToCart } = useCart();
+  const { addToCart, setQuickViewProduct } = useCart();
 
   useEffect(() => {
     setSelectedImage(0);
@@ -309,6 +309,18 @@ export default function ProductDetail() {
                   <div className="absolute top-3 right-3 bg-surface/90 backdrop-blur px-2.5 py-1 rounded-full text-xs font-bold text-primary shadow-sm">
                     ₹{item.price}
                   </div>
+                  {/* Quick View Button */}
+                  <button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setQuickViewProduct(item);
+                    }}
+                    className="absolute bottom-3 right-3 z-10 bg-surface/90 backdrop-blur-md text-primary text-xs font-bold px-3 py-1.5 rounded-full shadow-md flex items-center gap-1 hover:bg-primary hover:text-white transition-all duration-300 border border-primary/20 cursor-pointer"
+                    title="Quick View Product"
+                  >
+                    <span className="material-symbols-outlined text-[15px]">visibility</span>
+                    <span>Quick View</span>
+                  </button>
                 </div>
                 <div className="p-6 flex flex-col flex-grow justify-between gap-4">
                   <div>

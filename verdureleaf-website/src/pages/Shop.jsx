@@ -105,12 +105,16 @@ export default function Shop() {
                   </span>
                 </button>
 
-                {/* Quick View Hover Button */}
+                {/* Quick View Button */}
                 <button
-                  onClick={() => setQuickViewProduct(product)}
-                  className="absolute bottom-3 right-3 z-10 bg-primary text-on-primary text-xs font-semibold px-3 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-md flex items-center gap-1 hover:bg-primary-container"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setQuickViewProduct(product);
+                  }}
+                  className="absolute bottom-3 right-3 z-10 bg-surface/90 backdrop-blur-md text-primary text-xs font-bold px-3 py-1.5 rounded-full shadow-md flex items-center gap-1 hover:bg-primary hover:text-white transition-all duration-300 border border-primary/20 cursor-pointer"
+                  title="Quick View Product"
                 >
-                  <span className="material-symbols-outlined text-[14px]">visibility</span>
+                  <span className="material-symbols-outlined text-[15px]">visibility</span>
                   <span>Quick View</span>
                 </button>
               </div>
