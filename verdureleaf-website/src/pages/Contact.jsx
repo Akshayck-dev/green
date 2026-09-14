@@ -171,45 +171,6 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* UAE Office */}
-              <div className="bg-surface-container-lowest rounded-xl p-8 shadow-[0_8px_24px_rgba(27,67,50,0.06)] relative overflow-hidden group">
-                <div className="absolute top-0 right-0 w-2 h-full bg-accent" />
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <span className="font-body text-xs font-semibold uppercase tracking-widest text-accent block">
-                      Regional Hub
-                    </span>
-                    <h3 className="font-headline text-2xl font-semibold text-on-surface">
-                      UAE Office
-                    </h3>
-                  </div>
-                  <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent">
-                    <span className="material-symbols-outlined">location_city</span>
-                  </div>
-                </div>
-                <div className="flex flex-col gap-2.5 text-sm text-on-surface-variant">
-                  <div className="flex items-start gap-2">
-                    <span className="material-symbols-outlined text-[18px] text-accent mt-0.5">
-                      location_on
-                    </span>
-                    <span>
-                      Noora Ali Ahmad Abna Naseer Lootah Warehouses, Warehouse Number 25, Jebel Ali Industrial Area 2, Dubai, UAE
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="material-symbols-outlined text-[18px] text-accent">
-                      mail
-                    </span>
-                    <a
-                      className="hover:text-primary transition-colors"
-                      href="mailto:jismariajl@gmail.com"
-                    >
-                      jismariajl@gmail.com
-                    </a>
-                  </div>
-                </div>
-              </div>
-
               {/* Map Placeholder */}
               <div className="w-full h-64 rounded-xl overflow-hidden shadow-[0_8px_24px_rgba(27,67,50,0.06)] relative">
                 <div

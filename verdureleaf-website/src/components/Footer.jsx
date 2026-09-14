@@ -38,13 +38,13 @@ export default function Footer() {
           </Link>
         </div>
 
-        {/* Top 3-Column Grid with Vertical Dividers */}
+        {/* 2-Column Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-12 pb-16">
-          {/* Column 1: Brand Philosophy & Callback (Left ~ 5 Cols) */}
-          <div className="lg:col-span-5 lg:pr-10 lg:border-r border-white/15 flex flex-col justify-between">
+          {/* Column 1: Brand Philosophy & Callback (Left ~ 7 Cols) */}
+          <div className="lg:col-span-7 lg:pr-12 lg:border-r border-white/15 flex flex-col justify-between">
             <div>
               <h3 className="font-serif text-3xl md:text-[38px] font-medium text-white mb-3 tracking-wide leading-snug">
-                Freshness You Can Feel.|
+                Freshness You Can Feel.
               </h3>
               <p className="font-body text-xs md:text-sm text-gray-300 leading-relaxed mb-6 max-w-md">
                 Our microgreens are cultivated sustainably to nourish your body and support a greener tomorrow.
@@ -85,22 +85,25 @@ export default function Footer() {
             </Link>
           </div>
 
-          {/* Column 2: INDIA (Center ~ 3.5 Cols) */}
-          <div className="lg:col-span-3 lg:px-6 lg:border-r border-white/15 flex flex-col gap-4">
+          {/* Column 2: Farm Location & Contact Info (Right ~ 5 Cols) */}
+          <div className="lg:col-span-5 lg:pl-8 flex flex-col gap-4">
             <h4 className="font-headline font-bold text-xs uppercase tracking-[0.2em] text-emerald-400">
-              INDIA
+              FARM LOCATION & CONTACT
             </h4>
 
-            <p className="font-body text-xs md:text-sm text-gray-200 leading-relaxed font-medium">
-              Neduvelil H, Mutholapuram P.O, Elanji, Ernakulam, Kerala, India
+            <p className="font-body text-xs md:text-sm text-gray-200 leading-relaxed font-medium flex items-start gap-2">
+              <span className="material-symbols-outlined text-[18px] text-emerald-400 mt-0.5 flex-shrink-0">
+                location_on
+              </span>
+              <span>Neduvelil H, Mutholapuram P.O, Elanji, Ernakulam, Kerala, India</span>
             </p>
 
-            <div className="flex flex-col gap-2.5 pt-2 text-xs md:text-sm text-gray-300">
+            <div className="flex flex-col gap-3 pt-2 text-xs md:text-sm text-gray-300">
               <a
                 href="mailto:jismariajl@gmail.com"
                 className="flex items-center gap-2.5 hover:text-white transition-colors"
               >
-                <span className="material-symbols-outlined text-[18px]">mail</span>
+                <span className="material-symbols-outlined text-[18px] text-emerald-400">mail</span>
                 <span>jismariajl@gmail.com</span>
               </a>
 
@@ -108,7 +111,7 @@ export default function Footer() {
                 href="tel:+918075931749"
                 className="flex items-center gap-2.5 hover:text-white transition-colors"
               >
-                <span className="material-symbols-outlined text-[18px]">call</span>
+                <span className="material-symbols-outlined text-[18px] text-emerald-400">call</span>
                 <span>+91 8075931749</span>
               </a>
 
@@ -116,7 +119,7 @@ export default function Footer() {
                 href="tel:+919400759169"
                 className="flex items-center gap-2.5 hover:text-white transition-colors"
               >
-                <span className="material-symbols-outlined text-[18px]">call</span>
+                <span className="material-symbols-outlined text-[18px] text-emerald-400">call</span>
                 <span>+91 9400759169</span>
               </a>
 
@@ -126,29 +129,8 @@ export default function Footer() {
                 rel="noreferrer"
                 className="flex items-center gap-2.5 hover:text-white transition-colors"
               >
-                <span className="material-symbols-outlined text-[18px]">chat</span>
-                <span>WhatsApp: +91 8075931749</span>
-              </a>
-            </div>
-          </div>
-
-          {/* Column 3: UAE (Right ~ 3.5 Cols) */}
-          <div className="lg:col-span-4 lg:pl-6 flex flex-col gap-4">
-            <h4 className="font-headline font-bold text-xs uppercase tracking-[0.2em] text-emerald-400">
-              UAE
-            </h4>
-
-            <p className="font-body text-xs md:text-sm text-gray-200 leading-relaxed font-medium">
-              Noora Ali Ahmad Abna Naseer Lootah Warehouses, Warehouse Number 25, Jebel Ali Industrial Area 2, Dubai, UAE
-            </p>
-
-            <div className="flex flex-col gap-2.5 pt-2 text-xs md:text-sm text-gray-300">
-              <a
-                href="mailto:jismariajl@gmail.com"
-                className="flex items-center gap-2.5 hover:text-white transition-colors"
-              >
-                <span className="material-symbols-outlined text-[18px]">mail</span>
-                <span>jismariajl@gmail.com</span>
+                <span className="material-symbols-outlined text-[18px] text-emerald-400">chat</span>
+                <span>WhatsApp Order: +91 8075931749</span>
               </a>
             </div>
           </div>

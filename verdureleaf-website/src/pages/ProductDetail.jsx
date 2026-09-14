@@ -235,30 +235,20 @@ export default function ProductDetail() {
             </div>
 
             {/* Delivery Estimates */}
-            <div className="bg-surface-container-highest/50 p-4 rounded-xl flex flex-col gap-4 mt-2 border border-outline-variant/20">
+            <div className="bg-surface-container-highest/50 p-4 rounded-xl flex flex-col gap-3 mt-2 border border-outline-variant/20">
               <h4 className="font-headline text-sm font-semibold text-on-surface flex items-center gap-1.5">
                 <span className="material-symbols-outlined text-primary text-[18px]">
                   local_shipping
                 </span>
-                Estimated Harvest & Delivery
+                Estimated Harvest & Cold-Chain Delivery
               </h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-                <div className="bg-surface p-3 rounded-lg flex flex-col gap-1 border border-outline-variant/20">
-                  <span className="font-semibold text-primary flex items-center gap-1 text-xs">
-                    🇮🇳 India
-                  </span>
-                  <span className="text-on-surface-variant text-[11px] leading-relaxed">
-                    Delivered within 24-48 hours from harvest in Bangalore, Mumbai & Delhi NCR.
-                  </span>
-                </div>
-                <div className="bg-surface p-3 rounded-lg flex flex-col gap-1 border border-outline-variant/20">
-                  <span className="font-semibold text-primary flex items-center gap-1 text-xs">
-                    🇦🇪 UAE
-                  </span>
-                  <span className="text-on-surface-variant text-[11px] leading-relaxed">
-                    Fresh cold-chain air freight delivery across Dubai, Abu Dhabi & Sharjah in 48h.
-                  </span>
-                </div>
+              <div className="bg-surface p-3 rounded-lg flex flex-col gap-1 border border-outline-variant/20 text-sm">
+                <span className="font-semibold text-primary flex items-center gap-1 text-xs">
+                  🌱 Express Farm Delivery
+                </span>
+                <span className="text-on-surface-variant text-[11px] leading-relaxed">
+                  Harvested fresh on order day and delivered in temperature-controlled cold-chain packaging within 24-48 hours.
+                </span>
               </div>
             </div>
           </div>
