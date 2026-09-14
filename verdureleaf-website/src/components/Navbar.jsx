@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import SearchModal from './SearchModal';
 
 const navLinks = [
   { to: '/', label: 'Home', icon: 'home' },
@@ -15,6 +16,7 @@ const navLinks = [
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
   const { setCartOpen, totalCartItems, showToast } = useCart();
 
   useEffect(() => {
@@ -105,15 +107,15 @@ export default function Navbar() {
 
           {/* Right: Actions & Utils */}
           <div className="flex items-center gap-2 md:gap-3 flex-shrink-0">
-            {/* Search Icon */}
+            {/* Search Icon Button */}
             <button
-              onClick={() => showToast('Search catalog functionality ready', 'info')}
+              onClick={() => setSearchOpen(true)}
               className={`w-9 h-9 rounded-full flex items-center justify-center transition-colors cursor-pointer ${
                 scrolled
                   ? 'hover:bg-surface-container text-on-surface-variant hover:text-primary'
                   : 'hover:bg-white/10 text-white/90 hover:text-white'
               }`}
-              title="Search"
+              title="Search catalog"
             >
               <span className="material-symbols-outlined text-[20px]">search</span>
             </button>
@@ -173,6 +175,9 @@ export default function Navbar() {
         </div>
       </header>
 
+      {/* Instant Search Modal */}
+      <SearchModal isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
+
       {/* Modern Slide-Over Side Navigation Drawer */}
       {mobileOpen && (
         <div className="fixed inset-0 z-50 lg:hidden flex justify-end">
@@ -209,6 +214,18 @@ export default function Navbar() {
                   <span className="material-symbols-outlined text-[20px]">close</span>
                 </button>
               </div>
+
+              {/* Mobile Quick Search Bar Trigger */}
+              <button
+                onClick={() => {
+                  setMobileOpen(false);
+                  setSearchOpen(true);
+                }}
+                className="w-full bg-surface-container-low border border-outline-variant/30 text-on-surface-variant/80 px-4 py-2.5 rounded-xl text-xs font-semibold flex items-center gap-2.5 mb-4 hover:border-primary transition-all cursor-pointer"
+              >
+                <span className="material-symbols-outlined text-primary text-[18px]">search</span>
+                <span>Search microgreens, recipes...</span>
+              </button>
 
               {/* Navigation Items with Icons & Active Pills */}
               <nav className="flex flex-col gap-2">

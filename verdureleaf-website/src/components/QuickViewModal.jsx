@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useCart } from '../context/CartContext';
 import { Link } from 'react-router-dom';
+import FlavorProfileGauge from './FlavorProfileGauge';
 
 export default function QuickViewModal() {
   const { quickViewProduct, setQuickViewProduct, addToCart } = useCart();
@@ -27,7 +28,7 @@ export default function QuickViewModal() {
       />
 
       {/* Modal Card */}
-      <div className="relative bg-surface rounded-2xl max-w-3xl w-full p-6 md:p-8 z-10 shadow-2xl border border-surface-container-highest overflow-hidden animate-scale-up">
+      <div className="relative bg-surface rounded-2xl max-w-3xl w-full p-6 md:p-8 z-10 shadow-2xl border border-surface-container-highest overflow-hidden animate-scale-up max-h-[90vh] overflow-y-auto">
         <button
           onClick={() => setQuickViewProduct(null)}
           className="absolute top-4 right-4 w-9 h-9 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface transition-colors z-20"
@@ -35,19 +36,24 @@ export default function QuickViewModal() {
           <span className="material-symbols-outlined text-[20px]">close</span>
         </button>
 
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-          {/* Image */}
-          <div className="md:col-span-5 relative rounded-xl overflow-hidden aspect-square bg-surface-container">
-            {product.onSale && (
-              <span className="absolute top-3 left-3 z-10 bg-sale text-on-error font-body text-[10px] font-semibold px-2.5 py-1 rounded-full uppercase tracking-wider">
-                Sale
-              </span>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+          {/* Image & Gauges */}
+          <div className="md:col-span-5 flex flex-col gap-4">
+            <div className="relative rounded-2xl overflow-hidden aspect-square bg-surface-container border border-outline-variant/20">
+              {product.onSale && (
+                <span className="absolute top-3 left-3 z-10 bg-sale text-on-error font-body text-[10px] font-semibold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                  Sale
+                </span>
+              )}
+              <img
+                src={product.image}
+                alt={product.name}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            {product.flavorProfile && (
+              <FlavorProfileGauge profile={product.flavorProfile} />
             )}
-            <img
-              src={product.image}
-              alt={product.name}
-              className="w-full h-full object-cover"
-            />
           </div>
 
           {/* Details */}
@@ -57,7 +63,7 @@ export default function QuickViewModal() {
                 <span className="font-body text-xs font-semibold text-secondary uppercase tracking-widest">
                   {product.categoryLabel || 'Microgreens'}
                 </span>
-                <span className="text-xs font-semibold text-secondary bg-secondary-fixed/30 px-2 py-0.5 rounded-full">
+                <span className="text-[11px] font-semibold text-secondary bg-secondary-fixed/30 px-2 py-0.5 rounded-full">
                   {product.stockStatus || 'In Stock'}
                 </span>
               </div>
@@ -87,13 +93,13 @@ export default function QuickViewModal() {
                 ₹{product.price + extraPrice}
               </span>
               {product.originalPrice && (
-                <span className="text-sm text-text-secondary line-through">
+                <span className="text-sm text-on-surface-variant line-through">
                   ₹{product.originalPrice}
                 </span>
               )}
             </div>
 
-            <p className="font-body text-sm text-on-surface-variant leading-relaxed">
+            <p className="font-body text-xs md:text-sm text-on-surface-variant leading-relaxed">
               {product.description}
             </p>
 
@@ -159,23 +165,20 @@ export default function QuickViewModal() {
 
               <button
                 onClick={handleAdd}
-                className="flex-1 bg-accent text-on-tertiary h-12 rounded-full font-body text-sm font-semibold hover:opacity-95 transition-opacity shadow-[0_4px_16px_rgba(224,122,95,0.3)] flex items-center justify-center gap-2"
+                className="flex-1 bg-accent text-on-tertiary h-12 rounded-full font-body text-sm font-semibold flex items-center justify-center gap-2 shadow-md hover:opacity-95 transition-opacity cursor-pointer"
               >
                 <span className="material-symbols-outlined text-[18px]">shopping_bag</span>
-                Add to Bag — ₹{itemPrice}
+                <span>Add to Bag — ₹{itemPrice}</span>
               </button>
             </div>
 
-            <div className="text-center pt-1">
-              <Link
-                to={`/product/${product.slug}`}
-                onClick={() => setQuickViewProduct(null)}
-                className="text-xs text-primary font-semibold hover:underline inline-flex items-center gap-1"
-              >
-                <span>View Full Harvest & Nutritional Specs</span>
-                <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
-              </Link>
-            </div>
+            <Link
+              to={`/product/${product.slug}`}
+              onClick={() => setQuickViewProduct(null)}
+              className="text-center text-xs font-semibold text-primary hover:underline pt-2 block"
+            >
+              View Full Product Page Details &rarr;
+            </Link>
           </div>
         </div>
       </div>
