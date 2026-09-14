@@ -136,31 +136,12 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Section: Divider Line + Copyright + Social Media + Scroll to Top */}
+        {/* Bottom Section: Divider Line + Copyright + Scroll to Top */}
         <div className="pt-8 border-t border-white/15 flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Copyright */}
-          <span className="font-body text-xs text-gray-400 font-medium order-2 md:order-1">
+          <span className="font-body text-xs text-gray-400 font-medium">
             © 2026 Caeris Greens. All rights reserved.
           </span>
-
-          {/* Social Icons */}
-          <div className="flex items-center gap-3 order-1 md:order-2">
-            {[
-              { icon: 'camera_alt', title: 'Instagram' },
-              { icon: 'share', title: 'Facebook' },
-              { icon: 'chat', title: 'WhatsApp' },
-              { icon: 'movie', title: 'YouTube' },
-              { icon: 'work', title: 'LinkedIn' },
-            ].map((soc) => (
-              <span
-                key={soc.title}
-                title={soc.title}
-                className="w-9 h-9 rounded-full bg-[#163829] border border-white/15 flex items-center justify-center text-gray-200 hover:bg-secondary hover:text-on-secondary hover:border-secondary transition-all cursor-pointer shadow-sm"
-              >
-                <span className="material-symbols-outlined text-[16px]">{soc.icon}</span>
-              </span>
-            ))}
-          </div>
 
           {/* Scroll to Top Button */}
           <button

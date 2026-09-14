@@ -281,24 +281,6 @@ export default function Navbar() {
                 <span className="material-symbols-outlined text-[16px] text-secondary">call</span>
                 <span>+91 8075931749</span>
               </a>
-
-              {/* Social Icons Row */}
-              <div className="flex items-center justify-center gap-3 pt-2">
-                {[
-                  { icon: 'camera_alt', title: 'Instagram' },
-                  { icon: 'share', title: 'Facebook' },
-                  { icon: 'chat', title: 'WhatsApp' },
-                  { icon: 'work', title: 'LinkedIn' },
-                ].map((soc) => (
-                  <span
-                    key={soc.title}
-                    title={soc.title}
-                    className="w-8.5 h-8.5 rounded-full bg-surface-container border border-outline-variant/30 flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-on-primary transition-all cursor-pointer text-xs"
-                  >
-                    <span className="material-symbols-outlined text-[15px]">{soc.icon}</span>
-                  </span>
-                ))}
-              </div>
             </div>
           </div>
         </div>
