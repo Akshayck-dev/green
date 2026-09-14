@@ -6,6 +6,7 @@ import { CartProvider } from '../context/CartContext';
 import CartDrawer from './CartDrawer';
 import QuickViewModal from './QuickViewModal';
 import Toast from './Toast';
+import FloatingWhatsApp from './FloatingWhatsApp';
 
 export default function Layout() {
   const { pathname } = useLocation();
@@ -24,7 +25,7 @@ export default function Layout() {
       <CartDrawer />
       <QuickViewModal />
       <Toast />
+      <FloatingWhatsApp />
     </CartProvider>
   );
 }
-
