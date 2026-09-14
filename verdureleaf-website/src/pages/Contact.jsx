@@ -187,23 +187,14 @@ export default function Contact() {
                     <span className="material-symbols-outlined">location_city</span>
                   </div>
                 </div>
-                <div className="flex flex-col gap-2 text-sm text-on-surface-variant">
+                <div className="flex flex-col gap-2.5 text-sm text-on-surface-variant">
                   <div className="flex items-start gap-2">
                     <span className="material-symbols-outlined text-[18px] text-accent mt-0.5">
                       location_on
                     </span>
-                    <span>Suite 404, Oasis Tower, Sheikh Zayed Road, Dubai, UAE</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="material-symbols-outlined text-[18px] text-accent">
-                      call
+                    <span>
+                      Noora Ali Ahmad Abna Naseer Lootah Warehouses, Warehouse Number 25, Jebel Ali Industrial Area 2, Dubai, UAE
                     </span>
-                    <a
-                      className="hover:text-primary transition-colors"
-                      href="tel:+97141234567"
-                    >
-                      +971 4 123 4567
-                    </a>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="material-symbols-outlined text-[18px] text-accent">
@@ -211,9 +202,9 @@ export default function Contact() {
                     </span>
                     <a
                       className="hover:text-primary transition-colors"
-                      href="mailto:uae@caerisgreens.com"
+                      href="mailto:jismariajl@gmail.com"
                     >
-                      uae@caerisgreens.com
+                      jismariajl@gmail.com
                     </a>
                   </div>
                 </div>

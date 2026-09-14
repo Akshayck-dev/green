@@ -150,16 +150,6 @@ export default function Footer() {
                 <span className="material-symbols-outlined text-[18px]">mail</span>
                 <span>jismariajl@gmail.com</span>
               </a>
-
-              <a
-                href="https://wa.me/971509760331"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-2.5 hover:text-white transition-colors"
-              >
-                <span className="material-symbols-outlined text-[18px]">chat</span>
-                <span>+971 509 760 331</span>
-              </a>
             </div>
           </div>
         </div>
