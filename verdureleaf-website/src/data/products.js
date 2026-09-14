@@ -13,7 +13,7 @@ export const products = [
     stockStatus: 'Harvesting Today',
     weight: '50g punnet',
     description: 'Bold, peppery kick packed with Vitamin C and robust enzymes.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAmZM-azbZj2s3lVfJFe4sbBKgfEBgjyFA7_c_HdgTPeH-gP4q4kcC0ei8nrESBuwn05M12NaJo8b1JtnMZygbnYcHzNjj7n2pv0-vYgYreFhzfFgeDjbxq5Ctv-IEdNuqvwYPoU73nGeO8EAa5kbmCzYwrQuXic36ByZzURxiHheXJDljkP-S8QmiTZ-aEpt8CwoXGN45ulIxudh6N8HJ2GbDP5FBl58kUDsrIXU3bzNlxPLf2Xh4Nvg',
+    image: '/images/products/mustard_microgreens.png',
     features: ['High Vitamin C', 'Organic Hydroponic', 'Bold Peppery Taste'],
     flavorProfile: {
       intensity: 5,
@@ -35,7 +35,7 @@ export const products = [
     stockStatus: 'In Stock',
     weight: '50g punnet',
     description: 'High concentration of sulforaphane with a crisp, mild cabbage flavor.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC7P0b915Uj7yIH3xWAUOiTMedFRAp1qceCMUZpL-6o2Qubrbg6lxcjceETKYytNAl1du5GSeTRgpoaYuXnBUwuPoBcDH4n1U7PfASnm4FssQ8i2NvUm1TvLOzzdpkiQwRextiTpWYhR4Z7vBADdEV5uuNcjmK9lwXsfTZMmexva0WBISqWO0ZYo-2P3b-YOAQtr_aJf6cwPa0oF_3hB_yaYiQGhTchFESF3QovaQTDpjsqTBQNinKVyA',
+    image: '/images/products/bok_choy_microgreens.png',
     features: ['Rich in Sulforaphane', 'Crisp Texture', 'Kid Friendly'],
     flavorProfile: {
       intensity: 2,
@@ -57,7 +57,7 @@ export const products = [
     stockStatus: 'Limited Trays',
     weight: '50g punnet',
     description: 'Earthy profile with gorgeous ruby stems to elevate any culinary plating.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDbsO9PmP4uea4VPVRfaWrU6BJeT6nmOqONBKHEkbGY22UhCWYRUdOGm0Wpl4xjxdEgfIULbXuYiUw4mBGxOPjmnSlWbo7xtDyXZiG0hZsERkGPC-qwkU4mcojfKBpnPDTsMj8fI1jpbRNtIA54NUOFORnf8bwRQQTgvTvYPb78BFonsizpkd7ktNhJ2-i4-Q1RlnDPCM8VbQqGZiWQRZrm_iXl7lZwTTkMyt1qzia8cS_F8BN9BWQO_A',
+    image: '/images/products/beetroot_microgreens.png',
     features: ['Vibrant Ruby Stems', 'Rich Betalains', 'Chef Favorite'],
     flavorProfile: {
       intensity: 3,
@@ -79,13 +79,13 @@ export const products = [
     stockStatus: 'Harvesting Today',
     weight: '50g punnet',
     description: 'Packed with up to 40x the vital phytonutrients of mature broccoli. Crisp texture and mild, peppery flavor.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCQ7OI3oHZZbYOIIMn6hOiSX5ngFZiaF2xFRYGl6pDe2hOgoLXyMlppuDWHQ1vdqMwG2KMuQ7xTBnt3eIF-T7pdCazvuYpJ4MTq2j8E2c_RXixF8we0HE6r3E9RuCDtFAVzkaUD1gcSSdKR0Lhg35VLd_tKK0WNBeKZKHnbInyi4_qKyDhNNJGxVB0jC-iEinzsf0d1lyzLVplnL32P7lXohQLzJVReDnhro5SEAwl_UUt3-MqQQHxb6Q',
+    image: '/images/products/broccoli_microgreens.png',
     detailImages: [
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDqVdy5cxBswO-9s5CH_Aa1zNaZnmQxXLHYYhXBDD6XDgj1R2ZQI4ETMsgmT2nTRJ8RWNukExKVIKu1383cUWckmbpKDeFLE8oyPbucNdmdH3U1_1787jcKs4Q1vJmqwx9XzbgrvLN24krVMSDLr4f2nOfPmUnGbRLZ3CBTIx0uo--H6EFyp3PdxJIsWKKVFUteFTFIPW5AQbSDXwlIg8QXGeNWUBBQ9oCo66Cj4WF4uCIQzEIZ85lsqw',
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAdsVC_DLjzNXQjWi_YZOKDJGf3PgstAW5QnfjeaP3gAaVyYJ-mfDCzPOq2P7p6KuzIBhVwWCZi9RYRcNsnZ6Pxa9uIqvU5459u8gGJZkN0_hbLBIGt7L0lcFgaVChCLrv0df_sw7zv0pQxQzYfb0FfylPeFenniSazJi9FkleKuYLkkP33pulEzY0tm5XNGpyD2TG4ehNJSXtSpkCFt8YzhqLQXGQgNs2qXK3IoCGbDy6LnXvjiTlw5A',
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuCheNByrHbECAm3NIIGeiFBoHdmixcktwwCKG01WAsBG7o0zpyb4GfNA50f9KWeWsiH0x8MtE0vRTFEL4DnOHmSvv6R1sIrUi-CbGO5QwKzq7zDX7kvm2NvgawuPTPUGLNbPGRRRec5CwafSRrylKqs3tU4hBfe3LDwMb-jvc7EKXD4ebMRx2qlveXcCiD_HQKmoCUb2PIgaJD5DByECJBKfT8q086TOELTYvC9nViuv0HeTeVbwnbMpg',
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAee7_oH9k9uJOZyWssflNEXP0n6_MZWaldUMV3LI_CtpphgJcuRTi6GihtIysBdmI55YeLh94RJdbJ5g_0eXkfiORBOTK3qTWJM73p9nxvHb0nSCMGxaPqes4AYfmsyxoMbnpInNrOnap0TxbKzx0mhyX8lFN9IA50zKl02WZIbyeLVZ2dOKTGg8FL53m2JnYhVo613C41rdrkmn7jfwvF1ZrxfyFCAgTxUZZGvM5K5WkRIWQ2pECiOQ',
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuCrUuPFekBcEHETA0eLMrFskjZNF7TFUjLCKjWRz7PG_vN8YUNlCQrWRJ-6YRTC9elh6eeZ7Te-kMyePaSskLAxWgtJ8sC386ca2hWx8hZU1WK4s5rQ2Ku5qdbeNz-0cMTvKY34htTno3Wir2J7pT8GNN0hDgQJG3TRWM4UnctQ3ykIUrN98sDmQacVRM79c6mVrE0DKG_ykPhkqD-OVNVNJsh6m3zXFveUPbOLQ4RBpftAR_9DHgM1_w',
+      '/images/products/broccoli_microgreens.png',
+      '/images/products/chefs_immunity_blend.png',
+      '/images/products/bok_choy_microgreens.png',
+      '/images/products/mustard_microgreens.png',
+      '/images/products/wheatgrass.png',
     ],
     sku: 'VL-BR-042',
     features: ['High Sulforaphane', '100% Organic Soil'],
@@ -109,7 +109,7 @@ export const products = [
     stockStatus: 'In Stock',
     weight: '50g punnet',
     description: 'Bold, peppery kick packed with Vitamin C and robust enzymes.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCBjkcnLtkZn7e3bX0XjwBKTVQ3p22B4kkdRqSwxZl-tVTOe4pThYYBAauirc2TWeePvvn60YT61DQXzFa-4Dkx8oQMxoxD0ZkRcegYfzEG37dUBvlKmZAshkBKfU65Z1YAhPSBUZxWfuELXT9cDhisTkYRDDkyjmb5zZFeyA4723_-uykdgoSppVSQm_U7Gz-bLOec0_3mG1Yky7w96ULuphnkxzk5zl67zORxEaYK751_9lT615Ql3w',
+    image: '/images/products/radish_microgreens.png',
     features: ['Spicy & Crisp', 'High Enzymes', 'Digestion Support'],
     flavorProfile: {
       intensity: 5,
@@ -131,7 +131,7 @@ export const products = [
     stockStatus: 'Harvesting Today',
     weight: '50g punnet',
     description: 'High concentration of sulforaphane with a crisp, mild cabbage flavor.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD6KyPhssGGIV46BUsI_g0u9ro42mWwaCiDgdLuGGRpy87uZN6lqfYikEp1ncxZHuXwoMzHDL6DubiWRIGK7Dl0urjDvhK7ODYfwuiF-78a3N3zibC2B16oc2BJItN8TqPjqVFW8co26sWXwN8MKsHGuwqQU2-eFUdRfZ8IXQ0-7wYISkFtgwjl9ocCTnoX-_DjhMcFk5NjQcZyAXMr7tQhmETUP4ZFtz8sYZU99-kzqV-kT6PhDcwC0A',
+    image: '/images/products/broccoli_microgreens.png',
     features: ['Sulforaphane Rich', 'Pesticide Free', 'Daily Superfood'],
     flavorProfile: {
       intensity: 2,
@@ -153,7 +153,7 @@ export const products = [
     stockStatus: 'In Stock',
     weight: '50g punnet',
     description: 'Earthy profile with gorgeous ruby stems to elevate any culinary plating.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDPRpKuh3opoyb_UJTZwg34yOtQ0ztDEg8nS-sVJ08kM5h611Lj-WbTQXVjuW-sWJKwh4Ng2yHSVlfRmSF6R35fGVr8yyAaLUZGcbGC59XfqmqXW15ey2p85m1XetMqegKDm2cjUmAtq7MNaXSMsziYtB8tMMEidDN6P3rKMuvFg7AdSOgU-Q5WcDYp5YDc3YvFsKL0wA7aJmcRJ10HL-NVjtFJUpbqru_-bO9RFfvWhjH0WIyyQjfNoQ',
+    image: '/images/products/beetroot_microgreens.png',
     features: ['Earthy Flavor', 'Iron & Vitamin K', 'Garnish Special'],
     flavorProfile: {
       intensity: 3,
@@ -175,7 +175,7 @@ export const products = [
     stockStatus: 'Live Tray Only',
     weight: '100g tray',
     description: 'The ultimate chlorophyll powerhouse for morning elixirs and vitality shots.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAUJGnzF-iDoecx71tDlOm96y0ldgYq4iwmX-q4gzKMp74BBvM2tc8NsNW8_-jPY545Uqg944m2hnX4EtSvuBU3PCgkSa_GFhD_n1BZ-2Ts-zs_p5u9MvPfZ8uKwCyf4hHKSiu4pBH51YVMI5jKDLkE5gJrOAyHuxw0dDPMChg0jgw8bO44Xjhg6LXeIbRJfKO3DMvUkj23oxZbwY3-Zukn8J8MLjZRMeCIURrSsttMyf0O1betVJ_CjA',
+    image: '/images/products/wheatgrass.png',
     features: ['100% Chlorophyll', 'Detox Elixir', 'Fresh Live Roots'],
     flavorProfile: {
       intensity: 4,
@@ -197,7 +197,7 @@ export const products = [
     stockStatus: 'Harvesting Today',
     weight: '50g punnet',
     description: 'Delightfully crunchy with a sweet fresh-picked garden pea flavor.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCblHt0ioE1mhG6J3Rp1gdIlmRc-SmmummIgJpuiOCXS3CMjjC0flkC9zYzC0KPyr4e4_lszVwipaGL8cpMtxVQaIFBFnXWzWK2OBKQjYvx_h6s8wMe2XDkPQvCKx3SAgo3E6rQi2SbRc1QbdTQqA40iU_G9e31C8ivLAmM6a5Ml6yWKQNepZXRHKWaZnYZWFTnaDGt2flPDbEi2efM0ELPag2kFYLEzjKWBee5OHweHcd06GJ575I35w',
+    image: '/images/products/snow_pea_shoots.png',
     features: ['Sweet Pea Taste', 'High Protein', 'Crisp Tendrils'],
     flavorProfile: {
       intensity: 1,
@@ -219,7 +219,7 @@ export const products = [
     stockStatus: 'In Stock',
     weight: '50g punnet',
     description: 'Brings authentic Dijon-like pungency and wonderful warmth to sandwiches.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCaT1TmlQ1lpfbUL644T84h9u9R6-q0kOXASvLaKFT6OFn9-qsziUV5R3ctRNc_cstvrRPWeuM9zv14cbFhL3wdqYpsWsCJr_7CFD8BMgW19lvSg92q0r2diFwFWI84_aZiaaASkHrXNTDusFhSmqPDh6-c2Gvq4AtRCq2EbYlXeXT6ryc_tamzebT1EN6ovzeUimEjjWK7hujlPCBp-3KSCXGp34bDMPm0UJDVPv-VgF1y22iZueivaQ',
+    image: '/images/products/mustard_microgreens.png',
     features: ['Wasabi-like Kick', 'Antioxidant Dense', 'Sandwich Topper'],
     flavorProfile: {
       intensity: 5,
@@ -241,7 +241,7 @@ export const products = [
     stockStatus: 'Limited Trays',
     weight: '50g punnet',
     description: 'Deep burgundy leaves with a mild, sweet beet flavor profile.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD4ix14rNGc-9bi85m0DuvtdAd-gTpRhvnteHYJCP2sUghfs6s3wwpoO-Lp9sSfE_f2H8MsZ-h4RFKM8km_MD27eRxCl_mtnM0I7_3az5OGMpiSYl4MBPO6-OaReeMOxw9fzrzIIM8kxPzo0VKDEbrAUTP4964V9HPdT6vHa8bEBYs8djndgk_nQrIMFQeCCV72fIzH3k0C4VegR9glgo-L0PwS9Y-3op2sTGZ1fz1oHWTb7hXdFsjAqQ',
+    image: '/images/products/beetroot_microgreens.png',
     features: ['Rich Deep Purple', 'Betalain Boost', 'Gourmet Choice'],
     flavorProfile: {
       intensity: 3,
@@ -263,7 +263,7 @@ export const products = [
     stockStatus: 'Harvesting Today',
     weight: '75g mix',
     description: 'A master antioxidant combination of brassicas, amaranth, and red cabbage.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCyzni2ejbrIYJAkKxsOqhS51rEc0rwQ0aunpF0UhhqTzd_bz2apxb5rldjhCJvGvKg9FM9zFgOIOvGVursNA6Lvh0x6eazVCAap8eczAZsR-T20o3wzPTYiuowqjswMQrxZZLYzzz65k27M0BYYMxGUgm1cuOyQHTp7ne3D_e9ZfHy9cXY5bhjeM-NOlXmSklSgEArY7mG9RhCV2sw3Wj5RjrpSv8KFPj14DBnW2NYkBOnPp9HJQrnBA',
+    image: '/images/products/chefs_immunity_blend.png',
     features: ['4-in-1 Super Mix', 'Maximum Antioxidants', 'Chef Crafted'],
     flavorProfile: {
       intensity: 4,
@@ -285,7 +285,7 @@ export const products = [
     stockStatus: 'In Stock',
     weight: '50g punnet',
     description: 'Delivers a bold, spicy kick resembling mature radishes, packed with Vitamin C and antioxidants.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB3kRps7SidhBCKVBjCRqeqmIZpy_-MLSi4p6tngdl8TN1vRk50c6Ia8JUXOdiRHdGKUoO2QhlTexhYHchRvam8uby__sOQsMWqSDQrChyqJZf0y_y3Q44x1Kb6HFOpDJLNDCeZv6hGDXJYVm_oxu_tKes4VzQs6cmMqPqt-xKfC1Gaz_X5ALYrzv4fBMdLUDlVVchb1aUU8ZDedkxTBDu_-MRzIKWMnf8MFX9XD-tKAXj9elwCFtbcuw',
+    image: '/images/products/radish_microgreens.png',
     features: ['Spicy Kick', 'High Anthocyanins', 'Live Root Tray'],
     flavorProfile: {
       intensity: 5,
@@ -307,7 +307,7 @@ export const products = [
     stockStatus: 'Harvesting Today',
     weight: '75g punnet',
     description: 'Thick, crunchy stems with a delightful nutty flavor. Exceptional source of plant protein and healthy fats.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAk1xEqha5iQGS27i0TLS7jOVZMW9zNcIeRtrndO1J55G7VrS4hMxYI8VrvZDeOUSLctcNQOVTgjC_oSEFW4Yh3hEcIhpeEJ0GL9mhxhUlRpdMneKESP3VwTOAEI2wKaRIcGaEDtQdGt7uy-Fs_qjxf8_awegT7WUcitC8V1IGM-k-AkugdiajgLgfFFc7nrgXJ3kVL8DKgXevXHXy2atHyWH7ydueO7n7X6LQjx4e4EJOjsAqk-yTQQQ',
+    image: '/images/products/sunflower_microgreens.png',
     features: ['Plant Protein', 'Nutty Flavor', 'Thick Juicy Stems'],
     flavorProfile: {
       intensity: 2,
