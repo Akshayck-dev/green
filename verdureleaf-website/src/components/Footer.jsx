@@ -11,7 +11,7 @@ export default function Footer() {
       <div
         className="absolute inset-0 bg-cover bg-center z-0 scale-105 opacity-100"
         style={{
-          backgroundImage: `url('/images/footer_farm_bg.png')`,
+          backgroundImage: `url('/images/footer_farm_bg.webp')`,
         }}
       />
       {/* Subtle Scrim for High Text Contrast */}
@@ -58,7 +58,7 @@ export default function Footer() {
             {/* Brand Logo */}
             <Link to="/" className="font-headline text-2xl font-bold text-white flex items-center gap-3 mt-4 group">
               <img
-                src="/images/logo.png"
+                src="/images/logo.webp"
                 alt="Caeris Greens Logo"
                 className="w-11 h-11 object-contain shadow-md group-hover:scale-105 transition-transform"
               />

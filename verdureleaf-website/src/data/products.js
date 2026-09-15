@@ -13,7 +13,7 @@ export const products = [
     stockStatus: 'Harvesting Today',
     weight: '50g punnet',
     description: 'Bold, peppery kick packed with Vitamin C and robust enzymes.',
-    image: '/images/products/mustard_microgreens.png',
+    image: '/images/products/mustard_microgreens.webp',
     features: ['High Vitamin C', 'Organic Hydroponic', 'Bold Peppery Taste'],
     flavorProfile: {
       intensity: 5,
@@ -35,7 +35,7 @@ export const products = [
     stockStatus: 'In Stock',
     weight: '50g punnet',
     description: 'High concentration of sulforaphane with a crisp, mild cabbage flavor.',
-    image: '/images/products/bok_choy_microgreens.png',
+    image: '/images/products/bok_choy_microgreens.webp',
     features: ['Rich in Sulforaphane', 'Crisp Texture', 'Kid Friendly'],
     flavorProfile: {
       intensity: 2,
@@ -57,7 +57,7 @@ export const products = [
     stockStatus: 'Limited Trays',
     weight: '50g punnet',
     description: 'Earthy profile with gorgeous ruby stems to elevate any culinary plating.',
-    image: '/images/products/beetroot_microgreens.png',
+    image: '/images/products/beetroot_microgreens.webp',
     features: ['Vibrant Ruby Stems', 'Rich Betalains', 'Chef Favorite'],
     flavorProfile: {
       intensity: 3,
@@ -79,13 +79,13 @@ export const products = [
     stockStatus: 'Harvesting Today',
     weight: '50g punnet',
     description: 'Packed with up to 40x the vital phytonutrients of mature broccoli. Crisp texture and mild, peppery flavor.',
-    image: '/images/products/broccoli_microgreens.png',
+    image: '/images/products/broccoli_microgreens.webp',
     detailImages: [
-      '/images/products/broccoli_microgreens.png',
-      '/images/products/chefs_immunity_blend.png',
-      '/images/products/bok_choy_microgreens.png',
-      '/images/products/mustard_microgreens.png',
-      '/images/products/wheatgrass.png',
+      '/images/products/broccoli_microgreens.webp',
+      '/images/products/chefs_immunity_blend.webp',
+      '/images/products/bok_choy_microgreens.webp',
+      '/images/products/mustard_microgreens.webp',
+      '/images/products/wheatgrass.webp',
     ],
     sku: 'VL-BR-042',
     features: ['High Sulforaphane', '100% Organic Soil'],
@@ -109,7 +109,7 @@ export const products = [
     stockStatus: 'In Stock',
     weight: '50g punnet',
     description: 'Bold, peppery kick packed with Vitamin C and robust enzymes.',
-    image: '/images/products/radish_microgreens.png',
+    image: '/images/products/radish_microgreens.webp',
     features: ['Spicy & Crisp', 'High Enzymes', 'Digestion Support'],
     flavorProfile: {
       intensity: 5,
@@ -131,7 +131,7 @@ export const products = [
     stockStatus: 'Harvesting Today',
     weight: '50g punnet',
     description: 'High concentration of sulforaphane with a crisp, mild cabbage flavor.',
-    image: '/images/products/broccoli_microgreens.png',
+    image: '/images/products/broccoli_microgreens.webp',
     features: ['Sulforaphane Rich', 'Pesticide Free', 'Daily Superfood'],
     flavorProfile: {
       intensity: 2,
@@ -153,7 +153,7 @@ export const products = [
     stockStatus: 'In Stock',
     weight: '50g punnet',
     description: 'Earthy profile with gorgeous ruby stems to elevate any culinary plating.',
-    image: '/images/products/beetroot_microgreens.png',
+    image: '/images/products/beetroot_microgreens.webp',
     features: ['Earthy Flavor', 'Iron & Vitamin K', 'Garnish Special'],
     flavorProfile: {
       intensity: 3,
@@ -175,7 +175,7 @@ export const products = [
     stockStatus: 'Live Tray Only',
     weight: '100g tray',
     description: 'The ultimate chlorophyll powerhouse for morning elixirs and vitality shots.',
-    image: '/images/products/wheatgrass.png',
+    image: '/images/products/wheatgrass.webp',
     features: ['100% Chlorophyll', 'Detox Elixir', 'Fresh Live Roots'],
     flavorProfile: {
       intensity: 4,
@@ -197,7 +197,7 @@ export const products = [
     stockStatus: 'Harvesting Today',
     weight: '50g punnet',
     description: 'Delightfully crunchy with a sweet fresh-picked garden pea flavor.',
-    image: '/images/products/snow_pea_shoots.png',
+    image: '/images/products/snow_pea_shoots.webp',
     features: ['Sweet Pea Taste', 'High Protein', 'Crisp Tendrils'],
     flavorProfile: {
       intensity: 1,
@@ -219,7 +219,7 @@ export const products = [
     stockStatus: 'In Stock',
     weight: '50g punnet',
     description: 'Brings authentic Dijon-like pungency and wonderful warmth to sandwiches.',
-    image: '/images/products/mustard_microgreens.png',
+    image: '/images/products/mustard_microgreens.webp',
     features: ['Wasabi-like Kick', 'Antioxidant Dense', 'Sandwich Topper'],
     flavorProfile: {
       intensity: 5,
@@ -241,7 +241,7 @@ export const products = [
     stockStatus: 'Limited Trays',
     weight: '50g punnet',
     description: 'Deep burgundy leaves with a mild, sweet beet flavor profile.',
-    image: '/images/products/beetroot_microgreens.png',
+    image: '/images/products/beetroot_microgreens.webp',
     features: ['Rich Deep Purple', 'Betalain Boost', 'Gourmet Choice'],
     flavorProfile: {
       intensity: 3,
@@ -263,7 +263,7 @@ export const products = [
     stockStatus: 'Harvesting Today',
     weight: '75g mix',
     description: 'A master antioxidant combination of brassicas, amaranth, and red cabbage.',
-    image: '/images/products/chefs_immunity_blend.png',
+    image: '/images/products/chefs_immunity_blend.webp',
     features: ['4-in-1 Super Mix', 'Maximum Antioxidants', 'Chef Crafted'],
     flavorProfile: {
       intensity: 4,
@@ -285,7 +285,7 @@ export const products = [
     stockStatus: 'In Stock',
     weight: '50g punnet',
     description: 'Delivers a bold, spicy kick resembling mature radishes, packed with Vitamin C and antioxidants.',
-    image: '/images/products/radish_microgreens.png',
+    image: '/images/products/radish_microgreens.webp',
     features: ['Spicy Kick', 'High Anthocyanins', 'Live Root Tray'],
     flavorProfile: {
       intensity: 5,
@@ -307,7 +307,7 @@ export const products = [
     stockStatus: 'Harvesting Today',
     weight: '75g punnet',
     description: 'Thick, crunchy stems with a delightful nutty flavor. Exceptional source of plant protein and healthy fats.',
-    image: '/images/products/sunflower_microgreens.png',
+    image: '/images/products/sunflower_microgreens.webp',
     features: ['Plant Protein', 'Nutty Flavor', 'Thick Juicy Stems'],
     flavorProfile: {
       intensity: 2,

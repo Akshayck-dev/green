@@ -11,8 +11,8 @@ const heroSlides = [
     tagline: 'FRESH • ORGANIC • SUSTAINABLE',
     subtitle:
       'Freshly harvested microgreens delivered to your doorstep with flexible weekly subscriptions.',
-    bgDesktop: '/images/hero_greenhouse_desktop.png',
-    bgMobile: '/images/hero_greenhouse_mobile.png',
+    bgDesktop: '/images/hero_greenhouse_desktop.webp',
+    bgMobile: '/images/hero_greenhouse_mobile.webp',
     ctaPrimary: 'Start Your Plan',
     ctaPrimaryLink: '/subscriptions',
     ctaSecondary: 'View Collections',
@@ -23,8 +23,8 @@ const heroSlides = [
     tagline: 'PEAK BIOLOGICAL ENERGY',
     subtitle:
       'Up to 40x higher nutrient concentration than mature vegetables. Delivered living with roots intact for maximum freshness.',
-    bgDesktop: '/images/hero_harvest_desktop.png',
-    bgMobile: '/images/hero_harvest_mobile.png',
+    bgDesktop: '/images/hero_harvest_desktop.webp',
+    bgMobile: '/images/hero_harvest_mobile.webp',
     ctaPrimary: 'Start Your Plan',
     ctaPrimaryLink: '/subscriptions',
     ctaSecondary: 'View Collections',
@@ -35,8 +35,8 @@ const heroSlides = [
     tagline: 'HYDROPONIC & PESTICIDE FREE',
     subtitle:
       'Cultivated with organic seeds and pristine water. Zero chemical fertilizers or synthetic additives.',
-    bgDesktop: '/images/hero_subscription_desktop.png',
-    bgMobile: '/images/hero_subscription_mobile.png',
+    bgDesktop: '/images/hero_subscription_desktop.webp',
+    bgMobile: '/images/hero_subscription_mobile.webp',
     ctaPrimary: 'Start Your Plan',
     ctaPrimaryLink: '/subscriptions',
     ctaSecondary: 'View Collections',
@@ -542,7 +542,7 @@ export default function Home() {
             <div
               className="absolute inset-0 bg-cover bg-center opacity-40 z-0 scale-105"
               style={{
-                backgroundImage: `url('/images/hero_subscription_desktop.png')`,
+                backgroundImage: `url('/images/hero_subscription_desktop.webp')`,
               }}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-transparent z-1" />
